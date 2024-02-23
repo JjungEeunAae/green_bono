@@ -9,5 +9,6 @@ namespace project_nanibono.common
     public static class Common
     {
         // 공통으로 쓸 메소드를 저장
+        // 오호호호호호호호호호호호 
     }
 }
