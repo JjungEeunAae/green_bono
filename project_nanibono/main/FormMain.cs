@@ -1,4 +1,3 @@
-using Oracle.ManagedDataAccess.Client;
 using project_nanibono.word;
 
 namespace project_nanibono
@@ -10,7 +9,7 @@ namespace project_nanibono
         public FormMain()
         {
             InitializeComponent();
-            
+
             wordSearchResult1.Visible = false;  // 단어검색결과 사용자 정의 컨트롤 숨기기
             menuPanel.Visible = false;          // 메뉴패널 숨기기
 

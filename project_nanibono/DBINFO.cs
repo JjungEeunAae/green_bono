@@ -1,9 +1,4 @@
 ﻿using Oracle.ManagedDataAccess.Client;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace project_nanibono
 {
@@ -25,5 +20,12 @@ namespace project_nanibono
         public static OracleConnection con = new OracleConnection(getConnection());
         public static OracleCommand cmd = new OracleCommand();
         public static string sql = "";
+
+
+        // 은애코드
+        public static string strConnection = "DATA SOURCE=192.168.0.110; User Id=bono; Password=bono";
+        public static OracleConnection conn = new OracleConnection(strConnection);
+        public static OracleCommand cmd_eunae;
+        public static OracleDataReader rdr_eunae;
     }
 }

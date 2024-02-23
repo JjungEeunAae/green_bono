@@ -55,6 +55,7 @@
             button_requestSearch.TabIndex = 17;
             button_requestSearch.Text = "Search";
             button_requestSearch.UseVisualStyleBackColor = false;
+            button_requestSearch.Click += button_requestSearch_Click;
             // 
             // comboBox_requestRyn
             // 
@@ -108,6 +109,7 @@
             dataGridView2.ReadOnly = true;
             dataGridView2.Size = new Size(649, 169);
             dataGridView2.TabIndex = 12;
+            dataGridView2.CellContentClick += dataGridView2_CellContentClick;
             // 
             // dataGridView1
             // 
@@ -123,6 +125,7 @@
             dataGridView1.ReadOnly = true;
             dataGridView1.Size = new Size(649, 169);
             dataGridView1.TabIndex = 11;
+            dataGridView1.CellClick += dataGridView1_CellClick;
             // 
             // label1
             // 

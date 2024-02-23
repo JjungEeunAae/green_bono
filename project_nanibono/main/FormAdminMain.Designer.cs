@@ -34,9 +34,9 @@
             button_word = new Button();
             button_user = new Button();
             button1 = new Button();
-            adminRequestManagement1 = new request.AdminRequestManagement();
             adminMemberManagement1 = new request.AdminMemberManagement();
             adminWordManagement1 = new word.AdminWordManagement();
+            adminRequestManagement1 = new request.AdminRequestManagement(this);
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -121,14 +121,6 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button_Click;
             // 
-            // adminRequestManagement1
-            // 
-            adminRequestManagement1.BackColor = SystemColors.ControlLightLight;
-            adminRequestManagement1.Location = new Point(142, 0);
-            adminRequestManagement1.Name = "adminRequestManagement1";
-            adminRequestManagement1.Size = new Size(655, 450);
-            adminRequestManagement1.TabIndex = 1;
-            // 
             // adminMemberManagement1
             // 
             adminMemberManagement1.BackColor = SystemColors.ButtonHighlight;
@@ -145,15 +137,23 @@
             adminWordManagement1.Size = new Size(655, 450);
             adminWordManagement1.TabIndex = 4;
             // 
+            // adminRequestManagement1
+            // 
+            adminRequestManagement1.BackColor = SystemColors.ControlLightLight;
+            adminRequestManagement1.Location = new Point(142, 0);
+            adminRequestManagement1.Name = "adminRequestManagement1";
+            adminRequestManagement1.Size = new Size(655, 450);
+            adminRequestManagement1.TabIndex = 4;
+            // 
             // FormAdminMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
             ClientSize = new Size(800, 450);
+            Controls.Add(adminRequestManagement1);
             Controls.Add(adminWordManagement1);
             Controls.Add(adminMemberManagement1);
-            Controls.Add(adminRequestManagement1);
             Controls.Add(panel1);
             Name = "FormAdminMain";
             Text = "FormAdminMain";
@@ -169,8 +169,8 @@
         private Button button_word;
         private Button button_user;
         private Panel SidePanel;
-        private request.AdminRequestManagement adminRequestManagement1;
         private request.AdminMemberManagement adminMemberManagement1;
         private word.AdminWordManagement adminWordManagement1;
+        private request.AdminRequestManagement adminRequestManagement1;
     }
 }
