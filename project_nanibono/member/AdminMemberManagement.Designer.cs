@@ -90,6 +90,7 @@
             button_requestSearch.TabIndex = 18;
             button_requestSearch.Text = "Search";
             button_requestSearch.UseVisualStyleBackColor = false;
+            button_requestSearch.Click += button_requestSearch_Click;
             // 
             // AdminMemberManagement
             // 

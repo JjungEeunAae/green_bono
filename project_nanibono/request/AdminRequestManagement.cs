@@ -26,6 +26,11 @@ namespace project_nanibono.request
             deleteRequestView();
         }
 
+        /*public AdminRequestManagement()
+        {
+            InitializeComponent();
+        }*/
+
         public void deleteRequestView()
         {
             view("DELETE", dataGridView2, "");
@@ -137,7 +142,7 @@ namespace project_nanibono.request
                     }
                     else
                     {
-                        dataGridView.Rows[rowIndex].DefaultCellStyle.BackColor = Color.YellowGreen;
+                        dataGridView.Rows[rowIndex].DefaultCellStyle.BackColor = Color.FromArgb(224, 244, 255);
                         dataGridView.Rows[rowIndex].Cells["button"].Value = "바로가기"; // 버튼 셀에 값을 설정
                     }
                 }

@@ -59,11 +59,6 @@ namespace project_nanibono.request
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            memberSearch();
-        }
-
         private void memberSearch()
         // 검색기능
         {
@@ -128,5 +123,9 @@ namespace project_nanibono.request
             }
         }
 
+        private void button_requestSearch_Click(object sender, EventArgs e)
+        {
+            memberSearch();
+        }
     }
 }

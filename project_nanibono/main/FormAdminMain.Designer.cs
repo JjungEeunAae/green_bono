@@ -124,7 +124,7 @@
             // adminMemberManagement1
             // 
             adminMemberManagement1.BackColor = SystemColors.ButtonHighlight;
-            adminMemberManagement1.Location = new Point(142, 0);
+            adminMemberManagement1.Location = new Point(140, 0);
             adminMemberManagement1.Name = "adminMemberManagement1";
             adminMemberManagement1.Size = new Size(655, 450);
             adminMemberManagement1.TabIndex = 4;
@@ -132,7 +132,7 @@
             // adminWordManagement1
             // 
             adminWordManagement1.BackColor = SystemColors.ButtonHighlight;
-            adminWordManagement1.Location = new Point(142, 0);
+            adminWordManagement1.Location = new Point(140, 0);
             adminWordManagement1.Name = "adminWordManagement1";
             adminWordManagement1.Size = new Size(655, 450);
             adminWordManagement1.TabIndex = 4;
@@ -140,7 +140,7 @@
             // adminRequestManagement1
             // 
             adminRequestManagement1.BackColor = SystemColors.ControlLightLight;
-            adminRequestManagement1.Location = new Point(142, 0);
+            adminRequestManagement1.Location = new Point(140, 0);
             adminRequestManagement1.Name = "adminRequestManagement1";
             adminRequestManagement1.Size = new Size(655, 450);
             adminRequestManagement1.TabIndex = 4;
