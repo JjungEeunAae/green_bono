@@ -203,6 +203,7 @@
             Controls.Add(userId);
             Controls.Add(pictureBox1);
             Name = "FormSignUp";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FormSignUp";
             Load += FormSignUp_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
