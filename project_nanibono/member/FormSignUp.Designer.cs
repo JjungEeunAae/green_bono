@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             pictureBox1 = new PictureBox();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
+            userId = new TextBox();
+            userPassword = new TextBox();
+            userName = new TextBox();
             button1 = new Button();
             label4 = new Label();
             label5 = new Label();
@@ -54,26 +54,26 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // textBox1
+            // userId
             // 
-            textBox1.Location = new Point(274, 183);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(265, 23);
-            textBox1.TabIndex = 4;
+            userId.Location = new Point(274, 183);
+            userId.Name = "userId";
+            userId.Size = new Size(265, 23);
+            userId.TabIndex = 4;
             // 
-            // textBox2
+            // userPassword
             // 
-            textBox2.Location = new Point(274, 221);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(265, 23);
-            textBox2.TabIndex = 5;
+            userPassword.Location = new Point(274, 221);
+            userPassword.Name = "userPassword";
+            userPassword.Size = new Size(265, 23);
+            userPassword.TabIndex = 5;
             // 
-            // textBox3
+            // userName
             // 
-            textBox3.Location = new Point(274, 259);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(265, 23);
-            textBox3.TabIndex = 6;
+            userName.Location = new Point(274, 259);
+            userName.Name = "userName";
+            userName.Size = new Size(265, 23);
+            userName.TabIndex = 6;
             // 
             // button1
             // 
@@ -148,6 +148,7 @@
             loginButton.TabIndex = 17;
             loginButton.Text = "SIGN UP";
             loginButton.UseVisualStyleBackColor = false;
+            loginButton.Click += loginButton_Click;
             // 
             // label6
             // 
@@ -197,9 +198,9 @@
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(button1);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(userName);
+            Controls.Add(userPassword);
+            Controls.Add(userId);
             Controls.Add(pictureBox1);
             Name = "FormSignUp";
             Text = "FormSignUp";
@@ -212,9 +213,9 @@
         #endregion
 
         private PictureBox pictureBox1;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private TextBox userId;
+        private TextBox userPassword;
+        private TextBox userName;
         private Button button1;
         private Label label4;
         private Label label5;
