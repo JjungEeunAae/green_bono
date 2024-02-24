@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\green_bono\\project_nanibono\\project_nanibono.csproj": {}
+    "D:\\green_bono\\project_nanibono\\project_nanibono.csproj": {}
   },
   "projects": {
-    "C:\\green_bono\\project_nanibono\\project_nanibono.csproj": {
+    "D:\\green_bono\\project_nanibono\\project_nanibono.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\green_bono\\project_nanibono\\project_nanibono.csproj",
+        "projectUniqueName": "D:\\green_bono\\project_nanibono\\project_nanibono.csproj",
         "projectName": "project_nanibono",
-        "projectPath": "C:\\green_bono\\project_nanibono\\project_nanibono.csproj",
-        "packagesPath": "C:\\Users\\wjddm\\.nuget\\packages\\",
-        "outputPath": "C:\\green_bono\\project_nanibono\\obj\\",
+        "projectPath": "D:\\green_bono\\project_nanibono\\project_nanibono.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "D:\\green_bono\\project_nanibono\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\wjddm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
