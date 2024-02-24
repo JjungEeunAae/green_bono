@@ -1,4 +1,4 @@
-﻿using project_nanibono.request;
+using project_nanibono.request;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

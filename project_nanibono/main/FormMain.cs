@@ -1,4 +1,3 @@
-using Oracle.ManagedDataAccess.Client;
 using project_nanibono.word;
 
 namespace project_nanibono

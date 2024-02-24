@@ -1,4 +1,4 @@
-﻿using project_nanibono.main;
+using project_nanibono.main;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

@@ -1,10 +1,6 @@
 ﻿using Oracle.ManagedDataAccess.Client;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace project_nanibono.word
 {
@@ -26,7 +22,7 @@ namespace project_nanibono.word
                 OracleDataReader oracleDataReader = cmd.ExecuteReader();
                 if (oracleDataReader.Read())
                 {
-                    Word selectWord= new Word();
+                    Word selectWord = new Word();
                     selectWord.word_no = oracleDataReader.GetString("word_no");
                     selectWord.word = oracleDataReader.GetString("word");
                     selectWord.word_mean = oracleDataReader.GetString("word_mean");

@@ -1,6 +1,4 @@
 using project_nanibono.main;
-using project_nanibono.request;
-using project_nanibono.word;
 
 namespace project_nanibono
 {
@@ -15,9 +13,8 @@ namespace project_nanibono
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            //Application.Run(new FormMain());
+            Application.Run(new FormMain());
             //Application.Run(new FormAdminMain());
-            Application.Run(new FormSignUp());
         }
     }
 }

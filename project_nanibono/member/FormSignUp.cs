@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualBasic.ApplicationServices;
+
+using Microsoft.VisualBasic.ApplicationServices;
 using Oracle.ManagedDataAccess.Client;
 using project_nanibono.member;
 using System;

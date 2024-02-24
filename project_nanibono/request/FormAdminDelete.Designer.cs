@@ -197,6 +197,7 @@
             closeBtn.TabIndex = 88;
             closeBtn.Text = "닫기";
             closeBtn.UseVisualStyleBackColor = false;
+            closeBtn.Click += closeBtn_Click;
             // 
             // successBtn
             // 
@@ -211,6 +212,7 @@
             successBtn.TabIndex = 87;
             successBtn.Text = "처리완료";
             successBtn.UseVisualStyleBackColor = false;
+            successBtn.Click += successBtn_Click;
             // 
             // label4
             // 
@@ -238,6 +240,7 @@
             comboBox_processDivision.Name = "comboBox_processDivision";
             comboBox_processDivision.Size = new Size(279, 23);
             comboBox_processDivision.TabIndex = 84;
+            comboBox_processDivision.SelectedIndexChanged += comboBox_processDivision_SelectedIndexChanged;
             // 
             // textBox_requestContent
             // 

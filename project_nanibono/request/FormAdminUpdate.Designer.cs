@@ -42,7 +42,7 @@
             textBox_wordMean = new TextBox();
             label__wordMean = new Label();
             comboBox_reason = new ComboBox();
-            label_deleteForm_reason = new Label();
+            label_reason = new Label();
             closeBtn = new Button();
             successBtn = new Button();
             label4 = new Label();
@@ -52,7 +52,7 @@
             textBox_word = new TextBox();
             textBox_wordCode = new TextBox();
             textBox_id = new TextBox();
-            label5 = new Label();
+            label_processDivision = new Label();
             label6 = new Label();
             label7 = new Label();
             label_word = new Label();
@@ -193,16 +193,16 @@
             comboBox_reason.Size = new Size(279, 23);
             comboBox_reason.TabIndex = 119;
             // 
-            // label_deleteForm_reason
+            // label_reason
             // 
-            label_deleteForm_reason.AutoSize = true;
-            label_deleteForm_reason.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold);
-            label_deleteForm_reason.ForeColor = Color.Firebrick;
-            label_deleteForm_reason.Location = new Point(21, 342);
-            label_deleteForm_reason.Name = "label_deleteForm_reason";
-            label_deleteForm_reason.Size = new Size(60, 17);
-            label_deleteForm_reason.TabIndex = 118;
-            label_deleteForm_reason.Text = "거절사유";
+            label_reason.AutoSize = true;
+            label_reason.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold);
+            label_reason.ForeColor = Color.Firebrick;
+            label_reason.Location = new Point(21, 342);
+            label_reason.Name = "label_reason";
+            label_reason.Size = new Size(60, 17);
+            label_reason.TabIndex = 118;
+            label_reason.Text = "거절사유";
             // 
             // closeBtn
             // 
@@ -217,6 +217,7 @@
             closeBtn.TabIndex = 117;
             closeBtn.Text = "닫기";
             closeBtn.UseVisualStyleBackColor = false;
+            closeBtn.Click += closeBtn_Click;
             // 
             // successBtn
             // 
@@ -231,6 +232,7 @@
             successBtn.TabIndex = 116;
             successBtn.Text = "처리완료";
             successBtn.UseVisualStyleBackColor = false;
+            successBtn.Click += successBtn_Click;
             // 
             // label4
             // 
@@ -258,6 +260,7 @@
             comboBox_processDivision.Name = "comboBox_processDivision";
             comboBox_processDivision.Size = new Size(279, 23);
             comboBox_processDivision.TabIndex = 113;
+            comboBox_processDivision.SelectedIndexChanged += comboBox_processDivision_SelectedIndexChanged;
             // 
             // textBox_requestContent
             // 
@@ -288,15 +291,15 @@
             textBox_id.Size = new Size(279, 23);
             textBox_id.TabIndex = 109;
             // 
-            // label5
+            // label_processDivision
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold);
-            label5.Location = new Point(21, 310);
-            label5.Name = "label5";
-            label5.Size = new Size(60, 17);
-            label5.TabIndex = 107;
-            label5.Text = "처리구분";
+            label_processDivision.AutoSize = true;
+            label_processDivision.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold);
+            label_processDivision.Location = new Point(21, 310);
+            label_processDivision.Name = "label_processDivision";
+            label_processDivision.Size = new Size(60, 17);
+            label_processDivision.TabIndex = 107;
+            label_processDivision.Text = "처리구분";
             // 
             // label6
             // 
@@ -398,7 +401,7 @@
             Controls.Add(textBox_wordMean);
             Controls.Add(label__wordMean);
             Controls.Add(comboBox_reason);
-            Controls.Add(label_deleteForm_reason);
+            Controls.Add(label_reason);
             Controls.Add(closeBtn);
             Controls.Add(successBtn);
             Controls.Add(textBox_date);
@@ -407,7 +410,7 @@
             Controls.Add(textBox_word);
             Controls.Add(textBox_wordCode);
             Controls.Add(textBox_id);
-            Controls.Add(label5);
+            Controls.Add(label_processDivision);
             Controls.Add(label6);
             Controls.Add(label7);
             Controls.Add(label_word);
@@ -437,7 +440,7 @@
         private TextBox textBox_wordMean;
         private Label label__wordMean;
         private ComboBox comboBox_reason;
-        private Label label_deleteForm_reason;
+        private Label label_reason;
         private Button closeBtn;
         private Button successBtn;
         private Label label4;
@@ -447,7 +450,7 @@
         private TextBox textBox_word;
         private TextBox textBox_wordCode;
         private TextBox textBox_id;
-        private Label label5;
+        private Label label_processDivision;
         private Label label6;
         private Label label7;
         private Label label_word;

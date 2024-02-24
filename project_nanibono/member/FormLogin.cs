@@ -1,18 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-using Oracle.ManagedDataAccess.Client;
-using System;
-using System.Data;
-using System.Windows.Forms;
-using project_nanibono.member;
+﻿using Oracle.ManagedDataAccess.Client;
 
 namespace project_nanibono
 {
