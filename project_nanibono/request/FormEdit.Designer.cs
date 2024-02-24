@@ -35,17 +35,19 @@
             label_wordCode = new Label();
             label_id = new Label();
             label_requestDate = new Label();
-            textBox_id = new TextBox();
-            textBox_wordCode = new TextBox();
-            textBox_word = new TextBox();
             textBox_requestContent = new TextBox();
-            textBox_requestDate = new TextBox();
             comboBox_proccessDivision = new ComboBox();
-            panel2 = new Panel();
             panel1 = new Panel();
             closeBtn = new Button();
             successBtn = new Button();
             label8 = new Label();
+            comboBox3 = new ComboBox();
+            label14 = new Label();
+            label15 = new Label();
+            label16 = new Label();
+            label17 = new Label();
+            label18 = new Label();
+            panel2 = new Panel();
             SuspendLayout();
             // 
             // label9
@@ -62,7 +64,7 @@
             // 
             label_requestContent.AutoSize = true;
             label_requestContent.Font = new Font("맑은 고딕", 9F, FontStyle.Bold);
-            label_requestContent.Location = new Point(193, 235);
+            label_requestContent.Location = new Point(193, 259);
             label_requestContent.Name = "label_requestContent";
             label_requestContent.Size = new Size(55, 15);
             label_requestContent.TabIndex = 15;
@@ -112,47 +114,19 @@
             // 
             label_requestDate.AutoSize = true;
             label_requestDate.Font = new Font("맑은 고딕", 9F, FontStyle.Bold);
-            label_requestDate.Location = new Point(208, 336);
+            label_requestDate.Location = new Point(208, 360);
             label_requestDate.Name = "label_requestDate";
             label_requestDate.Size = new Size(43, 15);
             label_requestDate.TabIndex = 20;
             label_requestDate.Text = "요청일";
             // 
-            // textBox_id
-            // 
-            textBox_id.Location = new Point(260, 78);
-            textBox_id.Name = "textBox_id";
-            textBox_id.Size = new Size(325, 23);
-            textBox_id.TabIndex = 21;
-            // 
-            // textBox_wordCode
-            // 
-            textBox_wordCode.Location = new Point(260, 115);
-            textBox_wordCode.Name = "textBox_wordCode";
-            textBox_wordCode.Size = new Size(325, 23);
-            textBox_wordCode.TabIndex = 22;
-            // 
-            // textBox_word
-            // 
-            textBox_word.Location = new Point(260, 152);
-            textBox_word.Name = "textBox_word";
-            textBox_word.Size = new Size(325, 23);
-            textBox_word.TabIndex = 23;
-            // 
             // textBox_requestContent
             // 
-            textBox_requestContent.Location = new Point(260, 235);
+            textBox_requestContent.Location = new Point(260, 259);
             textBox_requestContent.Multiline = true;
             textBox_requestContent.Name = "textBox_requestContent";
             textBox_requestContent.Size = new Size(325, 84);
             textBox_requestContent.TabIndex = 25;
-            // 
-            // textBox_requestDate
-            // 
-            textBox_requestDate.Location = new Point(260, 332);
-            textBox_requestDate.Name = "textBox_requestDate";
-            textBox_requestDate.Size = new Size(325, 23);
-            textBox_requestDate.TabIndex = 26;
             // 
             // comboBox_proccessDivision
             // 
@@ -161,15 +135,6 @@
             comboBox_proccessDivision.Name = "comboBox_proccessDivision";
             comboBox_proccessDivision.Size = new Size(325, 23);
             comboBox_proccessDivision.TabIndex = 27;
-            // 
-            // panel2
-            // 
-            panel2.BackgroundImage = Properties.Resources.bonoback;
-            panel2.Dock = DockStyle.Left;
-            panel2.Location = new Point(0, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(170, 450);
-            panel2.TabIndex = 167;
             // 
             // panel1
             // 
@@ -217,23 +182,88 @@
             label8.Size = new Size(400, 2);
             label8.TabIndex = 171;
             // 
+            // comboBox3
+            // 
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Location = new Point(260, 224);
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(325, 23);
+            comboBox3.TabIndex = 173;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("맑은 고딕", 9F, FontStyle.Bold);
+            label14.Location = new Point(193, 228);
+            label14.Name = "label14";
+            label14.Size = new Size(55, 15);
+            label14.TabIndex = 172;
+            label14.Text = "요청구분";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new Point(260, 80);
+            label15.Name = "label15";
+            label15.Size = new Size(46, 15);
+            label15.TabIndex = 174;
+            label15.Text = "label15";
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Location = new Point(260, 119);
+            label16.Name = "label16";
+            label16.Size = new Size(46, 15);
+            label16.TabIndex = 175;
+            label16.Text = "label16";
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Location = new Point(260, 155);
+            label17.Name = "label17";
+            label17.Size = new Size(46, 15);
+            label17.TabIndex = 176;
+            label17.Text = "label17";
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Location = new Point(260, 360);
+            label18.Name = "label18";
+            label18.Size = new Size(46, 15);
+            label18.TabIndex = 177;
+            label18.Text = "label18";
+            // 
+            // panel2
+            // 
+            panel2.BackgroundImage = Properties.Resources.bonoback;
+            panel2.Dock = DockStyle.Left;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(170, 450);
+            panel2.TabIndex = 167;
+            // 
             // FormEdit
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
             ClientSize = new Size(800, 450);
+            Controls.Add(label18);
+            Controls.Add(label17);
+            Controls.Add(label16);
+            Controls.Add(label15);
+            Controls.Add(comboBox3);
+            Controls.Add(label14);
             Controls.Add(label8);
             Controls.Add(closeBtn);
             Controls.Add(successBtn);
             Controls.Add(panel1);
             Controls.Add(panel2);
             Controls.Add(comboBox_proccessDivision);
-            Controls.Add(textBox_requestDate);
             Controls.Add(textBox_requestContent);
-            Controls.Add(textBox_word);
-            Controls.Add(textBox_wordCode);
-            Controls.Add(textBox_id);
             Controls.Add(label_requestDate);
             Controls.Add(label_requestContent);
             Controls.Add(label_proccessDivision);
@@ -243,7 +273,6 @@
             Controls.Add(label9);
             Name = "FormEdit";
             Text = "FormEdit";
-            Load += FormEdit_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -256,16 +285,18 @@
         private Label label_wordCode;
         private Label label_id;
         private Label label_requestDate;
-        private TextBox textBox_id;
-        private TextBox textBox_wordCode;
-        private TextBox textBox_word;
         private TextBox textBox_requestContent;
-        private TextBox textBox_requestDate;
         private ComboBox comboBox_proccessDivision;
-        private Panel panel2;
         private Panel panel1;
         private Button closeBtn;
         private Button successBtn;
         private Label label8;
+        private ComboBox comboBox3;
+        private Label label14;
+        private Label label15;
+        private Label label16;
+        private Label label17;
+        private Label label18;
+        private Panel panel2;
     }
 }

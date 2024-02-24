@@ -8,26 +8,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace project_nanibono.word
 {
     public partial class WordSearchResult : UserControl
     {
-        string word; // Îã®Ïñ¥
-        string wordMean; // Îã®Ïñ¥ Îúª
-        int panelY = 100; // Ï¥àÍ∏∞ Y ÏúÑÏπò
+        string word;
+        string wordMean;
+        int panelY = 100; // √ ±‚ Y ¿ßƒ°
 
-        public WordSearchResult(Dictionary<string, string> selectWord)
+        public WordSearchResult(Dictionary<string, string> dictWord)
         {
             InitializeComponent();
 
-            foreach (var kvp in selectWord)
+            foreach (var kvp in dictWord)
             {
                 word = kvp.Key;
                 wordMean = kvp.Value;
 
-                Console.WriteLine("forÎ¨∏ Îã®Ïñ¥ = " + word);
-                Console.WriteLine("forÎ¨∏ ÏùòÎØ∏ = " + wordMean);
+                Console.WriteLine("forπÆ ¥‹æÓ = " + word);
+                Console.WriteLine("forπÆ ¿«πÃ = " + wordMean);
 
                 Panel panel = new Panel();
                 panel.Location = new Point(60, panelY);
@@ -37,14 +38,14 @@ namespace project_nanibono.word
 
                 Button button_requestEdit = new Button();
                 button_requestEdit.Name = "button_requestEdit";
-                button_requestEdit.Location = new Point(590, 95); // Ìå®ÎÑêÏùò ÎÑàÎπÑ ÎÇ¥Ïóê ÏúÑÏπòÌïòÎèÑÎ°ù X Ï¢åÌëú Ï°∞Ï†ï
+                button_requestEdit.Location = new Point(590, 95); // ∆–≥Œ¿« ≥ ∫Ò ≥ªø° ¿ßƒ°«œµµ∑œ X ¡¬«• ¡∂¡§
                 button_requestEdit.Size = new Size(100, 30);
                 button_requestEdit.BackColor = Color.FromArgb(135, 196, 255);
                 button_requestEdit.FlatAppearance.BorderSize = 0;
                 button_requestEdit.FlatStyle = FlatStyle.Flat;
-                button_requestEdit.Font = new Font("ÎßëÏùÄ Í≥†Îîï", 9F, FontStyle.Bold);
+                button_requestEdit.Font = new Font("∏º¿∫ ∞ÌµÒ", 9F, FontStyle.Bold);
                 button_requestEdit.ForeColor = Color.White;
-                button_requestEdit.Text = "Ìé∏ÏßëÏöîÏ≤≠";
+                button_requestEdit.Text = "∆Ì¡˝ø‰√ª";
                 button_requestEdit.UseVisualStyleBackColor = false;
                 button_requestEdit.Click += Button_Click;
                 panel.Controls.Add(button_requestEdit);
@@ -54,31 +55,33 @@ namespace project_nanibono.word
                 label_word.Location = new Point(15, 30);
                 label_word.Text = word;
                 label_word.AutoSize = true;
-                label_word.Font = new Font("ÎßëÏùÄ Í≥†Îîï", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
+                label_word.Font = new Font("∏º¿∫ ∞ÌµÒ", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
                 label_word.ForeColor = Color.FromArgb(57, 167, 255);
                 panel.Controls.Add(label_word);
 
                 Label label2 = new Label();
-                label2.AutoSize = true;
+                label2.AutoSize = false; // ø÷æ»µ«¡ˆ
+                label2.Size = new Size(100, 100); // ø÷ æ»µ«¡ˆ
                 label2.ForeColor = Color.FromArgb(64, 64, 64);
                 label2.Location = new Point(15, 70);
                 label2.Text = wordMean;
                 label2.Size = new Size(545, 54);
                 panel.Controls.Add(label2);
 
-                // Ìå®ÎÑê Í∞ÑÍ≤© Ï°∞Ï†à
+                // ∆–≥Œ ∞£∞› ¡∂¿˝
                 panelY += 150;
 
             }
         }
-            private void Button_Click(object sender, EventArgs e)
-            {
-                Button btn = (Button)sender;
-                Console.WriteLine("Î≤ÑÌäº" + word);
-                FormEdit rq = new FormEdit(word);
-                rq.Show();
+        private void Button_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            Console.WriteLine("πˆ∆∞" + word);
+            FormEdit rq = new FormEdit(word);
+            rq.Show();
 
-
-            }
         }
+
+
+    }
     }

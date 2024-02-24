@@ -1,16 +1,17 @@
 using project_nanibono.word;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace project_nanibono
 {
     public partial class FormMain : Form
     {
         private WordSearch wordSearch = new WordSearch();
-
+        
         public FormMain()
         {
             InitializeComponent();
 
-            wordSearchResult1.Visible = false;  // 단어검색결과 사용자 정의 컨트롤 숨기기
+            //wordSearchResult1.Visible = false;  // 단어검색결과 사용자 정의 컨트롤 숨기기
             menuPanel.Visible = false;          // 메뉴패널 숨기기
 
             // 단어검색 사용자 정의 컨트롤
@@ -20,6 +21,9 @@ namespace project_nanibono
 
             // 단어검색 사용자 정의 컨트롤 버튼 클릭 이벤트
             wordSearch.SearchButtonClicked += wordSearch1_SearchButtonClicked;
+
+            InitializeComponent();
+
         }
 
         public void ShowPanelAndControl2()
@@ -68,6 +72,9 @@ namespace project_nanibono
             //       }
         }
 
+        private void FormMain_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }

@@ -145,6 +145,7 @@
             ForeColor = SystemColors.ControlText;
             Name = "WordSearch";
             Size = new Size(800, 396);
+            Load += WordSearch_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
