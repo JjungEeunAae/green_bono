@@ -31,9 +31,7 @@
             label4 = new Label();
             closeBtn = new Button();
             successBtn = new Button();
-            textBox_groupNo = new TextBox();
             label_groupNo = new Label();
-            textBox_category = new TextBox();
             label_category = new Label();
             textBox_wordMean = new TextBox();
             label__wordMean = new Label();
@@ -42,6 +40,8 @@
             label8 = new Label();
             panel1 = new Panel();
             panel2 = new Panel();
+            comboBox1 = new ComboBox();
+            comboBox2 = new ComboBox();
             SuspendLayout();
             // 
             // label4
@@ -79,15 +79,8 @@
             successBtn.Name = "successBtn";
             successBtn.Size = new Size(212, 38);
             successBtn.TabIndex = 150;
-            successBtn.Text = "처리완료";
+            successBtn.Text = "등록";
             successBtn.UseVisualStyleBackColor = false;
-            // 
-            // textBox_groupNo
-            // 
-            textBox_groupNo.Location = new Point(249, 91);
-            textBox_groupNo.Name = "textBox_groupNo";
-            textBox_groupNo.Size = new Size(339, 23);
-            textBox_groupNo.TabIndex = 161;
             // 
             // label_groupNo
             // 
@@ -98,13 +91,6 @@
             label_groupNo.Size = new Size(34, 17);
             label_groupNo.TabIndex = 160;
             label_groupNo.Text = "분류";
-            // 
-            // textBox_category
-            // 
-            textBox_category.Location = new Point(249, 131);
-            textBox_category.Name = "textBox_category";
-            textBox_category.Size = new Size(339, 23);
-            textBox_category.TabIndex = 159;
             // 
             // label_category
             // 
@@ -178,18 +164,39 @@
             panel2.Size = new Size(170, 450);
             panel2.TabIndex = 167;
             // 
+            // comboBox1
+            // 
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "== 선택하세요 ==", "정보처리기사", "SQLD" });
+            comboBox1.Location = new Point(249, 94);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(192, 23);
+            comboBox1.TabIndex = 168;
+            comboBox1.SelectedIndexChanged += selectGroupName;
+            // 
+            // comboBox2
+            // 
+            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(249, 133);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(192, 23);
+            comboBox2.TabIndex = 169;
+            comboBox2.SelectedIndexChanged += selectGroupCategory;
+            // 
             // FormAdminWord
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
             ClientSize = new Size(800, 450);
+            Controls.Add(comboBox2);
+            Controls.Add(comboBox1);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(label8);
-            Controls.Add(textBox_groupNo);
             Controls.Add(label_groupNo);
-            Controls.Add(textBox_category);
             Controls.Add(label_category);
             Controls.Add(textBox_wordMean);
             Controls.Add(label__wordMean);
@@ -199,6 +206,7 @@
             Controls.Add(successBtn);
             Controls.Add(label4);
             Name = "FormAdminWord";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FormAdminWord";
             ResumeLayout(false);
             PerformLayout();
@@ -208,9 +216,7 @@
         private Label label4;
         private Button closeBtn;
         private Button successBtn;
-        private TextBox textBox_groupNo;
         private Label label_groupNo;
-        private TextBox textBox_category;
         private Label label_category;
         private TextBox textBox_wordMean;
         private Label label__wordMean;
@@ -219,5 +225,7 @@
         private Label label8;
         private Panel panel1;
         private Panel panel2;
+        private ComboBox comboBox1;
+        private ComboBox comboBox2;
     }
 }

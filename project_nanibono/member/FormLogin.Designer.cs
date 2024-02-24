@@ -161,6 +161,7 @@
             homeButton.TabIndex = 11;
             homeButton.Text = "HOME";
             homeButton.UseVisualStyleBackColor = false;
+            homeButton.Click += homeButton_Click;
             // 
             // label1
             // 

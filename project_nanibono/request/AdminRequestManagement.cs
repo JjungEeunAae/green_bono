@@ -226,8 +226,8 @@ namespace project_nanibono.request
                         { // 삭제 페이지가 닫힐 때 부모 폼을 다시 표시
                             parentForm.Show();
 
-                            dataGridViewClear(dataGridView2);   // 해당 dataGridView의 행과 컬럼 값을 모두 삭제
-                            view("DELETE", dataGridView2, null);      // 초기화된 dataGridView에 SQL 결과를 전달
+                            dataGridViewClear(dataGridView2);       // 해당 dataGridView의 행과 컬럼 값을 모두 삭제
+                            view("DELETE", dataGridView2, "");      // 초기화된 dataGridView에 SQL 결과를 전달
                         };
                     }
                 }
