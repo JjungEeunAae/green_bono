@@ -28,73 +28,83 @@ namespace project_nanibono.main
             conn.Close();
         }
 
-        public Dictionary<string, string> selectWord(TextBox text)
+        public Dictionary<string, string> selectWord(TextBox text, ComboBox combox)
         {
-            string word = text.Text;
-            if (word.Equals(""))
+            if (combox.Text.Equals("용어"))
             {
-                MessageBox.Show("검색어를 입력해주세요");
+                string word = text.Text;
+                if (word.Equals(""))
+                {
+                    MessageBox.Show("검색어를 입력해주세요");
+                    return null;
+                }
+                OracleConnection conn = new OracleConnection(strConnection);
+                conn.Open();
+                OracleCommand cmd = new OracleCommand($"SELECT * FROM word WHERE word LIKE '%{word}%' AND delete_yn = 'n'", conn);
+                OracleDataReader reader = cmd.ExecuteReader();
+                int cnt = 0;
+                Dictionary<string, string> dWord = new Dictionary<string, string>();
+                while (reader.Read())
+                {
+                    cnt++;
+                    //Console.WriteLine(reader["WORD"].ToString());
+                    //Console.WriteLine(reader["WORD_MEAN"].ToString());
+
+                    dWord.Add(reader["WORD"].ToString(), reader["WORD_MEAN"].ToString());
+
+
+                }
+                if (cnt == 0)
+                {
+                    MessageBox.Show("다시 검색하세요");
+                    return null;
+                }
+                reader.Close();
+                conn.Close();
+                return dWord; // return을 반복문 안에 넣어서 한번밖에 못돈다
+
+            }
+            else if (combox.Text.Equals("정의"))
+            {
+                string wordMean = text.Text;
+                if (wordMean.Equals(""))
+                {
+                    MessageBox.Show("검색어를 입력해주세요");
+                    return null;
+                }
+                OracleConnection conn = new OracleConnection(strConnection);
+                conn.Open();
+                OracleCommand cmd = new OracleCommand($"SELECT * FROM word WHERE word_mean LIKE '%{wordMean}%' AND delete_yn = 'n'", conn);
+                OracleDataReader reader = cmd.ExecuteReader();
+                int cnt = 0;
+                Dictionary<string, string> dWordMean = new Dictionary<string, string>();
+                while (reader.Read())
+                {
+                    cnt++;
+                    //Console.WriteLine(reader["WORD"].ToString());
+                    //Console.WriteLine(reader["WORD_MEAN"].ToString());
+
+
+                    dWordMean.Add(reader["WORD"].ToString(), reader["WORD_MEAN"].ToString());
+
+
+                }
+                if (cnt == 0)
+                {
+                    MessageBox.Show("다시 검색하세요");
+                    return null;
+                }
+                reader.Close();
+                conn.Close();
+                return dWordMean;
+
+            }
+
+            else
+            {
+                MessageBox.Show("카테고리를 선택해주세요");
                 return null;
             }
-            OracleConnection conn = new OracleConnection(strConnection);
-            conn.Open();
-            OracleCommand cmd = new OracleCommand($"SELECT * FROM word WHERE word LIKE '%{word}%' AND delete_yn = 'n'", conn);
-            OracleDataReader reader = cmd.ExecuteReader();
-            int cnt = 0;
-            Dictionary<string, string> dWord = new Dictionary<string, string>();
-            while (reader.Read())
-            {
-                cnt++;
-                //Console.WriteLine(reader["WORD"].ToString());
-                //Console.WriteLine(reader["WORD_MEAN"].ToString());
-
-                dWord.Add(reader["WORD"].ToString(), reader["WORD_MEAN"].ToString());
-
-
-            }
-            if (cnt == 0)
-            {
-                MessageBox.Show("다시 검색하세요");
-                return null;
-            }
-            reader.Close();
-            conn.Close();
-            return dWord; // return을 반복문 안에 넣어서 한번밖에 못돈다
-        }
-        public Dictionary<string, string> selectWordMean(TextBox text)
-        {
-            string wordMean = text.Text;
-            if (wordMean.Equals(""))
-            {
-                MessageBox.Show("검색어를 입력해주세요");
-                return null;
-            }
-            OracleConnection conn = new OracleConnection(strConnection);
-            conn.Open();
-            OracleCommand cmd = new OracleCommand($"SELECT * FROM word WHERE word_mean LIKE '%{wordMean}%' AND delete_yn = 'n'", conn);
-            OracleDataReader reader = cmd.ExecuteReader();
-            int cnt = 0;
-            Dictionary<string, string> dWordMean = new Dictionary<string, string>();
-            while (reader.Read())
-            {
-                cnt++;
-                //Console.WriteLine(reader["WORD"].ToString());
-                //Console.WriteLine(reader["WORD_MEAN"].ToString());
-
-
-                dWordMean.Add(reader["WORD"].ToString(), reader["WORD_MEAN"].ToString());
-
-
-            }
-            if (cnt == 0)
-            {
-                MessageBox.Show("다시 검색하세요");
-                return null;
-            }
-            reader.Close();
-            conn.Close();
-            return dWordMean;
-
         }
     }
 }

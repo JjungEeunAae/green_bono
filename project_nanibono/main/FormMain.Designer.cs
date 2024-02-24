@@ -1,4 +1,6 @@
-﻿namespace project_nanibono
+﻿using static System.ComponentModel.Design.ObjectSelectorEditor;
+
+namespace project_nanibono
 {
     partial class FormMain
     {
@@ -29,6 +31,7 @@
         private void InitializeComponent()
         {
             menuPanel = new Panel();
+            wordSearch1 = new word.WordSearch();
             panel2 = new Panel();
             button_ct2 = new Button();
             button_ct1 = new Button();
@@ -52,6 +55,7 @@
             // menuPanel
             // 
             menuPanel.BackColor = Color.FromArgb(224, 244, 255);
+            menuPanel.Controls.Add(wordSearch1);
             menuPanel.Controls.Add(panel2);
             menuPanel.Controls.Add(button_ct2);
             menuPanel.Controls.Add(button_ct1);
@@ -68,6 +72,15 @@
             menuPanel.Name = "menuPanel";
             menuPanel.Size = new Size(148, 396);
             menuPanel.TabIndex = 13;
+            // 
+            // wordSearch1
+            // 
+            wordSearch1.BackColor = SystemColors.ControlLightLight;
+            wordSearch1.ForeColor = SystemColors.ControlText;
+            wordSearch1.Location = new Point(0, 0);
+            wordSearch1.Name = "wordSearch1";
+            wordSearch1.Size = new Size(800, 396);
+            wordSearch1.TabIndex = 24;
             // 
             // panel2
             // 
@@ -272,24 +285,17 @@
             homeButton.TabIndex = 1;
             homeButton.UseVisualStyleBackColor = false;
             // 
-            // wordSearchResult1
-            // 
-            wordSearchResult1.BackColor = SystemColors.ControlLightLight;
-            wordSearchResult1.Location = new Point(149, 54);
-            wordSearchResult1.Name = "wordSearchResult1";
-            wordSearchResult1.Size = new Size(651, 396);
-            wordSearchResult1.TabIndex = 16;
-            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new Size(800, 450);
-            Controls.Add(wordSearchResult1);
             Controls.Add(menuPanel);
             Controls.Add(panel1);
             Name = "FormMain";
             Text = "Form1";
+            Load += FormMain_Load;
             menuPanel.ResumeLayout(false);
             panel1.ResumeLayout(false);
             ResumeLayout(false);
@@ -314,5 +320,6 @@
         private Button sdButton;
         private Button homeButton;
         private word.WordSearchResult wordSearchResult1;
+        private word.WordSearch wordSearch1;
     }
 }
