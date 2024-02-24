@@ -2,7 +2,7 @@
 {
     public partial class FormEdit : Form
     {
-        public FormEdit()
+        public FormEdit(string word)
         {
             InitializeComponent();
         }

@@ -67,5 +67,7 @@ namespace project_nanibono
             //   this.Hide();
             //       }
         }
+
+
     }
 }

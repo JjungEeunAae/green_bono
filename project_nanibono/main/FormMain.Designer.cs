@@ -45,7 +45,6 @@
             notifButton = new Button();
             sdButton = new Button();
             homeButton = new Button();
-            wordSearchResult1 = new word.WordSearchResult();
             menuPanel.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
