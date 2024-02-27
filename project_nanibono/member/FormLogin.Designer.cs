@@ -102,6 +102,7 @@
             // 
             pwTextBox.Location = new Point(137, 226);
             pwTextBox.Name = "pwTextBox";
+            pwTextBox.PasswordChar = '*';
             pwTextBox.Size = new Size(201, 23);
             pwTextBox.TabIndex = 6;
             // 

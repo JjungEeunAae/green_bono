@@ -10,7 +10,7 @@ namespace project_nanibono.main
     public class mainDB
     {
         // 단어 검색 기능
-        string strConnection = "Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=xe)));User Id=bono;Password=bono;";
+        string strConnection = "Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.110)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=xe)));User Id=bono;Password=bono;";
         private Dictionary<string, string> myDictionary = new Dictionary<string, string>();
 
         public void selectComoBox(ComboBox comboBox)

@@ -31,7 +31,6 @@ namespace project_nanibono
         private void InitializeComponent()
         {
             menuPanel = new Panel();
-            wordSearch1 = new word.WordSearch();
             panel2 = new Panel();
             button_ct2 = new Button();
             button_ct1 = new Button();
@@ -48,6 +47,7 @@ namespace project_nanibono
             notifButton = new Button();
             sdButton = new Button();
             homeButton = new Button();
+            wordSearch1 = new word.WordSearch();
             menuPanel.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -55,7 +55,6 @@ namespace project_nanibono
             // menuPanel
             // 
             menuPanel.BackColor = Color.FromArgb(224, 244, 255);
-            menuPanel.Controls.Add(wordSearch1);
             menuPanel.Controls.Add(panel2);
             menuPanel.Controls.Add(button_ct2);
             menuPanel.Controls.Add(button_ct1);
@@ -119,6 +118,7 @@ namespace project_nanibono
             button_ct1.Text = "정보처리기사";
             button_ct1.TextAlign = ContentAlignment.MiddleLeft;
             button_ct1.UseVisualStyleBackColor = false;
+            button_ct1.Click += button_ct1_Click;
             // 
             // logoutButton
             // 
@@ -229,7 +229,7 @@ namespace project_nanibono
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(800, 54);
+            panel1.Size = new Size(799, 54);
             panel1.TabIndex = 12;
             // 
             // button2
@@ -285,12 +285,22 @@ namespace project_nanibono
             homeButton.TabIndex = 1;
             homeButton.UseVisualStyleBackColor = false;
             // 
+            // wordSearch1
+            // 
+            wordSearch1.BackColor = SystemColors.ControlLightLight;
+            wordSearch1.ForeColor = SystemColors.ControlText;
+            wordSearch1.Location = new Point(3, 187);
+            wordSearch1.Name = "wordSearch1";
+            wordSearch1.Size = new Size(800, 396);
+            wordSearch1.TabIndex = 14;
+            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(799, 450);
+            Controls.Add(wordSearch1);
             Controls.Add(menuPanel);
             Controls.Add(panel1);
             Name = "FormMain";
