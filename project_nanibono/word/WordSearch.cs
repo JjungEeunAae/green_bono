@@ -49,5 +49,10 @@ namespace project_nanibono.word
         {
             db.selectComoBox(comboBox1);
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

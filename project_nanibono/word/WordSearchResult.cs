@@ -82,6 +82,9 @@ namespace project_nanibono.word
 
         }
 
+        private void WordSearchResult_Load(object sender, EventArgs e)
+        {
 
+        }
     }
-    }
+}
