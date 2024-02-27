@@ -16,6 +16,7 @@ namespace project_nanibono
             ApplicationConfiguration.Initialize();
 
 
+
             Application.Run(new FormMain());
 
             //Application.Run(new FormAdminMain());

@@ -30,7 +30,7 @@
         {
             label1 = new Label();
             dataGridView1 = new DataGridView();
-            button_wordSearch = new Button();
+            button_wordInsert = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -57,29 +57,31 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RightToLeft = RightToLeft.No;
-            dataGridView1.Size = new Size(649, 359);
+            dataGridView1.Size = new Size(649, 309);
             dataGridView1.TabIndex = 12;
+            dataGridView1.CellClick += wordlistGridview_CellClick;
             // 
-            // button_wordSearch
+            // button_wordInsert
             // 
-            button_wordSearch.BackColor = Color.FromArgb(135, 196, 255);
-            button_wordSearch.FlatAppearance.BorderSize = 0;
-            button_wordSearch.FlatStyle = FlatStyle.Flat;
-            button_wordSearch.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            button_wordSearch.ForeColor = Color.White;
-            button_wordSearch.Location = new Point(577, 50);
-            button_wordSearch.Name = "button_wordSearch";
-            button_wordSearch.Size = new Size(75, 23);
-            button_wordSearch.TabIndex = 19;
-            button_wordSearch.Text = "Search";
-            button_wordSearch.UseVisualStyleBackColor = false;
+            button_wordInsert.BackColor = Color.FromArgb(135, 196, 255);
+            button_wordInsert.FlatAppearance.BorderSize = 0;
+            button_wordInsert.FlatStyle = FlatStyle.Flat;
+            button_wordInsert.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            button_wordInsert.ForeColor = Color.White;
+            button_wordInsert.Location = new Point(577, 397);
+            button_wordInsert.Name = "button_wordInsert";
+            button_wordInsert.Size = new Size(75, 23);
+            button_wordInsert.TabIndex = 19;
+            button_wordInsert.Text = "등록";
+            button_wordInsert.UseVisualStyleBackColor = false;
+            button_wordInsert.Click += button_wordInsert_Click;
             // 
             // AdminWordManagement
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
-            Controls.Add(button_wordSearch);
+            Controls.Add(button_wordInsert);
             Controls.Add(dataGridView1);
             Controls.Add(label1);
             Name = "AdminWordManagement";
@@ -93,6 +95,6 @@
 
         private Label label1;
         private DataGridView dataGridView1;
-        private Button button_wordSearch;
+        private Button button_wordInsert;
     }
 }
