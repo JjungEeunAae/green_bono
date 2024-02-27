@@ -72,6 +72,15 @@ namespace project_nanibono
             menuPanel.Size = new Size(148, 396);
             menuPanel.TabIndex = 13;
             // 
+            // wordSearch1
+            // 
+            wordSearch1.BackColor = SystemColors.ControlLightLight;
+            wordSearch1.ForeColor = SystemColors.ControlText;
+            wordSearch1.Location = new Point(0, -3);
+            wordSearch1.Name = "wordSearch1";
+            wordSearch1.Size = new Size(800, 396);
+            wordSearch1.TabIndex = 24;
+            // 
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(57, 167, 255);
