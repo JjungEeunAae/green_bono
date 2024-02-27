@@ -17,8 +17,9 @@ namespace project_nanibono
 
 
 
-            Application.Run(new FormMain());
 
+            Application.Run(new FormLogin());
+            //Application.Run(new FormMain());
             //Application.Run(new FormAdminMain());
             //Application.Run(new FormSignUp());
             //Application.Run(new FormAdminWord());

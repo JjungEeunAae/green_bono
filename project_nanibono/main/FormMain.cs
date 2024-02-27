@@ -80,5 +80,26 @@ namespace project_nanibono
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            menuPanel.Visible = true;
+            fillPanel.Visible = true;
+            menuPanel.BringToFront();
+            fillPanel.BringToFront();
+        }
+
+        private void sdButton_Click(object sender, EventArgs e)
+        {
+            menuPanel.Visible = true;
+            fillPanel.Visible = true;
+            menuPanel.BringToFront();
+            fillPanel.BringToFront();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
