@@ -15,9 +15,11 @@ namespace project_nanibono
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-            //Application.Run(new Search());
-            //Application.Run(new mainDB());
-            Application.Run(new FormAdminMain());
+
+
+            Application.Run(new FormMain());
+
+            //Application.Run(new FormAdminMain());
             //Application.Run(new FormSignUp());
             //Application.Run(new FormAdminWord());
         }

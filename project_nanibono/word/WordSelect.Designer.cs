@@ -1,6 +1,6 @@
 ﻿namespace project_nanibono.word
 {
-    partial class WordSearchResult
+    partial class WordSelect
     {
         /// <summary> 
         /// 필수 디자이너 변수입니다.
@@ -28,43 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
             SuspendLayout();
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("휴먼둥근헤드라인", 21.75F);
-            label1.ForeColor = Color.FromArgb(57, 167, 255);
-            label1.Location = new Point(3, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(129, 30);
-            label1.TabIndex = 16;
-            label1.Text = "검색결과";
-            // 
-            // WordSearchResult
+            // WordSelect
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ControlLightLight;
-            Controls.Add(label1);
-            Name = "WordSearchResult";
+            Name = "WordSelect";
             Size = new Size(651, 396);
-
-            Load += WordSearchResult_Load;
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
-
+            Load += WordSelect_Load;
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Label label1;
     }
 }

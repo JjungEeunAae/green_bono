@@ -10,7 +10,7 @@ namespace project_nanibono.main
     public class mainDB
     {
         // 단어 검색 기능
-        string strConnection = "Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=xe)));User Id=bono;Password=bono;";
+        string strConnection = "Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.110)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=xe)));User Id=bono;Password=bono;";
         private Dictionary<string, string> myDictionary = new Dictionary<string, string>();
 
         public void selectComoBox(ComboBox comboBox)
@@ -33,9 +33,9 @@ namespace project_nanibono.main
             if (combox.Text.Equals("용어"))
             {
                 string word = text.Text;
-                if (word.Equals(""))
+                if (string.IsNullOrEmpty(word.Trim()))
                 {
-                    MessageBox.Show("검색어를 입력해주세요");
+                    MessageBox.Show("검색어를 입력해주세요", "경고", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return null;
                 }
                 OracleConnection conn = new OracleConnection(strConnection);
@@ -67,7 +67,7 @@ namespace project_nanibono.main
             else if (combox.Text.Equals("정의"))
             {
                 string wordMean = text.Text;
-                if (wordMean.Equals(""))
+                if (string.IsNullOrEmpty(wordMean.Trim()))
                 {
                     MessageBox.Show("검색어를 입력해주세요");
                     return null;

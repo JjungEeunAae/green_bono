@@ -24,9 +24,17 @@ namespace project_nanibono.word
         }
         private void searchButton_Click(object sender, EventArgs e)
         {
-            OnSearchButtonClicked(EventArgs.Empty);
+            //OnSearchButtonClicked(EventArgs.Empty);
             /*formMain = new FormMain();
             formMain.ShowPanelAndControl2();*/
+            // null이 들어올 수 있으니깐 null인지 아닌지 정확하게 형변환
+             Dictionary<string, string> dictWord = db.selectWord(textBox1, comboBox1) as Dictionary<string, string>;
+            if (dictWord != null)
+            {
+                WordSearchResult sw = new WordSearchResult(dictWord);
+                this.Controls.Add(sw);
+                sw.BringToFront();
+            };
         }
 
         protected virtual void OnSearchButtonClicked(EventArgs e)
@@ -34,20 +42,15 @@ namespace project_nanibono.word
             SearchButtonClicked?.Invoke(this, e);
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // null이 들어올 수 있으니깐 null인지 아닌지 정확하게 형변환
-            if (db.selectWord(textBox1, comboBox1) != null)
-            {
-                Dictionary<string, string> dictWord = db.selectWord(textBox1, comboBox1) as Dictionary<string, string>;
-                WordSearchResult sw = new WordSearchResult(dictWord);
-                sw.Show();
-            };
-        }
 
         private void WordSearch_Load(object sender, EventArgs e)
         {
             db.selectComoBox(comboBox1);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
