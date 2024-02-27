@@ -35,7 +35,7 @@
             button_user = new Button();
             button1 = new Button();
             adminMemberManagement1 = new request.AdminMemberManagement();
-            adminWordManagement1 = new word.AdminWordManagement();
+            adminWordManagement1 = new word.AdminWordManagement(this);
             adminRequestManagement1 = new request.AdminRequestManagement(this);
             panel1.SuspendLayout();
             SuspendLayout();

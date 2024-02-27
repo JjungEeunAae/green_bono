@@ -67,6 +67,7 @@
             closeBtn.TabIndex = 151;
             closeBtn.Text = "닫기";
             closeBtn.UseVisualStyleBackColor = false;
+            closeBtn.Click += closeBtn_Click;
             // 
             // successBtn
             // 

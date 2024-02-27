@@ -136,9 +136,9 @@ namespace project_nanibono
                         "values(:id, :pw, :name, 'USER', 'N')";
                     using (OracleCommand cmd = new OracleCommand(DBINFO.sql, con))
                     {
-                        cmd.Parameters.Add("id", OracleDbType.Varchar2).Value = userId.Text;
-                        cmd.Parameters.Add("pw", OracleDbType.Varchar2).Value = userPassword.Text;
-                        cmd.Parameters.Add("name", OracleDbType.Varchar2).Value = userName.Text;
+                        cmd.Parameters.Add("id", userId.Text);
+                        cmd.Parameters.Add("pw", userPassword.Text);
+                        cmd.Parameters.Add("name", userName.Text);
 
 
                         if (cmd.ExecuteNonQuery() == 1)

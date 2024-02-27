@@ -1,19 +1,24 @@
 ﻿using Oracle.ManagedDataAccess.Client;
 using project_nanibono.common;
+using project_nanibono.main;
 
 namespace project_nanibono.word
 {
     public partial class FormAdminWord : Form
     {
+        private Form parentForm;
+
         GroupDetail groupDetail = new GroupDetail();
         Group group = new Group();
 
-        public FormAdminWord()
+        public FormAdminWord(Form parentForm)
         {
+            this.parentForm = parentForm;
             InitializeComponent();
 
             comboBox1.SelectedIndex = 0; // 0번째 실행시키는 코드   
         }
+
         public string selectGoup_no()  // 정처기, sqld 중에 선택해서 선택 값 리턴하는 콤보박스1
         {
             string check = "";
@@ -101,6 +106,23 @@ namespace project_nanibono.word
         private void selectGroupCategory(object sender, EventArgs e) // 정처기, sql 관련 카테고리 선택
         {
             selectedetailName();
+        }
+
+        private void closeBtn_Click(object sender, EventArgs e) // 닫기 버튼 
+        {
+            MessageBox.Show("단어 페이지로 돌아갑니다.");
+
+            if(parentForm != null)
+            {
+                parentForm.Hide();
+                FormAdminMain formAdminMain = new FormAdminMain();
+                formAdminMain.Show();
+                formAdminMain.FormClosed += (s, args) =>
+                { // 닫기 페이지가 닫힐 때 부모 폼을 다시 표시
+                    formAdminMain.Show();
+                    
+                };
+            }
         }
     }
 }
