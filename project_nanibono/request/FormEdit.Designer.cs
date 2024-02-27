@@ -158,6 +158,7 @@
             closeBtn.TabIndex = 170;
             closeBtn.Text = "닫기";
             closeBtn.UseVisualStyleBackColor = false;
+            closeBtn.Click += closeBtn_Click;
             // 
             // successBtn
             // 
@@ -172,6 +173,7 @@
             successBtn.TabIndex = 169;
             successBtn.Text = "요청완료";
             successBtn.UseVisualStyleBackColor = false;
+            successBtn.Click += successBtn_Click;
             // 
             // label8
             // 

@@ -21,6 +21,15 @@ namespace project_nanibono.word
         public FormSearch()
         {
             InitializeComponent();
+            //Console.WriteLine( "여기 왔나");
+            //Console.WriteLine( GlobalVariables.LoggedInUserId );
+            //Console.WriteLine("여기 왔나");
+
+            if (GlobalVariables.LoggedInUserId != null)
+            {
+                button2.Visible = false;
+                button2.Enabled = false;
+            }
         }
 
         private void Search_Load(object sender, EventArgs e)
@@ -41,8 +50,7 @@ namespace project_nanibono.word
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
-            
+
             if (!string.IsNullOrEmpty(GlobalVariables.LoggedInUserId))
             {
                 // 사용자가 로그인한 상태
@@ -55,6 +63,14 @@ namespace project_nanibono.word
                 // 버튼을 보이게 함
                 button2.Visible = true;
             }
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Hide();
+            new FormMain().ShowDialog();
+            Show();
         }
     }
 }

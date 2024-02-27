@@ -180,3 +180,4 @@ D:\green_bono\project_nanibono\obj\Debug\net8.0-windows\refint\project_nanibono.
 D:\green_bono\project_nanibono\obj\Debug\net8.0-windows\project_nanibono.pdb
 D:\green_bono\project_nanibono\obj\Debug\net8.0-windows\project_nanibono.genruntimeconfig.cache
 D:\green_bono\project_nanibono\obj\Debug\net8.0-windows\ref\project_nanibono.dll
+

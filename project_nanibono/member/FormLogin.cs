@@ -1,18 +1,24 @@
 ﻿using Oracle.ManagedDataAccess.Client;
 using project_nanibono.member;
+using project_nanibono.word;
 
 namespace project_nanibono
 {
     public partial class FormLogin : Form
     {
+
         string strConnection = "DATA SOURCE = 192.168.0.110; User Id = bono; Password=bono";
 
         OracleConnection conn;
         OracleCommand cmd;
 
+        
+
         public FormLogin()
         {
             InitializeComponent();
+
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -37,57 +43,43 @@ namespace project_nanibono
             }
 
             MemberDB memberDB = new MemberDB();
-            Member member = memberDB.SelectMember(memberId, password);
 
-            Member memberr = memberDB.SelectId(memberId);
-            Member memberrr = memberDB.SelectPw(password);
+            Member member_id = memberDB.SelectId(memberId);
+            Member member_pw = memberDB.SelectPw(password);
 
-            if (memberr == null)
+            if (member_id == null)
             {
 
                 MessageBox.Show("존재하지 않는 회원입니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
-            if (memberr.role == "admin")
+            if (member_id.role == "admin")
             {
+                GlobalVariables.LoggedInUserId = memberId;
+
                 main.FormAdminMain formAdminMain = new main.FormAdminMain();
                 formAdminMain.Show();
                 this.Hide();
             }
 
 
-            else if (memberrr == null)
+            else if (member_pw == null)
             {
                 MessageBox.Show("비밀번호가 올바르지 않습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
+            }           
+            else
+            {
+                // 로그인 정보 저장
+                GlobalVariables.LoggedInUserId = memberId;
+
+                word.FormSearch formSearch = new word.FormSearch();
+                formSearch.Show();
+
+                this.Hide();
             }
 
-         
-            // 로그인 정보 저장
-            GlobalVariables.LoggedInUserId = memberId;
-
-            // 전역 변수에서 사용자 아이디를 읽어옴
-           // string loggedInUserId = GlobalVariables.LoggedInUserId;
-
-            //if (!string.IsNullOrEmpty(loggedInUserId))
-           // {
-                // 사용자가 로그인한 상태
-                // 필요한 작업을 수행할 수 있음
-            //}
-            //else
-            //{
-                // 사용자가 로그인하지 않은 상태
-                // 로그인 페이지로 이동하거나 다른 작업을 수행할 수 있음
-           // }
-
-
-      
-            word.FormSearch formSearch = new word.FormSearch();
-                      formSearch.Show();
-
-
-            this.Hide();
         }
 
         private void FormLogin_Load(object sender, EventArgs e)

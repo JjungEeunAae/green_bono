@@ -35,8 +35,11 @@
             button_user = new Button();
             button1 = new Button();
             adminMemberManagement1 = new request.AdminMemberManagement();
+
             adminWordManagement1 = new word.AdminWordManagement(this);
             adminRequestManagement1 = new request.AdminRequestManagement(this);
+
+
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -143,7 +146,10 @@
             adminRequestManagement1.Location = new Point(140, 0);
             adminRequestManagement1.Name = "adminRequestManagement1";
             adminRequestManagement1.Size = new Size(655, 450);
-            adminRequestManagement1.TabIndex = 4;
+
+            adminRequestManagement1.TabIndex = 6;
+            adminRequestManagement1.Load += adminRequestManagement1_Load;
+
             // 
             // FormAdminMain
             // 
