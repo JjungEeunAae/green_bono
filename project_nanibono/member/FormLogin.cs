@@ -1,5 +1,6 @@
 ﻿using Oracle.ManagedDataAccess.Client;
 using project_nanibono.member;
+using project_nanibono.word;
 
 namespace project_nanibono
 {
@@ -10,9 +11,13 @@ namespace project_nanibono
         OracleConnection conn;
         OracleCommand cmd;
 
+        
+
         public FormLogin()
         {
             InitializeComponent();
+
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
