@@ -47,6 +47,9 @@ namespace project_nanibono.main
             }
         }
 
+        private void adminRequestManagement1_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }

@@ -50,9 +50,17 @@ namespace project_nanibono
             centerPanel = new Panel();
             rightPanel = new Panel();
             wordSearch1 = new word.WordSearch();
+            fillPanel = new Panel();
+            label1 = new Label();
+            dataGridView1 = new DataGridView();
             menuPanel.SuspendLayout();
             panel1.SuspendLayout();
+
+            fillPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+
             centerPanel.SuspendLayout();
+
             SuspendLayout();
             // 
             // menuPanel
@@ -239,6 +247,7 @@ namespace project_nanibono
             button2.TabIndex = 5;
             button2.Text = "정보처리기사";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // notifButton
             // 
@@ -265,6 +274,7 @@ namespace project_nanibono
             sdButton.TabIndex = 2;
             sdButton.Text = "SQLD";
             sdButton.UseVisualStyleBackColor = false;
+            sdButton.Click += sdButton_Click;
             // 
             // homeButton
             // 
@@ -305,13 +315,46 @@ namespace project_nanibono
             wordSearch1.Size = new Size(799, 396);
             wordSearch1.TabIndex = 0;
             // 
+            // fillPanel
+            // 
+            fillPanel.Controls.Add(dataGridView1);
+            fillPanel.Controls.Add(label1);
+            fillPanel.Dock = DockStyle.Fill;
+            fillPanel.Location = new Point(148, 54);
+            fillPanel.Name = "fillPanel";
+            fillPanel.Size = new Size(651, 396);
+            fillPanel.TabIndex = 15;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(15, 18);
+            label1.Name = "label1";
+            label1.Size = new Size(57, 15);
+            label1.TabIndex = 0;
+            label1.Text = "LabelTitle";
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Dock = DockStyle.Bottom;
+            dataGridView1.Location = new Point(0, 46);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(651, 350);
+            dataGridView1.TabIndex = 16;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(799, 450);
+
+            Controls.Add(fillPanel);
+
             Controls.Add(menuPanel);
+            Controls.Add(wordSearch1);
             Controls.Add(panel1);
             Controls.Add(centerPanel);
             Name = "FormMain";
@@ -319,7 +362,13 @@ namespace project_nanibono
             Load += FormMain_Load;
             menuPanel.ResumeLayout(false);
             panel1.ResumeLayout(false);
+
+            fillPanel.ResumeLayout(false);
+            fillPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+
             centerPanel.ResumeLayout(false);
+
             ResumeLayout(false);
         }
 
@@ -344,6 +393,12 @@ namespace project_nanibono
         private word.WordSearchResult wordSearchResult1;
         private Panel centerPanel;
         private word.WordSearch wordSearch1;
+
+        private Panel fillPanel;
+        private Label label1;
+        private DataGridView dataGridView1;
+
         private Panel rightPanel;
+
     }
 }

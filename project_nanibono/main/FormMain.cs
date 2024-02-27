@@ -14,21 +14,21 @@ namespace project_nanibono
         public FormMain()
         {
             InitializeComponent();
-            //wordSearchResult1.Visible = false;  // ´Ü¾î°Ë»ö°á°ú »ç¿ëÀÚ Á¤ÀÇ ÄÁÆ®·Ñ ¼û±â±â
+            //wordSearchResult1.Visible = false;  // ë‹¨ì–´ê²€ìƒ‰ê²°ê³¼ ì‚¬ìš©ì ì •ì˜ ì»¨íŠ¸ë¡¤ ìˆ¨ê¸°ê¸°
 
-            //menuPanel.Visible = false;          // ¸Ş´ºÆĞ³Î ¼û±â±â
+            //menuPanel.Visible = false;          // ë©”ë‰´íŒ¨ë„ ìˆ¨ê¸°ê¸°
 
             centerPanel.BringToFront();
             wordSearch1.Visible = true;
             wordSearch1.BringToFront();
 
-            // ´Ü¾î°Ë»ö »ç¿ëÀÚ Á¤ÀÇ ÄÁÆ®·Ñ
-            //Controls.Add(wordSearch);               // ÄÁÆ®·Ñ¿¡ »ğÀÔ
+            // ë‹¨ì–´ê²€ìƒ‰ ì‚¬ìš©ì ì •ì˜ ì»¨íŠ¸ë¡¤
+            //Controls.Add(wordSearch);               // ì»¨íŠ¸ë¡¤ì— ì‚½ì…
 
-            //wordSearch.Visible = true;              // ´Ü¾î°Ë»ö »ç¿ëÀÚ Á¤ÀÇ ÄÁÆ®·Ñ º¸ÀÌ°Ô ÇÏ±â
-            //wordSearch.Location = new Point(0, 54); // º¸¿©ÁÙ Àå¼Ò Á¶Á¤ÇØÁÖ±â
+            //wordSearch.Visible = true;              // ë‹¨ì–´ê²€ìƒ‰ ì‚¬ìš©ì ì •ì˜ ì»¨íŠ¸ë¡¤ ë³´ì´ê²Œ í•˜ê¸°
+            //wordSearch.Location = new Point(0, 54); // ë³´ì—¬ì¤„ ì¥ì†Œ ì¡°ì •í•´ì£¼ê¸°
 
-            // ´Ü¾î°Ë»ö »ç¿ëÀÚ Á¤ÀÇ ÄÁÆ®·Ñ ¹öÆ° Å¬¸¯ ÀÌº¥Æ®
+            // ë‹¨ì–´ê²€ìƒ‰ ì‚¬ìš©ì ì •ì˜ ì»¨íŠ¸ë¡¤ ë²„íŠ¼ í´ë¦­ ì´ë²¤íŠ¸
             //wordSearch.SearchButtonClicked += wordSearch1_SearchButtonClicked;
 
             searchButton = wordSearch1.getButton1();
@@ -42,7 +42,7 @@ namespace project_nanibono
             //OnSearchButtonClicked(EventArgs.Empty);
             /*formMain = new FormMain();
             formMain.ShowPanelAndControl2();*/
-            // nullÀÌ µé¾î¿Ã ¼ö ÀÖÀ¸´Ï±ñ nullÀÎÁö ¾Æ´ÑÁö Á¤È®ÇÏ°Ô Çüº¯È¯
+            // nullì´ ë“¤ì–´ì˜¬ ìˆ˜ ìˆìœ¼ë‹ˆê¹ nullì¸ì§€ ì•„ë‹Œì§€ ì •í™•í•˜ê²Œ í˜•ë³€í™˜
             Dictionary<string, string> dictWord = db.selectWord(wordSearch1.getTextBox(), wordSearch1.getComboBox()) as Dictionary<string, string>;
             if (dictWord != null)
             {
@@ -56,15 +56,15 @@ namespace project_nanibono
 
         public void ShowPanelAndControl2()
         {
-            MessageBox.Show("¿©±â¿À³ª");
-            //wordSearch.Visible = false;       // »ç¿ëÀÚ Á¤ÀÇ ÄÁÆ®·Ñ1 º¸ÀÌ±â
-            //menuPanel.Visible = true;         // ÆĞ³Î º¸ÀÌ±â
-            //wordSearchResult1.Visible = true; // »ç¿ëÀÚ Á¤ÀÇ ÄÁÆ®·Ñ2 º¸ÀÌ±â
+            MessageBox.Show("ì—¬ê¸°ì˜¤ë‚˜");
+            //wordSearch.Visible = false;       // ì‚¬ìš©ì ì •ì˜ ì»¨íŠ¸ë¡¤1 ë³´ì´ê¸°
+            //menuPanel.Visible = true;         // íŒ¨ë„ ë³´ì´ê¸°
+            //wordSearchResult1.Visible = true; // ì‚¬ìš©ì ì •ì˜ ì»¨íŠ¸ë¡¤2 ë³´ì´ê¸°
         }
 
         private void wordSearch1_SearchButtonClicked(object sender, EventArgs e)
         {
-            //ShowPanelAndControl2(); // °Ë»ö ¹öÆ°À» Å¬¸¯ÇÏ¸é ÆĞ³Î°ú »ç¿ëÀÚ Á¤ÀÇ ÄÁÆ®·Ñ2¸¦ º¸¿©ÁÜ
+            //ShowPanelAndControl2(); // ê²€ìƒ‰ ë²„íŠ¼ì„ í´ë¦­í•˜ë©´ íŒ¨ë„ê³¼ ì‚¬ìš©ì ì •ì˜ ì»¨íŠ¸ë¡¤2ë¥¼ ë³´ì—¬ì¤Œ
         }
 
         private void searchTerm_Click(object sender, EventArgs e)
@@ -80,19 +80,19 @@ namespace project_nanibono
             }
             else
             {
-                MessageBox.Show("°Ë»öµÇ´Â °á°ú°¡ ¾ø½À´Ï´Ù.");
+                MessageBox.Show("ê²€ìƒ‰ë˜ëŠ” ê²°ê³¼ê°€ ì—†ìŠµë‹ˆë‹¤.");
             }*/
-            // + ¸ŞÀÎÃ¢ ¼û±â±â 
+            // + ë©”ì¸ì°½ ìˆ¨ê¸°ê¸° 
 
 
-            // 1. ¿ë¾î°¡ databaseÀÇ word Table ¼Ó word attribute¿¡ Á¸ÀçÇÒ °æ¿ì
-            // 2. Á¸ÀçÇÏÁö ¾ÊÀ» °æ¿ì  
+            // 1. ìš©ì–´ê°€ databaseì˜ word Table ì† word attributeì— ì¡´ì¬í•  ê²½ìš°
+            // 2. ì¡´ì¬í•˜ì§€ ì•Šì„ ê²½ìš°  
 
-            //  FormResultÀÇ label1¿¡ ÇØ´ç word¸¦ °¡Á®¿À°í
-            //  FormResultÀÇ label2¿¡ word Table ¼Ó world_MEANÀ» °¡Á®¿Â´Ù. 
+            //  FormResultì˜ label1ì— í•´ë‹¹ wordë¥¼ ê°€ì ¸ì˜¤ê³ 
+            //  FormResultì˜ label2ì— word Table ì† world_MEANì„ ê°€ì ¸ì˜¨ë‹¤. 
 
             //         string searchTerm = searchBox.Text;
-            //      if ((searchTerm)) // ¿ë¾î°¡ ÀÖÀ»¶§
+            //      if ((searchTerm)) // ìš©ì–´ê°€ ìˆì„ë•Œ
             //       {
             //         Search(searchTerm);
             //       FormResult formResult = new FormResult();
@@ -111,7 +111,26 @@ namespace project_nanibono
 
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            menuPanel.Visible = true;
+            fillPanel.Visible = true;
+            menuPanel.BringToFront();
+            fillPanel.BringToFront();
+        }
+
+        private void sdButton_Click(object sender, EventArgs e)
+        {
+            menuPanel.Visible = true;
+            fillPanel.Visible = true;
+            menuPanel.BringToFront();
+            fillPanel.BringToFront();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
         private void wordSearch1_Load(object sender, EventArgs e)
+
         {
 
         }
