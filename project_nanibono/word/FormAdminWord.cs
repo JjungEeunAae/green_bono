@@ -108,21 +108,20 @@ namespace project_nanibono.word
             selectedetailName();
         }
 
-        private void closeBtn_Click(object sender, EventArgs e) // 닫기 버튼 
+        private void closeBtn_Click(object sender, EventArgs e) // 닫기 버튼  
         {
             MessageBox.Show("단어 페이지로 돌아갑니다.");
+            this.Close();
+            parentForm.Show();
+        }
 
-            if(parentForm != null)
-            {
-                parentForm.Hide();
-                FormAdminMain formAdminMain = new FormAdminMain();
-                formAdminMain.Show();
-                formAdminMain.FormClosed += (s, args) =>
-                { // 닫기 페이지가 닫힐 때 부모 폼을 다시 표시
-                    formAdminMain.Show();
-                    
-                };
-            }
+        private void successBtn_Click(object sender, EventArgs e) // 등록 버튼
+        {
+
+        }
+        private void insertWord()
+        {
+
         }
     }
 }

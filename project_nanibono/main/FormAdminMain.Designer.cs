@@ -35,6 +35,11 @@
             button_user = new Button();
             button1 = new Button();
             adminMemberManagement1 = new request.AdminMemberManagement();
+
+            adminWordManagement1 = new word.AdminWordManagement(this);
+            adminRequestManagement1 = new request.AdminRequestManagement(this);
+
+
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -141,8 +146,10 @@
             adminRequestManagement1.Location = new Point(140, 0);
             adminRequestManagement1.Name = "adminRequestManagement1";
             adminRequestManagement1.Size = new Size(655, 450);
+
             adminRequestManagement1.TabIndex = 6;
             adminRequestManagement1.Load += adminRequestManagement1_Load;
+
             // 
             // FormAdminMain
             // 
@@ -151,10 +158,11 @@
             BackColor = SystemColors.ControlLightLight;
             ClientSize = new Size(800, 450);
             Controls.Add(adminRequestManagement1);
-            Controls.Add(adminMemberManagement1);
             Controls.Add(adminWordManagement1);
+            Controls.Add(adminMemberManagement1);
             Controls.Add(panel1);
             Name = "FormAdminMain";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FormAdminMain";
             panel1.ResumeLayout(false);
             ResumeLayout(false);
@@ -168,8 +176,8 @@
         private Button button_word;
         private Button button_user;
         private Panel SidePanel;
-        private word.AdminWordManagement adminWordManagement1;
         private request.AdminMemberManagement adminMemberManagement1;
+        private word.AdminWordManagement adminWordManagement1;
         private request.AdminRequestManagement adminRequestManagement1;
     }
 }
