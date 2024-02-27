@@ -61,7 +61,6 @@ namespace project_nanibono.member
                 Member dbMember = new Member()
                 {
                     id = oracleDataReader["Id"].ToString(),
-                    role = oracleDataReader["role"].ToString()
 
 
                 };

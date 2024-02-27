@@ -1,6 +1,6 @@
 ﻿namespace project_nanibono.word
 {
-    partial class FormSearch
+    partial class Search
     {
         /// <summary>
         /// Required designer variable.
@@ -79,7 +79,6 @@
             button2.TabIndex = 13;
             button2.Text = "LOGIN";
             button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
             // 
             // label2
             // 
@@ -201,7 +200,7 @@
             notifButton.TabIndex = 4;
             notifButton.UseVisualStyleBackColor = true;
             // 
-            // FormSearch
+            // Search
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -216,7 +215,7 @@
             Controls.Add(button1);
             Controls.Add(textBox1);
             Controls.Add(comboBox1);
-            Name = "FormSearch";
+            Name = "Search";
             Text = "Search";
             Load += Search_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();

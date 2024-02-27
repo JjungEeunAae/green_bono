@@ -6,7 +6,7 @@ namespace project_nanibono
     public partial class FormMain : Form
     {
         private WordSearch wordSearch = new WordSearch();
-
+        
         public FormMain()
         {
             InitializeComponent();
@@ -73,11 +73,6 @@ namespace project_nanibono
         }
 
         private void FormMain_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button_ct1_Click(object sender, EventArgs e)
         {
 
         }

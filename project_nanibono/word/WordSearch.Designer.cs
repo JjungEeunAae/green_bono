@@ -108,7 +108,6 @@
             button2.TabIndex = 5;
             button2.Text = "LOGIN";
             button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
             // 
             // pictureBox1
             // 

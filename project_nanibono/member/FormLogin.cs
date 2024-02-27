@@ -48,43 +48,20 @@ namespace project_nanibono
                 MessageBox.Show("존재하지 않는 회원입니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-
-            if (memberr.role == "admin")
-            {
-                main.FormAdminMain formAdminMain = new main.FormAdminMain();
-                formAdminMain.Show();
-                this.Hide();
-            }
-
-
             else if (memberrr == null)
             {
                 MessageBox.Show("비밀번호가 올바르지 않습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
-         
-            // 로그인 정보 저장
+
+            // 로그인 성공  // ++++++++로그인유지시켜 
+
             GlobalVariables.LoggedInUserId = memberId;
 
-            // 전역 변수에서 사용자 아이디를 읽어옴
-           // string loggedInUserId = GlobalVariables.LoggedInUserId;
-
-            //if (!string.IsNullOrEmpty(loggedInUserId))
-           // {
-                // 사용자가 로그인한 상태
-                // 필요한 작업을 수행할 수 있음
-            //}
-            //else
-            //{
-                // 사용자가 로그인하지 않은 상태
-                // 로그인 페이지로 이동하거나 다른 작업을 수행할 수 있음
-           // }
-
-
-      
-            word.FormSearch formSearch = new word.FormSearch();
-                      formSearch.Show();
+            // WordSearch폼은 만들어지는중 
+            // FormWordSearch formWordSearch = new FormWordSearch();
+            //  formWordSearch.Show();
 
 
             this.Hide();
@@ -103,12 +80,18 @@ namespace project_nanibono
         {
             // 회원가입 페이지로 이동
 
-            FormSignUp formSignUp = new FormSignUp();
-            formSignUp.Show();
-            this.Hide();
+            //FormSignUp formSignUp = new FormSignUp();
+            // formSignUp.Show();
+            //this.Hide();
         }
 
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            // 프로그램 종료
+            Application.Exit();
 
+
+        }
 
         private void pwTextBox_TextChanged(object sender, EventArgs e)
         {
@@ -123,10 +106,10 @@ namespace project_nanibono
         private void homeButton_Click(object sender, EventArgs e)
         {
 
-            word.FormSearch formSearch = new word.FormSearch();
-            formSearch.Show();
-            this.Hide();
-        }
+            // FormWordSearch formWordSearch = new FormWordSearch();
+            //formWordSearch.Show();
 
+            // this.Hide();
+        }
     }
 }
