@@ -22,13 +22,14 @@ namespace project_nanibono.word
         {
             InitializeComponent();
 
+
             foreach (var kvp in dictWord)
             {
                 word = kvp.Key;
                 wordMean = kvp.Value;
 
-                Console.WriteLine("for문 단어 = " + word);
-                Console.WriteLine("for문 의미 = " + wordMean);
+                //Console.WriteLine("for문 단어 = " + word);
+                //Console.WriteLine("for문 의미 = " + wordMean);
 
                 Panel panel = new Panel();
                 panel.Location = new Point(60, panelY);

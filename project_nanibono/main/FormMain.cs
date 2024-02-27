@@ -22,7 +22,6 @@ namespace project_nanibono
             // 단어검색 사용자 정의 컨트롤 버튼 클릭 이벤트
             wordSearch.SearchButtonClicked += wordSearch1_SearchButtonClicked;
 
-            InitializeComponent();
 
         }
 
