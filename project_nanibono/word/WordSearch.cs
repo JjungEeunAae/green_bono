@@ -22,24 +22,39 @@ namespace project_nanibono.word
         {
             InitializeComponent();
         }
+
+        public Button getButton1()
+        {
+            return button1;
+        }
+
+        public TextBox getTextBox()
+        {
+            return textBox1;
+        }
+
+        public ComboBox getComboBox()
+        {
+            return comboBox1;
+        }
         private void searchButton_Click(object sender, EventArgs e)
         {
-            //OnSearchButtonClicked(EventArgs.Empty);
-            /*formMain = new FormMain();
-            formMain.ShowPanelAndControl2();*/
-            // null이 들어올 수 있으니깐 null인지 아닌지 정확하게 형변환
-             Dictionary<string, string> dictWord = db.selectWord(textBox1, comboBox1) as Dictionary<string, string>;
-            if (dictWord != null)
-            {
-                WordSearchResult sw = new WordSearchResult(dictWord);
-                this.Controls.Add(sw);
-                sw.BringToFront();
-            };
+            ////OnSearchButtonClicked(EventArgs.Empty);
+            ///*formMain = new FormMain();
+            //formMain.ShowPanelAndControl2();*/
+            //// null이 들어올 수 있으니깐 null인지 아닌지 정확하게 형변환
+            // Dictionary<string, string> dictWord = db.selectWord(textBox1, comboBox1) as Dictionary<string, string>;
+            //if (dictWord != null)
+            //{
+            //    WordSearchResult sw = new WordSearchResult(dictWord);
+            //    this.Controls.Add(sw);
+            //    sw.BringToFront();
+            //};
         }
 
         protected virtual void OnSearchButtonClicked(EventArgs e)
         {
-            SearchButtonClicked?.Invoke(this, e);
+            //SearchButtonClicked?.Invoke(this, e);
         }
 
 

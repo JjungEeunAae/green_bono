@@ -1,3 +1,4 @@
+using project_nanibono.main;
 using project_nanibono.word;
 using static System.ComponentModel.Design.ObjectSelectorEditor;
 
@@ -5,36 +6,65 @@ namespace project_nanibono
 {
     public partial class FormMain : Form
     {
-        private WordSearch wordSearch = new WordSearch();
+        //private WordSearch wordSearch = new WordSearch();
+        public Button searchButton = null;
+
+        mainDB db = new mainDB();
 
         public FormMain()
         {
             InitializeComponent();
-
             //wordSearchResult1.Visible = false;  // 단어검색결과 사용자 정의 컨트롤 숨기기
-            menuPanel.Visible = false;          // 메뉴패널 숨기기
+
+            //menuPanel.Visible = false;          // 메뉴패널 숨기기
+
+            centerPanel.BringToFront();
+            wordSearch1.Visible = true;
+            wordSearch1.BringToFront();
 
             // 단어검색 사용자 정의 컨트롤
-            Controls.Add(wordSearch);               // 컨트롤에 삽입
-            wordSearch.Visible = true;              // 단어검색 사용자 정의 컨트롤 보이게 하기
-            wordSearch.Location = new Point(0, 54); // 보여줄 장소 조정해주기
+            //Controls.Add(wordSearch);               // 컨트롤에 삽입
+
+            //wordSearch.Visible = true;              // 단어검색 사용자 정의 컨트롤 보이게 하기
+            //wordSearch.Location = new Point(0, 54); // 보여줄 장소 조정해주기
 
             // 단어검색 사용자 정의 컨트롤 버튼 클릭 이벤트
-            wordSearch.SearchButtonClicked += wordSearch1_SearchButtonClicked;
+            //wordSearch.SearchButtonClicked += wordSearch1_SearchButtonClicked;
 
+            searchButton = wordSearch1.getButton1();
+            searchButton.Click += SearchButton_Click;
 
+        }
+
+        private void SearchButton_Click(object? sender, EventArgs e)
+        {
+
+            //OnSearchButtonClicked(EventArgs.Empty);
+            /*formMain = new FormMain();
+            formMain.ShowPanelAndControl2();*/
+            // null이 들어올 수 있으니깐 null인지 아닌지 정확하게 형변환
+            Dictionary<string, string> dictWord = db.selectWord(wordSearch1.getTextBox(), wordSearch1.getComboBox()) as Dictionary<string, string>;
+            if (dictWord != null)
+            {
+                WordSearchResult sw = new WordSearchResult(dictWord);
+                menuPanel.BringToFront();
+                rightPanel.Controls.Add(sw);
+                rightPanel.BringToFront();
+                sw.BringToFront();
+            };
         }
 
         public void ShowPanelAndControl2()
         {
-            wordSearch.Visible = false;       // 사용자 정의 컨트롤1 보이기
-            menuPanel.Visible = true;         // 패널 보이기
-            wordSearchResult1.Visible = true; // 사용자 정의 컨트롤2 보이기
+            MessageBox.Show("여기오나");
+            //wordSearch.Visible = false;       // 사용자 정의 컨트롤1 보이기
+            //menuPanel.Visible = true;         // 패널 보이기
+            //wordSearchResult1.Visible = true; // 사용자 정의 컨트롤2 보이기
         }
 
         private void wordSearch1_SearchButtonClicked(object sender, EventArgs e)
         {
-            ShowPanelAndControl2(); // 검색 버튼을 클릭하면 패널과 사용자 정의 컨트롤2를 보여줌
+            //ShowPanelAndControl2(); // 검색 버튼을 클릭하면 패널과 사용자 정의 컨트롤2를 보여줌
         }
 
         private void searchTerm_Click(object sender, EventArgs e)
@@ -77,6 +107,11 @@ namespace project_nanibono
         }
 
         private void button_ct1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void wordSearch1_Load(object sender, EventArgs e)
         {
 
         }
