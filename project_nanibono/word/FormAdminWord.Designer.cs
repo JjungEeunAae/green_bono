@@ -82,6 +82,7 @@
             successBtn.TabIndex = 150;
             successBtn.Text = "등록";
             successBtn.UseVisualStyleBackColor = false;
+            successBtn.Click += successBtn_Click;
             // 
             // label_groupNo
             // 

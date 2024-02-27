@@ -26,10 +26,10 @@ namespace project_nanibono.request
             deleteRequestView();
         }
 
-        /*public AdminRequestManagement()
+        public AdminRequestManagement()
         {
             InitializeComponent();
-        }*/
+        }
 
         public void deleteRequestView()
         {

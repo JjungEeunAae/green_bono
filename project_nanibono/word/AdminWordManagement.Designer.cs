@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            dataGridView1 = new DataGridView();
+            worddataGridView1 = new DataGridView();
             button_wordInsert = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)worddataGridView1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -45,21 +45,21 @@
             label1.TabIndex = 11;
             label1.Text = "단어관리";
             // 
-            // dataGridView1
+            // worddataGridView1
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.BackgroundColor = SystemColors.ControlLightLight;
-            dataGridView1.BorderStyle = BorderStyle.Fixed3D;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.GridColor = SystemColors.ActiveBorder;
-            dataGridView1.Location = new Point(3, 80);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RightToLeft = RightToLeft.No;
-            dataGridView1.Size = new Size(649, 309);
-            dataGridView1.TabIndex = 12;
-            dataGridView1.CellClick += wordlistGridview_CellClick;
+            worddataGridView1.AllowUserToAddRows = false;
+            worddataGridView1.AllowUserToDeleteRows = false;
+            worddataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            worddataGridView1.BackgroundColor = SystemColors.ControlLightLight;
+            worddataGridView1.BorderStyle = BorderStyle.Fixed3D;
+            worddataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            worddataGridView1.GridColor = SystemColors.ActiveBorder;
+            worddataGridView1.Location = new Point(3, 80);
+            worddataGridView1.Name = "worddataGridView1";
+            worddataGridView1.ReadOnly = true;
+            worddataGridView1.RightToLeft = RightToLeft.No;
+            worddataGridView1.Size = new Size(649, 309);
+            worddataGridView1.TabIndex = 12;
             // 
             // button_wordInsert
             // 
@@ -82,11 +82,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
             Controls.Add(button_wordInsert);
-            Controls.Add(dataGridView1);
+            Controls.Add(worddataGridView1);
             Controls.Add(label1);
             Name = "AdminWordManagement";
             Size = new Size(655, 450);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)worddataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -94,7 +94,7 @@
         #endregion
 
         private Label label1;
-        private DataGridView dataGridView1;
+        private DataGridView worddataGridView1;
         private Button button_wordInsert;
     }
 }

@@ -52,12 +52,12 @@
             Size = new Size(651, 396);
 
             Load += WordSearchResult_Load;
-            panel1.ResumeLayout(false);
+            /*panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel3.ResumeLayout(false);
-            panel3.PerformLayout();
+            panel3.PerformLayout();*/
 
             ResumeLayout(false);
             PerformLayout();

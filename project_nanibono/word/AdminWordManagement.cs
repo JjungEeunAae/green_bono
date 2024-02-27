@@ -1,6 +1,8 @@
 ﻿using Microsoft.VisualBasic.ApplicationServices;
 using Oracle.ManagedDataAccess.Client;
+using project_nanibono.member;
 using System.Data;
+using System.Drawing;
 
 namespace project_nanibono.word
 {
@@ -12,22 +14,31 @@ namespace project_nanibono.word
         {
             this.parentForm = parentForm;
             InitializeComponent();
+            WordList();
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        public AdminWordManagement()
         {
-
+            InitializeComponent();
         }
 
         private void button_wordInsert_Click(object sender, EventArgs e) // 단어등록 버튼
         {
             MessageBox.Show("단어 등록 페이지로 이동합니다.");
-            parentForm.Hide();
-            FormAdminWord formAdminWord = new FormAdminWord(parentForm);
-            formAdminWord.Show();
-        }
+            if(parentForm != null)
+            {
+                
+                FormAdminWord formAdminWord = new FormAdminWord(parentForm);
+                parentForm.Hide();
+                formAdminWord.Show();
+                formAdminWord.FormClosed += (s, args) =>
+                {
+                    parentForm.Hide();
+                };
+            }
 
-        private void wordlistGridview_CellClick(object sender, DataGridViewCellEventArgs e)
+        }
+        private void WordList()
         {
             try
             {
@@ -35,7 +46,8 @@ namespace project_nanibono.word
                 {
                     con.Open();
                     OracleDataAdapter oracleDataAdapter = new OracleDataAdapter();
-                    DBINFO.sql = "select word_no, word, word_mean, insert_date from word";
+                    DBINFO.sql = "select category as " + "카테고리" + ", word_no as " + "번호" + ", word as " + "단어" + ", word_mean as " + "뜻" + ", insert_date as " + "등록일" + " from word"; ;
+
                     using (OracleCommand cmd = new OracleCommand(DBINFO.sql, con))
                     {
                         oracleDataAdapter.SelectCommand = cmd;
@@ -43,7 +55,14 @@ namespace project_nanibono.word
                         {
                             oracleDataAdapter.Fill(dataSet);
 
-                            dataGridView1.DataSource = dataSet.Tables[0];
+                            if (dataSet.Tables.Count > 0)
+                            {
+                                worddataGridView1.DataSource = dataSet.Tables[0];
+                            }
+                            else
+                            {
+                                MessageBox.Show("No data found.");
+                            }
                         }
                     }
                 }
