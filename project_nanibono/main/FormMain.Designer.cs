@@ -47,14 +47,20 @@ namespace project_nanibono
             notifButton = new Button();
             sdButton = new Button();
             homeButton = new Button();
+            centerPanel = new Panel();
+            rightPanel = new Panel();
             wordSearch1 = new word.WordSearch();
             fillPanel = new Panel();
             label1 = new Label();
             dataGridView1 = new DataGridView();
             menuPanel.SuspendLayout();
             panel1.SuspendLayout();
+
             fillPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+
+            centerPanel.SuspendLayout();
+
             SuspendLayout();
             // 
             // menuPanel
@@ -74,7 +80,7 @@ namespace project_nanibono
             menuPanel.Dock = DockStyle.Left;
             menuPanel.Location = new Point(0, 54);
             menuPanel.Name = "menuPanel";
-            menuPanel.Size = new Size(148, 396);
+            menuPanel.Size = new Size(158, 396);
             menuPanel.TabIndex = 13;
             // 
             // panel2
@@ -283,14 +289,31 @@ namespace project_nanibono
             homeButton.TabIndex = 1;
             homeButton.UseVisualStyleBackColor = false;
             // 
+            // centerPanel
+            // 
+            centerPanel.Controls.Add(rightPanel);
+            centerPanel.Controls.Add(wordSearch1);
+            centerPanel.Location = new Point(0, 54);
+            centerPanel.Name = "centerPanel";
+            centerPanel.Size = new Size(799, 396);
+            centerPanel.TabIndex = 14;
+            // 
+            // rightPanel
+            // 
+            rightPanel.Dock = DockStyle.Right;
+            rightPanel.Location = new Point(154, 0);
+            rightPanel.Name = "rightPanel";
+            rightPanel.Size = new Size(645, 396);
+            rightPanel.TabIndex = 1;
+            // 
             // wordSearch1
             // 
             wordSearch1.BackColor = SystemColors.ControlLightLight;
             wordSearch1.ForeColor = SystemColors.ControlText;
-            wordSearch1.Location = new Point(3, 187);
+            wordSearch1.Location = new Point(0, 0);
             wordSearch1.Name = "wordSearch1";
-            wordSearch1.Size = new Size(800, 396);
-            wordSearch1.TabIndex = 14;
+            wordSearch1.Size = new Size(799, 396);
+            wordSearch1.TabIndex = 0;
             // 
             // fillPanel
             // 
@@ -327,18 +350,25 @@ namespace project_nanibono
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(799, 450);
+
             Controls.Add(fillPanel);
+
             Controls.Add(menuPanel);
             Controls.Add(wordSearch1);
             Controls.Add(panel1);
+            Controls.Add(centerPanel);
             Name = "FormMain";
             Text = "Form1";
             Load += FormMain_Load;
             menuPanel.ResumeLayout(false);
             panel1.ResumeLayout(false);
+
             fillPanel.ResumeLayout(false);
             fillPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+
+            centerPanel.ResumeLayout(false);
+
             ResumeLayout(false);
         }
 
@@ -361,9 +391,14 @@ namespace project_nanibono
         private Button sdButton;
         private Button homeButton;
         private word.WordSearchResult wordSearchResult1;
+        private Panel centerPanel;
         private word.WordSearch wordSearch1;
+
         private Panel fillPanel;
         private Label label1;
         private DataGridView dataGridView1;
+
+        private Panel rightPanel;
+
     }
 }

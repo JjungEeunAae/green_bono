@@ -1,13 +1,24 @@
 ﻿using Oracle.ManagedDataAccess.Client;
 using project_nanibono.member;
+using project_nanibono.word;
 
 namespace project_nanibono
 {
     public partial class FormLogin : Form
     {
+
+        string strConnection = "DATA SOURCE = 192.168.0.110; User Id = bono; Password=bono";
+
+        OracleConnection conn;
+        OracleCommand cmd;
+
+        
+
         public FormLogin()
         {
             InitializeComponent();
+
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
