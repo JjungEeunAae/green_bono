@@ -14,10 +14,16 @@ namespace project_nanibono
         public FormMain()
         {
             InitializeComponent();
+
             //wordSearchResult1.Visible = false;  // 단어검색결과 사용자 정의 컨트롤 숨기기
 
-            //menuPanel.Visible = false;          // 메뉴패널 숨기기
+            menuPanel.Visible = false;          // 메뉴패널 숨기기
+            //panel1.BringToFront();
 
+            //topPanel.Visible = true;
+            //topPanel.BringToFront();
+
+            centerPanel.Visible = true;
             centerPanel.BringToFront();
             wordSearch1.Visible = true;
             wordSearch1.BringToFront();
@@ -39,15 +45,13 @@ namespace project_nanibono
         private void SearchButton_Click(object? sender, EventArgs e)
         {
 
-            //OnSearchButtonClicked(EventArgs.Empty);
-            /*formMain = new FormMain();
-            formMain.ShowPanelAndControl2();*/
-            // null이 들어올 수 있으니깐 null인지 아닌지 정확하게 형변환
             Dictionary<string, string> dictWord = db.selectWord(wordSearch1.getTextBox(), wordSearch1.getComboBox()) as Dictionary<string, string>;
             if (dictWord != null)
             {
                 WordSearchResult sw = new WordSearchResult(dictWord);
+                menuPanel.Visible = true;
                 menuPanel.BringToFront();
+                rightPanel.Visible = true;
                 rightPanel.Controls.Add(sw);
                 rightPanel.BringToFront();
                 sw.BringToFront();
@@ -114,17 +118,17 @@ namespace project_nanibono
         private void button2_Click(object sender, EventArgs e)
         {
             menuPanel.Visible = true;
-            fillPanel.Visible = true;
+            //fillPanel.Visible = true;
             menuPanel.BringToFront();
-            fillPanel.BringToFront();
+            //fillPanel.BringToFront();
         }
 
         private void sdButton_Click(object sender, EventArgs e)
         {
             menuPanel.Visible = true;
-            fillPanel.Visible = true;
+            //fillPanel.Visible = true;
             menuPanel.BringToFront();
-            fillPanel.BringToFront();
+            //fillPanel.BringToFront();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -134,6 +138,21 @@ namespace project_nanibono
 
         private void wordSearch1_Load(object sender, EventArgs e)
 
+        {
+
+        }
+
+        private void rightPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void wordSearch1_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rightPanel_Paint_1(object sender, PaintEventArgs e)
         {
 
         }

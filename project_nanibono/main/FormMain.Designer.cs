@@ -42,7 +42,7 @@ namespace project_nanibono
             elfButton3 = new Button();
             elfButton2 = new Button();
             elfButton1 = new Button();
-            panel1 = new Panel();
+            topPanel = new Panel();
             button2 = new Button();
             notifButton = new Button();
             sdButton = new Button();
@@ -50,17 +50,9 @@ namespace project_nanibono
             centerPanel = new Panel();
             rightPanel = new Panel();
             wordSearch1 = new word.WordSearch();
-            fillPanel = new Panel();
-            label1 = new Label();
-            dataGridView1 = new DataGridView();
             menuPanel.SuspendLayout();
-            panel1.SuspendLayout();
-
-            fillPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-
+            topPanel.SuspendLayout();
             centerPanel.SuspendLayout();
-
             SuspendLayout();
             // 
             // menuPanel
@@ -77,7 +69,6 @@ namespace project_nanibono
             menuPanel.Controls.Add(elfButton3);
             menuPanel.Controls.Add(elfButton2);
             menuPanel.Controls.Add(elfButton1);
-            menuPanel.Dock = DockStyle.Left;
             menuPanel.Location = new Point(0, 54);
             menuPanel.Name = "menuPanel";
             menuPanel.Size = new Size(158, 396);
@@ -221,18 +212,18 @@ namespace project_nanibono
             elfButton1.TextAlign = ContentAlignment.MiddleLeft;
             elfButton1.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // topPanel
             // 
-            panel1.BackColor = Color.FromArgb(135, 196, 255);
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(notifButton);
-            panel1.Controls.Add(sdButton);
-            panel1.Controls.Add(homeButton);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(799, 54);
-            panel1.TabIndex = 12;
+            topPanel.BackColor = Color.FromArgb(135, 196, 255);
+            topPanel.Controls.Add(button2);
+            topPanel.Controls.Add(notifButton);
+            topPanel.Controls.Add(sdButton);
+            topPanel.Controls.Add(homeButton);
+            topPanel.Dock = DockStyle.Top;
+            topPanel.Location = new Point(0, 0);
+            topPanel.Name = "topPanel";
+            topPanel.Size = new Size(799, 54);
+            topPanel.TabIndex = 12;
             // 
             // button2
             // 
@@ -300,49 +291,21 @@ namespace project_nanibono
             // 
             // rightPanel
             // 
-            rightPanel.Dock = DockStyle.Right;
-            rightPanel.Location = new Point(154, 0);
+            rightPanel.Location = new Point(151, 3);
             rightPanel.Name = "rightPanel";
-            rightPanel.Size = new Size(645, 396);
-            rightPanel.TabIndex = 1;
+            rightPanel.Size = new Size(645, 390);
+            rightPanel.TabIndex = 15;
+            rightPanel.Paint += rightPanel_Paint_1;
             // 
             // wordSearch1
             // 
             wordSearch1.BackColor = SystemColors.ControlLightLight;
             wordSearch1.ForeColor = SystemColors.ControlText;
-            wordSearch1.Location = new Point(0, 0);
+            wordSearch1.Location = new Point(3, 3);
             wordSearch1.Name = "wordSearch1";
-            wordSearch1.Size = new Size(799, 396);
+            wordSearch1.Size = new Size(793, 396);
             wordSearch1.TabIndex = 0;
-            // 
-            // fillPanel
-            // 
-            fillPanel.Controls.Add(dataGridView1);
-            fillPanel.Controls.Add(label1);
-            fillPanel.Dock = DockStyle.Fill;
-            fillPanel.Location = new Point(148, 54);
-            fillPanel.Name = "fillPanel";
-            fillPanel.Size = new Size(651, 396);
-            fillPanel.TabIndex = 15;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(15, 18);
-            label1.Name = "label1";
-            label1.Size = new Size(57, 15);
-            label1.TabIndex = 0;
-            label1.Text = "LabelTitle";
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Dock = DockStyle.Bottom;
-            dataGridView1.Location = new Point(0, 46);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(651, 350);
-            dataGridView1.TabIndex = 16;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            wordSearch1.Load += wordSearch1_Load_1;
             // 
             // FormMain
             // 
@@ -350,25 +313,15 @@ namespace project_nanibono
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(799, 450);
-
-            Controls.Add(fillPanel);
-
-            Controls.Add(menuPanel);
-            Controls.Add(wordSearch1);
-            Controls.Add(panel1);
             Controls.Add(centerPanel);
+            Controls.Add(topPanel);
+            Controls.Add(menuPanel);
             Name = "FormMain";
             Text = "Form1";
             Load += FormMain_Load;
             menuPanel.ResumeLayout(false);
-            panel1.ResumeLayout(false);
-
-            fillPanel.ResumeLayout(false);
-            fillPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-
+            topPanel.ResumeLayout(false);
             centerPanel.ResumeLayout(false);
-
             ResumeLayout(false);
         }
 
@@ -385,7 +338,7 @@ namespace project_nanibono
         private Button elfButton3;
         private Button elfButton2;
         private Button elfButton1;
-        private Panel panel1;
+        private Panel topPanel;
         private Button button2;
         private Button notifButton;
         private Button sdButton;
@@ -393,12 +346,6 @@ namespace project_nanibono
         private word.WordSearchResult wordSearchResult1;
         private Panel centerPanel;
         private word.WordSearch wordSearch1;
-
-        private Panel fillPanel;
-        private Label label1;
-        private DataGridView dataGridView1;
-
         private Panel rightPanel;
-
     }
 }

@@ -8,7 +8,7 @@ namespace project_nanibono.word
     {
         string strconn = "Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.110)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=xe)));User Id=bono;Password=bono;";
 
-        public Word SelectWord(string word)
+        public DataTable SelectWord(string word)
         {
             OracleConnection oc = null;
             try
@@ -16,36 +16,32 @@ namespace project_nanibono.word
                 oc = new OracleConnection(strconn);
 
                 oc.Open();
+                string sql = "SELECT word" +
+                              "     , word_mean" +
+                               "     , insert_date" +
+                                  "     , category" +
+                                  "FROM word " +
+                                 "ORDER BY 1 DESC";
 
-                string sql = $"select * from word where word = '{word}'";
-                OracleCommand cmd = new OracleCommand(sql, oc);
-                OracleDataReader oracleDataReader = cmd.ExecuteReader();
-                if (oracleDataReader.Read())
-                {
-                    Word selectWord = new Word();
-                    selectWord.word_no = oracleDataReader.GetString("word_no");
-                    selectWord.word = oracleDataReader.GetString("word");
-                    selectWord.word_mean = oracleDataReader.GetString("word_mean");
-                    Console.WriteLine("행있음");
-                    return selectWord;
+                OracleDataAdapter adapter = new OracleDataAdapter();
+                DataSet ds = new DataSet();
+
+                OracleCommand oracleCommand = new OracleCommand(sql, oc);
+                adapter.SelectCommand = oracleCommand;
+
+                adapter.Fill(ds);
+
+                oc.Close();
+                return ds.Tables[0];
                 }
-                else
+                catch (Exception e)
                 {
-                    //db에 없음...
-                    Console.WriteLine("행없음");
+                    Console.WriteLine(e.StackTrace);
+                    Console.WriteLine(e.Message);
+                    Console.WriteLine("행있음");
                     return null;
                 }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.StackTrace);
-                return null;
-            }
-            finally
-            {
-                oc.Close();
-            }
 
-        }
+            }
     }
-}
+    } 

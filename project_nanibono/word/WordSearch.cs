@@ -66,6 +66,24 @@ namespace project_nanibono.word
         private void button2_Click(object sender, EventArgs e)
         {
 
+            FormLogin formLogin = new FormLogin();
+            formLogin.Show();
+            //formLogin.ShowDialog();
+          
+
+            if (!string.IsNullOrEmpty(GlobalVariables.LoggedInUserId))
+            {
+                // 사용자가 로그인한 상태
+                // 버튼을 숨김
+                button2.Visible = false;
+            }
+            else
+            {
+                // 사용자가 로그인하지 않은 상태
+                // 버튼을 보이게 함
+                button2.Visible = true;
+            }
+
         }
     }
 }

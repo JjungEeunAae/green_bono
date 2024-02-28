@@ -29,32 +29,45 @@
         private void InitializeComponent()
         {
             C = new DataGridView();
+            category = new Label();
             ((System.ComponentModel.ISupportInitialize)C).BeginInit();
             SuspendLayout();
             // 
             // C
             // 
             C.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            C.Location = new Point(25, 67);
+            C.Location = new Point(22, 121);
             C.Name = "C";
-            C.Size = new Size(588, 235);
+            C.Size = new Size(588, 263);
             C.TabIndex = 0;
             C.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // category
+            // 
+            category.AutoSize = true;
+            category.Location = new Point(22, 45);
+            category.Name = "category";
+            category.Size = new Size(133, 15);
+            category.TabIndex = 1;
+            category.Text = "categoryM > categoryS";
             // 
             // WordSelect
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(category);
             Controls.Add(C);
             Name = "WordSelect";
             Size = new Size(651, 396);
             Load += WordSelect_Load;
             ((System.ComponentModel.ISupportInitialize)C).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private DataGridView C;
+        private Label category;
     }
 }

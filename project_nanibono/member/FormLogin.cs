@@ -73,11 +73,7 @@ namespace project_nanibono
             {
                 // 로그인 정보 저장
                 GlobalVariables.LoggedInUserId = memberId;
-
-                word.FormSearch formSearch = new word.FormSearch();
-                formSearch.Show();
-
-                this.Hide();
+                // 워드서치 컨트롤으로 
             }
 
         }
@@ -115,9 +111,7 @@ namespace project_nanibono
         private void homeButton_Click(object sender, EventArgs e)
         {
 
-            word.FormSearch formSearch = new word.FormSearch();
-            formSearch.Show();
-            this.Hide();
+          // 홈 컨트롤
         }
 
     }
