@@ -29,5 +29,10 @@ namespace project_nanibono
         {
             this.Close();
         }
+
+        private void comboBox_proccessDivision_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
