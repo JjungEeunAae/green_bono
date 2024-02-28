@@ -70,7 +70,7 @@ namespace project_nanibono.word
                             }
                             else
                             {
-                                MessageBox.Show("No data found.");
+                                MessageBox.Show("데이터가 없습니다.");
                             }
                         }
                     }
