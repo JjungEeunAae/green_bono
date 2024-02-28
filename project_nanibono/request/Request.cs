@@ -12,6 +12,7 @@
         public string id { get; set; }
         public string word_no { get; set; }
         public string word { get; set; }
+        public string wordMean { get; set; }
 
         public override string ToString()
         {
