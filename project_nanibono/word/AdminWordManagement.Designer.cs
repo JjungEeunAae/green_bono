@@ -49,7 +49,7 @@
             // 
             worddataGridView1.AllowUserToAddRows = false;
             worddataGridView1.AllowUserToDeleteRows = false;
-            worddataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            worddataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             worddataGridView1.BackgroundColor = SystemColors.ControlLightLight;
             worddataGridView1.BorderStyle = BorderStyle.Fixed3D;
             worddataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
