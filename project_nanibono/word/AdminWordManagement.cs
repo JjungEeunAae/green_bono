@@ -3,6 +3,7 @@ using Oracle.ManagedDataAccess.Client;
 using project_nanibono.member;
 using System.Data;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace project_nanibono.word
 {
@@ -26,19 +27,19 @@ namespace project_nanibono.word
         {
             MessageBox.Show("단어 등록 페이지로 이동합니다.");
             if(parentForm != null)
-            {
-                
+            {               
                 FormAdminWord formAdminWord = new FormAdminWord(parentForm);
                 parentForm.Hide();
                 formAdminWord.Show();
                 formAdminWord.FormClosed += (s, args) =>
                 {
                     parentForm.Hide();
+                    WordList();
                 };
             }
 
         }
-        private void WordList()
+        private void WordList() // 단어리스트 보여주는 메서드
         {
             try
             {
@@ -46,7 +47,15 @@ namespace project_nanibono.word
                 {
                     con.Open();
                     OracleDataAdapter oracleDataAdapter = new OracleDataAdapter();
-                    DBINFO.sql = "select category as " + "카테고리" + ", word_no as " + "번호" + ", word as " + "단어" + ", word_mean as " + "뜻" + ", insert_date as " + "등록일" + " from word"; ;
+                    DBINFO.sql = "SELECT " +
+                         "CASE " +
+                         "    WHEN category LIKE 'CT1%' THEN '정보처리기사' " +
+                         "    WHEN category LIKE 'CT2%' THEN 'SQLD' " +
+                         "    ELSE category " +
+                         "END AS 카테고리, " +
+                         "word_no as " + "번호" + ", word as " + "단어" + ", word_mean as " + "뜻" + ", insert_date as " + "등록일" +
+                         " FROM word WHERE category like 'CT1%' or category like 'CT2%'" +
+                         " Order by insert_date desc";
 
                     using (OracleCommand cmd = new OracleCommand(DBINFO.sql, con))
                     {
