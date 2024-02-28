@@ -9,11 +9,11 @@ namespace project_nanibono.request
 {
     internal class RequestDB
     {
-        string strConnection = "Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=xe)));User Id=bono;Password=bono;";
+        //string strConnection = "Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=xe)));User Id=bono;Password=bono;";
 
         public void select(Label label9, Label label10, Label label11, Label label12, ComboBox comboBox1, ComboBox comboBox2, String word)
         {
-            OracleConnection conn = new OracleConnection(strConnection);
+            OracleConnection conn = new OracleConnection(DBINFO.getConnection());
             conn.Open();
             Console.WriteLine(word);
             // 아이디 자동조회
@@ -97,7 +97,7 @@ namespace project_nanibono.request
                 combo2 = "RC2";
             }
 
-            OracleConnection conn = new OracleConnection(strConnection);
+            OracleConnection conn = new OracleConnection(DBINFO.getConnection());
             conn.Open();
             OracleCommand cmd = new OracleCommand("INSERT INTO request (REQUEST_NO, PROCESS_DIVISION, REQUEST_DIVISION, REQUEST_CONTENT, REQUEST_DATE, REQUEST_RYN, ID, WORD_NO) " +
                                        "VALUES('RE' || RE.NEXTVAL, :processDivision, :requestDivision, :requestContent, SYSDATE, 'r', :id, :wordNo)", conn);
