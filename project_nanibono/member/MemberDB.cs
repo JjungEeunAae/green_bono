@@ -5,13 +5,11 @@ namespace project_nanibono.member
     public class MemberDB
     {
         // 공통 > 로그인 ( 응쟁 )
-
         string strconn = "Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.110)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=xe)));User Id=bono;Password=bono;";
 
         public Member SelectMember(string id, string pw)
         {
             OracleConnection oc = new OracleConnection(strconn);
-
             oc.Open();
 
             string sql = $"select * from Member where id = '{id}' and pw = '{pw}'";
@@ -19,28 +17,17 @@ namespace project_nanibono.member
             OracleDataReader oracleDataReader = cmd.ExecuteReader();
             if (oracleDataReader.Read())
             {
-
-
-
                 Member dbMember = new Member()
                 {
                     id = oracleDataReader["Id"].ToString(),
                     pw = oracleDataReader["PW"].ToString(),
-
                 };
-
                 return dbMember;
-
-
             }
             else
             {
-
                 return null;
-
-
             }
-
             oc.Close();
         }
 
@@ -49,83 +36,52 @@ namespace project_nanibono.member
             OracleConnection oc = new OracleConnection(strconn);
 
             oc.Open();
-
-            string sql = $"select * from Member where id = '{id}'";
-            OracleCommand cmd = new OracleCommand(sql, oc);
-            OracleDataReader oracleDataReader = cmd.ExecuteReader();
-            if (oracleDataReader.Read())
-            {
-
-
-
-                Member dbMember = new Member()
+            try { 
+                string sql = $"select * from Member where id = '{id}'";
+                OracleCommand cmd = new OracleCommand(sql, oc);
+                OracleDataReader oracleDataReader = cmd.ExecuteReader();
+                if (oracleDataReader.Read())
                 {
-                    id = oracleDataReader["Id"].ToString(),
-                    role = oracleDataReader["role"].ToString()
-
-
-                };
-
-                return dbMember;
-
-
-            }
-            else
-            {
-
-                return null;
-
-
-            }
-
-            oc.Close();
+                    Member dbMember = new Member()
+                    {
+                        id = oracleDataReader["Id"].ToString(),
+                        role = oracleDataReader["role"].ToString()
+                    };
+                    return dbMember;
+                }
+                else
+                {
+                    return null;
+                }
+            }finally { oc.Close(); }
         }
 
         public Member SelectPw(string pw)
         {
             OracleConnection oc = new OracleConnection(strconn);
-
             oc.Open();
-
             string sql = $"select * from Member where pw = '{pw}'";
             OracleCommand cmd = new OracleCommand(sql, oc);
             OracleDataReader oracleDataReader = cmd.ExecuteReader();
             if (oracleDataReader.Read())
             {
-
-
-
                 Member dbMember = new Member()
                 {
-
                     pw = oracleDataReader["PW"].ToString(),
-
                 };
-
                 return dbMember;
-
-
             }
             else
             {
-
                 return null;
-
-
             }
-
             oc.Close();
         }
 
         // 공통 > 회원가입 ( 강녕 )
 
 
-
-
-
         // 어드민 > 회원관리 ( 응앵 )
-
-
 
 
     }

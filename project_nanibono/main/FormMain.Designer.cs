@@ -31,7 +31,7 @@ namespace project_nanibono
         private void InitializeComponent()
         {
             menuPanel = new Panel();
-            panel2 = new Panel();
+            menuSwitchPanel = new Panel();
             button_ct2 = new Button();
             button_ct1 = new Button();
             logoutButton = new Button();
@@ -58,7 +58,7 @@ namespace project_nanibono
             // menuPanel
             // 
             menuPanel.BackColor = Color.FromArgb(224, 244, 255);
-            menuPanel.Controls.Add(panel2);
+            menuPanel.Controls.Add(menuSwitchPanel);
             menuPanel.Controls.Add(button_ct2);
             menuPanel.Controls.Add(button_ct1);
             menuPanel.Controls.Add(logoutButton);
@@ -74,13 +74,13 @@ namespace project_nanibono
             menuPanel.Size = new Size(158, 396);
             menuPanel.TabIndex = 13;
             // 
-            // panel2
+            // menuSwitchPanel
             // 
-            panel2.BackColor = Color.FromArgb(57, 167, 255);
-            panel2.Location = new Point(0, 46);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(10, 23);
-            panel2.TabIndex = 11;
+            menuSwitchPanel.BackColor = Color.FromArgb(57, 167, 255);
+            menuSwitchPanel.Location = new Point(0, 46);
+            menuSwitchPanel.Name = "menuSwitchPanel";
+            menuSwitchPanel.Size = new Size(10, 23);
+            menuSwitchPanel.TabIndex = 11;
             // 
             // button_ct2
             // 
@@ -96,6 +96,7 @@ namespace project_nanibono
             button_ct2.Text = "SQLD";
             button_ct2.TextAlign = ContentAlignment.MiddleLeft;
             button_ct2.UseVisualStyleBackColor = false;
+            button_ct2.Click += button_ct2_Click;
             // 
             // button_ct1
             // 
@@ -138,6 +139,7 @@ namespace project_nanibono
             sdButton2.Text = "SQL 기본 및 활용";
             sdButton2.TextAlign = ContentAlignment.MiddleLeft;
             sdButton2.UseVisualStyleBackColor = true;
+            sdButton2.Click += sdButton2_Click;
             // 
             // sdButton1
             // 
@@ -150,6 +152,7 @@ namespace project_nanibono
             sdButton1.Text = "데이터모델링의 이해";
             sdButton1.TextAlign = ContentAlignment.MiddleLeft;
             sdButton1.UseVisualStyleBackColor = true;
+            sdButton1.Click += sdButton1_Click;
             // 
             // elfButton5
             // 
@@ -162,6 +165,7 @@ namespace project_nanibono
             elfButton5.Text = "정보시스템 구축관리";
             elfButton5.TextAlign = ContentAlignment.MiddleLeft;
             elfButton5.UseVisualStyleBackColor = true;
+            elfButton5.Click += elfButton5_Click;
             // 
             // elfButton4
             // 
@@ -174,6 +178,7 @@ namespace project_nanibono
             elfButton4.Text = "프로그래밍 언어활용";
             elfButton4.TextAlign = ContentAlignment.MiddleLeft;
             elfButton4.UseVisualStyleBackColor = true;
+            elfButton4.Click += elfButton4_Click;
             // 
             // elfButton3
             // 
@@ -186,6 +191,7 @@ namespace project_nanibono
             elfButton3.Text = "데이터베이스 구축";
             elfButton3.TextAlign = ContentAlignment.MiddleLeft;
             elfButton3.UseVisualStyleBackColor = true;
+            elfButton3.Click += elfButton3_Click;
             // 
             // elfButton2
             // 
@@ -198,6 +204,7 @@ namespace project_nanibono
             elfButton2.Text = "소프트웨어 개발";
             elfButton2.TextAlign = ContentAlignment.MiddleLeft;
             elfButton2.UseVisualStyleBackColor = true;
+            elfButton2.Click += elfButton2_Click;
             // 
             // elfButton1
             // 
@@ -211,6 +218,7 @@ namespace project_nanibono
             elfButton1.Text = "소프트웨어 설계";
             elfButton1.TextAlign = ContentAlignment.MiddleLeft;
             elfButton1.UseVisualStyleBackColor = true;
+            elfButton1.Click += elfButton1_Click;
             // 
             // topPanel
             // 
@@ -291,17 +299,16 @@ namespace project_nanibono
             // 
             // rightPanel
             // 
-            rightPanel.Location = new Point(151, 3);
+            rightPanel.Location = new Point(164, 4);
             rightPanel.Name = "rightPanel";
-            rightPanel.Size = new Size(645, 390);
+            rightPanel.Size = new Size(632, 390);
             rightPanel.TabIndex = 15;
-            rightPanel.Paint += rightPanel_Paint_1;
             // 
             // wordSearch1
             // 
             wordSearch1.BackColor = SystemColors.ControlLightLight;
             wordSearch1.ForeColor = SystemColors.ControlText;
-            wordSearch1.Location = new Point(3, 3);
+            wordSearch1.Location = new Point(3, 0);
             wordSearch1.Name = "wordSearch1";
             wordSearch1.Size = new Size(793, 396);
             wordSearch1.TabIndex = 0;
@@ -313,9 +320,9 @@ namespace project_nanibono
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(799, 450);
+            Controls.Add(menuPanel);
             Controls.Add(centerPanel);
             Controls.Add(topPanel);
-            Controls.Add(menuPanel);
             Name = "FormMain";
             Text = "Form1";
             Load += FormMain_Load;
@@ -327,7 +334,7 @@ namespace project_nanibono
 
         #endregion
         private Panel menuPanel;
-        private Panel panel2;
+        private Panel menuSwitchPanel;
         private Button button_ct2;
         private Button button_ct1;
         private Button logoutButton;
