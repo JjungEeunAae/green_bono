@@ -105,6 +105,7 @@
             pwTextBox.PasswordChar = '*';
             pwTextBox.Size = new Size(201, 23);
             pwTextBox.TabIndex = 6;
+            pwTextBox.KeyDown += pwTextBox_KeyDown;
             // 
             // loginButton
             // 

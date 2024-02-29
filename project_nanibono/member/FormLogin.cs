@@ -12,13 +12,11 @@ namespace project_nanibono
         OracleConnection conn;
         OracleCommand cmd;
 
-        
-
         public FormLogin()
         {
             InitializeComponent();
 
-            
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -28,76 +26,20 @@ namespace project_nanibono
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            string memberId = idTextBox.Text.Trim();
-            string password = pwTextBox.Text.Trim();
-
-            if (string.IsNullOrEmpty(memberId))
-            {
-                MessageBox.Show("아이디를 입력하세요.", "경고", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            else if (string.IsNullOrEmpty(password))
-            {
-                MessageBox.Show("비밀번호를 입력하세요.", "경고", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            MemberDB memberDB = new MemberDB();
-
-            Member member_id = memberDB.SelectId(memberId);
-            Member member_pw = memberDB.SelectPw(password);
-
-            if (member_id == null)
-            {
-
-                MessageBox.Show("존재하지 않는 회원입니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            if (member_id.role == "admin")
-            {
-                GlobalVariables.LoggedInUserId = memberId;
-
-                main.FormAdminMain formAdminMain = new main.FormAdminMain();
-                formAdminMain.Show();
-                this.Hide();
-            }
-
-
-            else if (member_pw == null)
-            {
-                MessageBox.Show("비밀번호가 올바르지 않습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }           
-            else
-            {
-                // 로그인 정보 저장
-                GlobalVariables.LoggedInUserId = memberId;
-                // 워드서치 컨트롤으로 
-            }
-
+            loginCheck();
         }
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
-
         }
-
-
-
-
 
         private void SignUpButton_Click(object sender, EventArgs e)
         {
             // 회원가입 페이지로 이동
-
             FormSignUp formSignUp = new FormSignUp();
             formSignUp.Show();
             this.Hide();
         }
-
-
-
         private void pwTextBox_TextChanged(object sender, EventArgs e)
         {
 
@@ -111,8 +53,64 @@ namespace project_nanibono
         private void homeButton_Click(object sender, EventArgs e)
         {
 
-          // 홈 컨트롤
+            // 홈 컨트롤
         }
 
+        private void pwTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(Keys.Enter == e.KeyCode){
+                loginCheck();
+            }
+        }
+
+        private void loginCheck()
+        {
+            string inputMemberId = idTextBox.Text.Trim();
+            string inputMemberPw = pwTextBox.Text.Trim();
+
+            if (string.IsNullOrEmpty(inputMemberId))
+            {
+                MessageBox.Show("아이디를 입력하세요.", "경고", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            else if (string.IsNullOrEmpty(inputMemberPw))
+            {
+                MessageBox.Show("비밀번호를 입력하세요.", "경고", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            MemberDB memberDB = new MemberDB();
+
+            Member DBMemberId = memberDB.SelectId(inputMemberId);
+            Member DBMemberPw = memberDB.SelectPw(inputMemberPw);
+
+            if (DBMemberId == null)
+            {
+                MessageBox.Show("존재하지 않는 회원입니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (DBMemberId.role == "admin")
+            {
+                GlobalVariables.LoggedInUserId = DBMemberId.id;
+                main.FormAdminMain formAdminMain = new main.FormAdminMain();
+                formAdminMain.Show();
+                this.Hide();
+            }
+            else if (DBMemberPw == null)
+            {
+                MessageBox.Show("비밀번호가 올바르지 않습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            else if( inputMemberId == DBMemberId.id && inputMemberPw == DBMemberPw.pw)
+            {
+                // 로그인 정보 저장
+                GlobalVariables.LoggedInUserId = DBMemberId.id;
+
+                Hide();
+                FormMain formMain = new FormMain();
+                formMain.ShowDialog();
+                Show();
+            }
+        }
     }
 }

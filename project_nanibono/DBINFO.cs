@@ -10,10 +10,6 @@ namespace project_nanibono
 
             // 각자 집에서 DB 연결할 때 쓸 string 변수
             //string dbstr = "DATA SOURCE=localhost; User Id=green; Password=1234";
-
-
-
-
             return dbstr;
         }
 

@@ -1,5 +1,8 @@
+using project_nanibono.category;
 using project_nanibono.main;
 using project_nanibono.word;
+using System.Data;
+using System.Windows.Forms;
 using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace project_nanibono
@@ -10,6 +13,7 @@ namespace project_nanibono
         public Button searchButton = null;
 
         mainDB db = new mainDB();
+        CategoryDBManager manager = new CategoryDBManager();
 
         public FormMain()
         {
@@ -28,18 +32,8 @@ namespace project_nanibono
             wordSearch1.Visible = true;
             wordSearch1.BringToFront();
 
-            // 단어검색 사용자 정의 컨트롤
-            //Controls.Add(wordSearch);               // 컨트롤에 삽입
-
-            //wordSearch.Visible = true;              // 단어검색 사용자 정의 컨트롤 보이게 하기
-            //wordSearch.Location = new Point(0, 54); // 보여줄 장소 조정해주기
-
-            // 단어검색 사용자 정의 컨트롤 버튼 클릭 이벤트
-            //wordSearch.SearchButtonClicked += wordSearch1_SearchButtonClicked;
-
             searchButton = wordSearch1.getButton1();
             searchButton.Click += SearchButton_Click;
-
         }
 
         private void SearchButton_Click(object? sender, EventArgs e)
@@ -69,40 +63,12 @@ namespace project_nanibono
         private void wordSearch1_SearchButtonClicked(object sender, EventArgs e)
         {
             //ShowPanelAndControl2(); // 검색 버튼을 클릭하면 패널과 사용자 정의 컨트롤2를 보여줌
+            Console.WriteLine("여기 뭐야");
         }
 
         private void searchTerm_Click(object sender, EventArgs e)
         {
-
-            /*WordDB wordDB = new WordDB();
-            Word result = wordDB.SelectWord(searchBox.Text);
-
-            if (result != null) { 
-                Hide();
-                new FormResult(result).ShowDialog();
-                Show();
-            }
-            else
-            {
-                MessageBox.Show("검색되는 결과가 없습니다.");
-            }*/
-            // + 메인창 숨기기 
-
-
-            // 1. 용어가 database의 word Table 속 word attribute에 존재할 경우
-            // 2. 존재하지 않을 경우  
-
-            //  FormResult의 label1에 해당 word를 가져오고
-            //  FormResult의 label2에 word Table 속 world_MEAN을 가져온다. 
-
-            //         string searchTerm = searchBox.Text;
-            //      if ((searchTerm)) // 용어가 있을때
-            //       {
-            //         Search(searchTerm);
-            //       FormResult formResult = new FormResult();
-            //     formResult.Show();
-            //   this.Hide();
-            //       }
+            Console.WriteLine("zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz");
         }
 
         private void FormMain_Load(object sender, EventArgs e)
@@ -112,23 +78,32 @@ namespace project_nanibono
 
         private void button_ct1_Click(object sender, EventArgs e)
         {
-
+            ct1select();
         }
+
 
         private void button2_Click(object sender, EventArgs e)
         {
             menuPanel.Visible = true;
-            //fillPanel.Visible = true;
+            rightPanel.Visible = true;
             menuPanel.BringToFront();
-            //fillPanel.BringToFront();
+            rightPanel.BringToFront();
+            wordSearch1.Visible = false;
+            wordSearch1.SendToBack();
+
+            ct1select();
         }
 
         private void sdButton_Click(object sender, EventArgs e)
         {
             menuPanel.Visible = true;
-            //fillPanel.Visible = true;
+            rightPanel.Visible = true;
             menuPanel.BringToFront();
-            //fillPanel.BringToFront();
+            rightPanel.BringToFront();
+            wordSearch1.Visible = false;
+            wordSearch1.SendToBack();
+
+            ct2select();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -137,24 +112,113 @@ namespace project_nanibono
         }
 
         private void wordSearch1_Load(object sender, EventArgs e)
-
         {
-
+            Console.WriteLine("여기 나오나");
         }
 
         private void rightPanel_Paint(object sender, PaintEventArgs e)
         {
-
+            Console.WriteLine("여111111111");
         }
 
+        // 워드 서치 화면 나올때 실행되는 부분
         private void wordSearch1_Load_1(object sender, EventArgs e)
         {
-
         }
 
-        private void rightPanel_Paint_1(object sender, PaintEventArgs e)
+
+        private void ct1select()
+        {
+            selectCategory(manager.SelectELF());
+        }
+
+        private void ct2select()
+        {
+            selectCategory(manager.SelectSD());
+        }
+
+        private void button_ct2_Click(object sender, EventArgs e)
+        {
+            selectCategory(manager.SelectSD());
+        }
+
+        // 소프트웨어 설계 누름
+        private void elfButton1_Click(object sender, EventArgs e)
+        {
+            menuSwitchPanel.Location = new System.Drawing.Point(0, 46);
+            selectCategory(manager.Select("CT1_CG1"));
+        }
+
+        private void elfButton2_Click(object sender, EventArgs e)
+        {
+            menuSwitchPanel.Location = new System.Drawing.Point(0, 70);
+            selectCategory(manager.Select("CT1_CG2"));
+        }
+
+        private void elfButton3_Click(object sender, EventArgs e)
+        {
+            menuSwitchPanel.Location = new System.Drawing.Point(0, 93);
+            selectCategory(manager.Select("CT1_CG3"));
+        }
+
+        private void elfButton4_Click(object sender, EventArgs e)
+        {
+            menuSwitchPanel.Location = new System.Drawing.Point(0, 116);
+            selectCategory(manager.Select("CT1_CG4"));
+        }
+
+        private void elfButton5_Click(object sender, EventArgs e)
+        {
+            menuSwitchPanel.Location = new System.Drawing.Point(0, 139);
+            selectCategory(manager.Select("CT1_CG5"));
+        }
+
+
+        public void selectCategory(DataTable dataTable)
+        {
+            rightPanel.Controls.Clear();
+
+            DataGridView dgv = new DataGridView();
+            dgv.BackgroundColor = Color.White;
+            dgv.Dock = DockStyle.Fill;
+            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgv.ReadOnly = true;
+            dgv.AllowUserToAddRows = false;
+
+
+            DataTable dt = dataTable;
+
+            if (dt != null)
+            {
+                dgv.Columns.Clear();
+                dgv.DataSource = null;
+                dgv.AutoGenerateColumns = true;
+
+                dgv.Columns.Add("word", "word");
+                dgv.Columns.Add("word_mean", "word_mean");
+                dgv.Columns.Add("insert_date", "insert_date");
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    dgv.Rows.Add(row["word"], row["word_mean"], row["insert_date"]);
+                }
+                dgv.Columns[0].Width = 30;
+                dgv.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dgv.Columns[2].Width = 30;
+            }
+
+            rightPanel.Controls.Add(dgv);
+        }
+
+        private void sdButton1_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void sdButton2_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

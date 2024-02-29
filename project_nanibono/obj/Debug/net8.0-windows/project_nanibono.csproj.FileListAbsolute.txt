@@ -166,7 +166,6 @@ D:\green_bono\project_nanibono\obj\Debug\net8.0-windows\project_nanibono.word.Ad
 D:\green_bono\project_nanibono\obj\Debug\net8.0-windows\project_nanibono.word.FormAdminWord.resources
 D:\green_bono\project_nanibono\obj\Debug\net8.0-windows\project_nanibono.word.WordSearch.resources
 D:\green_bono\project_nanibono\obj\Debug\net8.0-windows\project_nanibono.word.WordSearchResult.resources
-D:\green_bono\project_nanibono\obj\Debug\net8.0-windows\project_nanibono.word.WordSelect.resources
 D:\green_bono\project_nanibono\obj\Debug\net8.0-windows\project_nanibono.csproj.GenerateResource.cache
 D:\green_bono\project_nanibono\obj\Debug\net8.0-windows\project_nanibono.GeneratedMSBuildEditorConfig.editorconfig
 D:\green_bono\project_nanibono\obj\Debug\net8.0-windows\project_nanibono.AssemblyInfoInputs.cache
