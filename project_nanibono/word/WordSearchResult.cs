@@ -17,6 +17,7 @@ namespace project_nanibono.word
         string word = "";
         string wordMean ="";
         int panelY = 50; // 초기 Y 위치
+        
 
         public WordSearchResult()
         {
@@ -24,9 +25,6 @@ namespace project_nanibono.word
             public WordSearchResult(Dictionary<string, string> dictWord)
         {
             InitializeComponent();
-
-            if(dictWord.Keys.Count > 0 )
-            {
                 foreach (var kvp in dictWord)
                 {
                     word = kvp.Key;
@@ -37,7 +35,7 @@ namespace project_nanibono.word
 
                     Panel panel = new Panel();
                     panel.Location = new Point(60, panelY);
-                    panel.Size = new Size(900, 180);
+                    panel.Size = new Size(900, 150);
                     panel.BackColor = Color.Transparent;
                     Controls.Add(panel);
 
@@ -52,6 +50,7 @@ namespace project_nanibono.word
                     button_requestEdit.ForeColor = Color.White;
                     button_requestEdit.Text = "편집요청";
                     button_requestEdit.UseVisualStyleBackColor = false;
+                    button_requestEdit.Tag = new Request { word = word, wordMean = wordMean };
                     button_requestEdit.Click += Button_Click;
                     panel.Controls.Add(button_requestEdit);
 
@@ -74,17 +73,17 @@ namespace project_nanibono.word
                     panel.Controls.Add(label2);
 
                     // 패널 간격 조절
-                    panelY += 150;
+                    panelY += 130;
                 }
             }
-        }
+
         private void Button_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            Console.WriteLine("버튼" + word);
-            FormEdit rq = new FormEdit(word);
+            Request rqvo = (Request)btn.Tag;  // 버튼의 Tag 속성을 이용하여 정보 가져오기
+            Console.WriteLine("버튼 " + rqvo.word);
+            FormEdit rq = new FormEdit(rqvo.word);
             rq.Show();
-
         }
 
         private void WordSearchResult_Load(object sender, EventArgs e)
