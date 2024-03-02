@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("project_nanibono")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8dcd992cbd6e36d48ffbbaff8a231e88d799ee8c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a6282043c8f93c95b03f281c17f1e70fb90b3281")]
 [assembly: System.Reflection.AssemblyProductAttribute("project_nanibono")]
 [assembly: System.Reflection.AssemblyTitleAttribute("project_nanibono")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -10,7 +10,6 @@ namespace project_nanibono.category
 {
     public class CategoryDBManager
     {
-       
         public DataTable Select(string code)
         {
             OracleConnection oc = null;
@@ -42,9 +41,6 @@ namespace project_nanibono.category
                 }
             }
         }
-
-        // [중분류]
-        // 1. 정처기 조회
         public DataTable SelectELF()
         {
             OracleConnection oc = null;
@@ -77,8 +73,6 @@ namespace project_nanibono.category
                 }
             }
         }
-
-        // 2. SQLD
         public DataTable SelectSD()
         {
             OracleConnection oc = null;
@@ -111,10 +105,6 @@ namespace project_nanibono.category
                     oc.Close();
                 }
             }
-
- 
-
-
         }
     }
 }
