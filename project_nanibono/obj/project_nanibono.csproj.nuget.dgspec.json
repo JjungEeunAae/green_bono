@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\green_bono\\project_nanibono\\project_nanibono.csproj": {}
+    "D:\\students\\green_bono\\project_nanibono\\project_nanibono.csproj": {}
   },
   "projects": {
-    "D:\\green_bono\\project_nanibono\\project_nanibono.csproj": {
+    "D:\\students\\green_bono\\project_nanibono\\project_nanibono.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\green_bono\\project_nanibono\\project_nanibono.csproj",
+        "projectUniqueName": "D:\\students\\green_bono\\project_nanibono\\project_nanibono.csproj",
         "projectName": "project_nanibono",
-        "projectPath": "D:\\green_bono\\project_nanibono\\project_nanibono.csproj",
+        "projectPath": "D:\\students\\green_bono\\project_nanibono\\project_nanibono.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "D:\\green_bono\\project_nanibono\\obj\\",
+        "outputPath": "D:\\students\\green_bono\\project_nanibono\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",

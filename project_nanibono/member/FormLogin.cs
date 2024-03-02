@@ -15,8 +15,6 @@ namespace project_nanibono
         public FormLogin()
         {
             InitializeComponent();
-
-
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -27,11 +25,11 @@ namespace project_nanibono
         private void loginButton_Click(object sender, EventArgs e)
         {
             loginCheck();
-           
         }
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
+
         }
 
         private void SignUpButton_Click(object sender, EventArgs e)
@@ -102,7 +100,6 @@ namespace project_nanibono
             }
             else if (inputMemberId == DBMemberId.id && inputMemberPw == DBMemberPw.pw)
             {
-                // 로그인 정보 저장
                 GlobalVariables.LoggedInUserId = DBMemberId.id;
 
                 MessageBox.Show("로그인에 성공했습니다.");
@@ -115,7 +112,6 @@ namespace project_nanibono
 
         private void SignUpButton_Click_1(object sender, EventArgs e)
         {
-            // 회원가입 페이지로 이동
             FormSignUp formSignUp = new FormSignUp();
             formSignUp.Show();
             this.Hide();
