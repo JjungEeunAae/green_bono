@@ -14,14 +14,17 @@ namespace project_nanibono.word
 {
     public partial class WordSearch : UserControl
     {
+        // Form 객체 초기화
+        private Form parentForm;
+
         public event EventHandler SearchButtonClicked;
-        //private FormMain formMain;
         mainDB db = new mainDB();
        
-
-
-        public WordSearch()
+        public WordSearch(Form parentForm)
         {
+            // 초기화된 객체에 매개변수에 담기는 MainForm 그 자체를 집어넣음
+            this.parentForm = parentForm;
+
             InitializeComponent();
 
             if (!string.IsNullOrEmpty(GlobalVariables.LoggedInUserId))
@@ -36,10 +39,8 @@ namespace project_nanibono.word
                 // 버튼을 보이게 함
                 button2.Visible = true;
             }
-
-
-
         }
+
 
         public Button getButton1()
         {
@@ -57,9 +58,6 @@ namespace project_nanibono.word
         }
         private void searchButton_Click(object sender, EventArgs e)
         {
-            ////OnSearchButtonClicked(EventArgs.Empty);
-            ///*formMain = new FormMain();
-            //formMain.ShowPanelAndControl2();*/
             // null이 들어올 수 있으니깐 null인지 아닌지 정확하게 형변환
             Dictionary<string, string> dictWord = db.selectWord(textBox1, comboBox1) as Dictionary<string, string>;
             if (dictWord != null)
@@ -83,17 +81,23 @@ namespace project_nanibono.word
 
         private void button2_Click(object sender, EventArgs e)
         {
-
-            FormMain formMain = new FormMain();
+            // FormLogin 객체 선언
             FormLogin formLogin = new FormLogin();
-           
 
-            formMain.Hide();
-            //this.Hide();
-            formLogin.Show();
-            //formLogin.ShowDialog();
+            parentForm.Hide();  // WordSearch를 품은 FormMain을 숨기고,
+            formLogin.Show();   // FormLogin 나와라.
 
-           
+            // FormMain이 있으면,
+            if (parentForm != null)
+            {
+                // formLogin을 닫을 때 마다
+                formLogin.FormClosed += (s, args) =>
+                {
+                    // MainForm을 띄운다.
+                    parentForm.Show();
+                };
+
+            }
 
         }
     }

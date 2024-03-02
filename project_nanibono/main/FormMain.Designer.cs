@@ -49,7 +49,7 @@ namespace project_nanibono
             homeButton = new Button();
             centerPanel = new Panel();
             rightPanel = new Panel();
-            wordSearch1 = new word.WordSearch();
+            wordSearch1 = new word.WordSearch(this);
             menuPanel.SuspendLayout();
             topPanel.SuspendLayout();
             centerPanel.SuspendLayout();

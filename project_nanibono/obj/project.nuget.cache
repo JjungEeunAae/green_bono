@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LX+gZ8rjXwwlXSPP4Obu+wVdtK91gVe3WgnKo0ZNe0HS+i4QZCDkbDJ4edw9WW3srbPh58Fb6go2c9RuyehFNA==",
+  "dgSpecHash": "L/o0sd9p0/TosVo/ylo+hgUjCdARVNdK+eMCjdB9QzarnFmRf0rXt1T6gWxZsvrd6SXhMDC/AtbowG8whqmzIg==",
   "success": true,
-  "projectFilePath": "D:\\students\\green_bono\\project_nanibono\\project_nanibono.csproj",
+  "projectFilePath": "D:\\green_bono\\project_nanibono\\project_nanibono.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\oracle.manageddataaccess.core\\3.21.130\\oracle.manageddataaccess.core.3.21.130.nupkg.sha512",
