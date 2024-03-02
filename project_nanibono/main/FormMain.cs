@@ -34,6 +34,20 @@ namespace project_nanibono
 
             searchButton = wordSearch1.getButton1();
             searchButton.Click += SearchButton_Click;
+
+
+            if (!string.IsNullOrEmpty(GlobalVariables.LoggedInUserId))
+            {
+                // 사용자가 로그인한 상태
+                // 버튼을 숨김
+               logoutButton.Visible = true;
+            }
+            else
+            {
+                // 사용자가 로그인하지 않은 상태
+                // 버튼을 보이게 함
+                logoutButton.Visible = false;
+            }
         }
 
         private void SearchButton_Click(object? sender, EventArgs e)
@@ -186,6 +200,12 @@ namespace project_nanibono
             wordSearch1.BringToFront();
         }
 
-       
+        private void logoutButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("로그아웃에 성공했습니다.");
+            GlobalVariables.LoggedInUserId = null;
+            Console.WriteLine(GlobalVariables.LoggedInUserId);
+            logoutButton.Visible = false;   
+        }
     }
 }
