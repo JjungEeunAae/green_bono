@@ -58,7 +58,8 @@ namespace project_nanibono
 
         private void pwTextBox_KeyDown(object sender, KeyEventArgs e)
         {
-            if(Keys.Enter == e.KeyCode){
+            if (Keys.Enter == e.KeyCode)
+            {
                 loginCheck();
             }
         }
@@ -101,16 +102,18 @@ namespace project_nanibono
                 MessageBox.Show("비밀번호가 올바르지 않습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            else if( inputMemberId == DBMemberId.id && inputMemberPw == DBMemberPw.pw)
+            else if (inputMemberId == DBMemberId.id && inputMemberPw == DBMemberPw.pw)
             {
                 // 로그인 정보 저장
                 GlobalVariables.LoggedInUserId = DBMemberId.id;
 
-                Hide();
                 FormMain formMain = new FormMain();
+                Hide();
                 formMain.ShowDialog();
                 Show();
             }
         }
+
+      
     }
 }

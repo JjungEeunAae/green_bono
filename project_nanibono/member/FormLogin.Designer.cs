@@ -144,6 +144,7 @@
             SignUpButton.TabIndex = 9;
             SignUpButton.Text = "SignUp";
             SignUpButton.UseVisualStyleBackColor = true;
+        
             // 
             // notifyIcon1
             // 

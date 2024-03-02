@@ -232,6 +232,7 @@ namespace project_nanibono
             topPanel.Name = "topPanel";
             topPanel.Size = new Size(799, 54);
             topPanel.TabIndex = 12;
+         
             // 
             // button2
             // 
@@ -287,6 +288,7 @@ namespace project_nanibono
             homeButton.Size = new Size(148, 54);
             homeButton.TabIndex = 1;
             homeButton.UseVisualStyleBackColor = false;
+            homeButton.Click += homeButton_Click;
             // 
             // centerPanel
             // 
@@ -312,7 +314,6 @@ namespace project_nanibono
             wordSearch1.Name = "wordSearch1";
             wordSearch1.Size = new Size(793, 396);
             wordSearch1.TabIndex = 0;
-            wordSearch1.Load += wordSearch1_Load_1;
             // 
             // FormMain
             // 
@@ -325,7 +326,6 @@ namespace project_nanibono
             Controls.Add(topPanel);
             Name = "FormMain";
             Text = "Form1";
-            Load += FormMain_Load;
             menuPanel.ResumeLayout(false);
             topPanel.ResumeLayout(false);
             centerPanel.ResumeLayout(false);

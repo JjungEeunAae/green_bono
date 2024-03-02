@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Update="main\FormAdminMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="main\FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="member\AdminMemberManagement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="member\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="member\FormSignUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="request\AdminRequestManagement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="request\FormAdminDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="request\FormAdminUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="request\FormEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="word\AdminWordManagement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="word\FormAdminWord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="word\WordSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="word\WordSearchResult.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

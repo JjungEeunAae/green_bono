@@ -52,36 +52,12 @@ namespace project_nanibono
             };
         }
 
-        public void ShowPanelAndControl2()
-        {
-            MessageBox.Show("여기오나");
-            //wordSearch.Visible = false;       // 사용자 정의 컨트롤1 보이기
-            //menuPanel.Visible = true;         // 패널 보이기
-            //wordSearchResult1.Visible = true; // 사용자 정의 컨트롤2 보이기
-        }
-
-        private void wordSearch1_SearchButtonClicked(object sender, EventArgs e)
-        {
-            //ShowPanelAndControl2(); // 검색 버튼을 클릭하면 패널과 사용자 정의 컨트롤2를 보여줌
-            Console.WriteLine("여기 뭐야");
-        }
-
-        private void searchTerm_Click(object sender, EventArgs e)
-        {
-            Console.WriteLine("zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz");
-        }
-
-        private void FormMain_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void button_ct1_Click(object sender, EventArgs e)
         {
             ct1select();
         }
 
-
+        // elfButton
         private void button2_Click(object sender, EventArgs e)
         {
             menuPanel.Visible = true;
@@ -104,73 +80,6 @@ namespace project_nanibono
             wordSearch1.SendToBack();
 
             ct2select();
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void wordSearch1_Load(object sender, EventArgs e)
-        {
-            Console.WriteLine("여기 나오나");
-        }
-
-        private void rightPanel_Paint(object sender, PaintEventArgs e)
-        {
-            Console.WriteLine("여111111111");
-        }
-
-        // 워드 서치 화면 나올때 실행되는 부분
-        private void wordSearch1_Load_1(object sender, EventArgs e)
-        {
-        }
-
-
-        private void ct1select()
-        {
-            selectCategory(manager.SelectELF());
-        }
-
-        private void ct2select()
-        {
-            selectCategory(manager.SelectSD());
-        }
-
-        private void button_ct2_Click(object sender, EventArgs e)
-        {
-            selectCategory(manager.SelectSD());
-        }
-
-        // 소프트웨어 설계 누름
-        private void elfButton1_Click(object sender, EventArgs e)
-        {
-            menuSwitchPanel.Location = new System.Drawing.Point(0, 46);
-            selectCategory(manager.Select("CT1_CG1"));
-        }
-
-        private void elfButton2_Click(object sender, EventArgs e)
-        {
-            menuSwitchPanel.Location = new System.Drawing.Point(0, 70);
-            selectCategory(manager.Select("CT1_CG2"));
-        }
-
-        private void elfButton3_Click(object sender, EventArgs e)
-        {
-            menuSwitchPanel.Location = new System.Drawing.Point(0, 93);
-            selectCategory(manager.Select("CT1_CG3"));
-        }
-
-        private void elfButton4_Click(object sender, EventArgs e)
-        {
-            menuSwitchPanel.Location = new System.Drawing.Point(0, 116);
-            selectCategory(manager.Select("CT1_CG4"));
-        }
-
-        private void elfButton5_Click(object sender, EventArgs e)
-        {
-            menuSwitchPanel.Location = new System.Drawing.Point(0, 139);
-            selectCategory(manager.Select("CT1_CG5"));
         }
 
 
@@ -210,15 +119,73 @@ namespace project_nanibono
             rightPanel.Controls.Add(dgv);
         }
 
+        private void ct1select()
+        {
+            selectCategory(manager.SelectELF());
+        }
+
+        private void ct2select()
+        {
+            selectCategory(manager.SelectSD());
+        }
+
+        private void button_ct2_Click(object sender, EventArgs e)
+        {
+            selectCategory(manager.SelectSD());
+        }
+
+
+        private void elfButton1_Click(object sender, EventArgs e)
+        {
+            menuSwitchPanel.Location = new System.Drawing.Point(0, 47);
+            selectCategory(manager.Select("CT1_CG1"));
+        }
+
+        private void elfButton2_Click(object sender, EventArgs e)
+        {
+            menuSwitchPanel.Location = new System.Drawing.Point(0, 75);
+            selectCategory(manager.Select("CT1_CG2"));
+        }
+
+        private void elfButton3_Click(object sender, EventArgs e)
+        {
+            menuSwitchPanel.Location = new System.Drawing.Point(0, 105);
+            selectCategory(manager.Select("CT1_CG3"));
+        }
+
+        private void elfButton4_Click(object sender, EventArgs e)
+        {
+            menuSwitchPanel.Location = new System.Drawing.Point(0, 132);
+            selectCategory(manager.Select("CT1_CG4"));
+        }
+
+        private void elfButton5_Click(object sender, EventArgs e)
+        {
+            menuSwitchPanel.Location = new System.Drawing.Point(0, 160);
+            selectCategory(manager.Select("CT1_CG5"));
+        }
         private void sdButton1_Click(object sender, EventArgs e)
         {
-
+            menuSwitchPanel.Location = new System.Drawing.Point(0, 200);
+            selectCategory(manager.Select("CT2_CG1"));
         }
 
         private void sdButton2_Click(object sender, EventArgs e)
         {
-
+            menuSwitchPanel.Location = new System.Drawing.Point(0, 230);
+            selectCategory(manager.Select("CT2_CG2"));
         }
 
+        private void homeButton_Click(object sender, EventArgs e)
+        {
+            menuPanel.Visible = false;
+            rightPanel.Visible = false;
+            /// menuPanel.BringToFront();
+            // rightPanel.BringToFront();
+            wordSearch1.Visible = true;
+            wordSearch1.BringToFront();
+        }
+
+       
     }
 }

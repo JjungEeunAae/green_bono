@@ -10,7 +10,7 @@ namespace project_nanibono.category
 {
     public class CategoryDBManager
     {
-        // 정처기 CT1 , SQLD CT2
+       
         public DataTable Select(string code)
         {
             OracleConnection oc = null;
@@ -111,6 +111,10 @@ namespace project_nanibono.category
                     oc.Close();
                 }
             }
+
+ 
+
+
         }
     }
 }
