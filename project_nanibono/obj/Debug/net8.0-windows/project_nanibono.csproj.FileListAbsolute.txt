@@ -172,7 +172,6 @@ D:\green_bono\project_nanibono\obj\Debug\net8.0-windows\project_nanibono.Assembl
 D:\green_bono\project_nanibono\obj\Debug\net8.0-windows\project_nanibono.AssemblyInfo.cs
 D:\green_bono\project_nanibono\obj\Debug\net8.0-windows\project_nanibono.csproj.CoreCompileInputs.cache
 D:\green_bono\project_nanibono\obj\Debug\net8.0-windows\project_nanibono.sourcelink.json
-D:\green_bono\project_nanibono\obj\Debug\net8.0-windows\project_nanibono.csproj.CopyComplete
 D:\green_bono\project_nanibono\obj\Debug\net8.0-windows\project_nanibono.dll
 D:\green_bono\project_nanibono\obj\Debug\net8.0-windows\refint\project_nanibono.dll
 D:\green_bono\project_nanibono\obj\Debug\net8.0-windows\project_nanibono.pdb
@@ -215,3 +214,4 @@ D:\students\green_bono\project_nanibono\obj\Debug\net8.0-windows\refint\project_
 D:\students\green_bono\project_nanibono\obj\Debug\net8.0-windows\project_nanibono.pdb
 D:\students\green_bono\project_nanibono\obj\Debug\net8.0-windows\project_nanibono.genruntimeconfig.cache
 D:\students\green_bono\project_nanibono\obj\Debug\net8.0-windows\ref\project_nanibono.dll
+D:\green_bono\project_nanibono\obj\Debug\net8.0-windows\project_.7CEAAFFB.Up2Date
