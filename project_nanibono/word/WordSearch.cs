@@ -17,10 +17,28 @@ namespace project_nanibono.word
         public event EventHandler SearchButtonClicked;
         //private FormMain formMain;
         mainDB db = new mainDB();
+       
+
 
         public WordSearch()
         {
             InitializeComponent();
+
+            if (!string.IsNullOrEmpty(GlobalVariables.LoggedInUserId))
+            {
+                // 사용자가 로그인한 상태
+                // 버튼을 숨김
+                button2.Visible = false;
+            }
+            else
+            {
+                // 사용자가 로그인하지 않은 상태
+                // 버튼을 보이게 함
+                button2.Visible = true;
+            }
+
+
+
         }
 
         public Button getButton1()
@@ -66,23 +84,16 @@ namespace project_nanibono.word
         private void button2_Click(object sender, EventArgs e)
         {
 
+            FormMain formMain = new FormMain();
             FormLogin formLogin = new FormLogin();
+           
+
+            formMain.Hide();
+            //this.Hide();
             formLogin.Show();
             //formLogin.ShowDialog();
-          
 
-            if (!string.IsNullOrEmpty(GlobalVariables.LoggedInUserId))
-            {
-                // 사용자가 로그인한 상태
-                // 버튼을 숨김
-                button2.Visible = false;
-            }
-            else
-            {
-                // 사용자가 로그인하지 않은 상태
-                // 버튼을 보이게 함
-                button2.Visible = true;
-            }
+           
 
         }
     }
