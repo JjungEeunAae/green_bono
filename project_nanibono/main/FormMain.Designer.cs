@@ -49,6 +49,7 @@ namespace project_nanibono
             homeButton = new Button();
             centerPanel = new Panel();
             rightPanel = new Panel();
+            wordSearch1 = new word.WordSearch(this);
             menuPanel.SuspendLayout();
             topPanel.SuspendLayout();
             centerPanel.SuspendLayout();
@@ -80,7 +81,6 @@ namespace project_nanibono
             menuSwitchPanel.Name = "menuSwitchPanel";
             menuSwitchPanel.Size = new Size(10, 23);
             menuSwitchPanel.TabIndex = 11;
-            menuSwitchPanel.Paint += menuSwitchPanel_Paint;
             // 
             // button_ct2
             // 
@@ -293,6 +293,7 @@ namespace project_nanibono
             // centerPanel
             // 
             centerPanel.Controls.Add(rightPanel);
+            centerPanel.Controls.Add(wordSearch1);
             centerPanel.Location = new Point(0, 54);
             centerPanel.Name = "centerPanel";
             centerPanel.Size = new Size(799, 396);
@@ -304,6 +305,15 @@ namespace project_nanibono
             rightPanel.Name = "rightPanel";
             rightPanel.Size = new Size(632, 390);
             rightPanel.TabIndex = 15;
+            // 
+            // wordSearch1
+            // 
+            wordSearch1.BackColor = SystemColors.ControlLightLight;
+            wordSearch1.ForeColor = SystemColors.ControlText;
+            wordSearch1.Location = new Point(3, 0);
+            wordSearch1.Name = "wordSearch1";
+            wordSearch1.Size = new Size(793, 396);
+            wordSearch1.TabIndex = 0;
             // 
             // FormMain
             // 

@@ -40,7 +40,7 @@ namespace project_nanibono.main
                 }
                 OracleConnection conn = new OracleConnection(strConnection);
                 conn.Open();
-                OracleCommand cmd = new OracleCommand($"SELECT * FROM word WHERE word LIKE '%{word}%' AND delete_yn = 'n'", conn);
+                OracleCommand cmd = new OracleCommand($"SELECT * FROM word WHERE word LIKE '%{word}%' AND delete_yn = 'N'", conn);
                 OracleDataReader reader = cmd.ExecuteReader();
                 int cnt = 0;
                 Dictionary<string, string> dWord = new Dictionary<string, string>();
@@ -74,7 +74,7 @@ namespace project_nanibono.main
                 }
                 OracleConnection conn = new OracleConnection(strConnection);
                 conn.Open();
-                OracleCommand cmd = new OracleCommand($"SELECT * FROM word WHERE word_mean LIKE '%{wordMean}%' AND delete_yn = 'n'", conn);
+                OracleCommand cmd = new OracleCommand($"SELECT * FROM word WHERE word_mean LIKE '%{wordMean}%' AND delete_yn = 'N'", conn);
                 OracleDataReader reader = cmd.ExecuteReader();
                 int cnt = 0;
                 Dictionary<string, string> dWordMean = new Dictionary<string, string>();

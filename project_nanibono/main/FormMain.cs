@@ -9,6 +9,7 @@ namespace project_nanibono
 {
     public partial class FormMain : Form
     {
+        //private WordSearch wordSearch = new WordSearch();
         public Button searchButton = null;
 
         mainDB db = new mainDB();
@@ -17,7 +18,15 @@ namespace project_nanibono
         public FormMain()
         {
             InitializeComponent();
-            menuPanel.Visible = false;
+
+            //wordSearchResult1.Visible = false;  // 단어검색결과 사용자 정의 컨트롤 숨기기
+
+            menuPanel.Visible = false;          // 메뉴패널 숨기기
+            //panel1.BringToFront();
+
+            //topPanel.Visible = true;
+            //topPanel.BringToFront();
+
             centerPanel.Visible = true;
             centerPanel.BringToFront();
             wordSearch1.Visible = true;
@@ -29,16 +38,21 @@ namespace project_nanibono
 
             if (!string.IsNullOrEmpty(GlobalVariables.LoggedInUserId))
             {
-                logoutButton.Visible = true;
+                // 사용자가 로그인한 상태
+                // 버튼을 숨김
+               logoutButton.Visible = true;
             }
             else
             {
+                // 사용자가 로그인하지 않은 상태
+                // 버튼을 보이게 함
                 logoutButton.Visible = false;
             }
         }
 
         private void SearchButton_Click(object? sender, EventArgs e)
         {
+
             Dictionary<string, string> dictWord = db.selectWord(wordSearch1.getTextBox(), wordSearch1.getComboBox()) as Dictionary<string, string>;
             if (dictWord != null)
             {
@@ -51,10 +65,13 @@ namespace project_nanibono
                 sw.BringToFront();
             };
         }
+
         private void button_ct1_Click(object sender, EventArgs e)
         {
             ct1select();
         }
+
+        // elfButton
         private void button2_Click(object sender, EventArgs e)
         {
             menuPanel.Visible = true;
@@ -78,6 +95,8 @@ namespace project_nanibono
 
             ct2select();
         }
+
+
         public void selectCategory(DataTable dataTable)
         {
             rightPanel.Controls.Clear();
@@ -88,6 +107,7 @@ namespace project_nanibono
             dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgv.ReadOnly = true;
             dgv.AllowUserToAddRows = false;
+
 
             DataTable dt = dataTable;
 
@@ -109,6 +129,7 @@ namespace project_nanibono
                 dgv.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 dgv.Columns[2].Width = 30;
             }
+
             rightPanel.Controls.Add(dgv);
         }
 
@@ -126,26 +147,32 @@ namespace project_nanibono
         {
             selectCategory(manager.SelectSD());
         }
+
+
         private void elfButton1_Click(object sender, EventArgs e)
         {
             menuSwitchPanel.Location = new System.Drawing.Point(0, 47);
             selectCategory(manager.Select("CT1_CG1"));
         }
+
         private void elfButton2_Click(object sender, EventArgs e)
         {
             menuSwitchPanel.Location = new System.Drawing.Point(0, 75);
             selectCategory(manager.Select("CT1_CG2"));
         }
+
         private void elfButton3_Click(object sender, EventArgs e)
         {
             menuSwitchPanel.Location = new System.Drawing.Point(0, 105);
             selectCategory(manager.Select("CT1_CG3"));
         }
+
         private void elfButton4_Click(object sender, EventArgs e)
         {
             menuSwitchPanel.Location = new System.Drawing.Point(0, 132);
             selectCategory(manager.Select("CT1_CG4"));
         }
+
         private void elfButton5_Click(object sender, EventArgs e)
         {
             menuSwitchPanel.Location = new System.Drawing.Point(0, 160);
@@ -162,24 +189,23 @@ namespace project_nanibono
             menuSwitchPanel.Location = new System.Drawing.Point(0, 230);
             selectCategory(manager.Select("CT2_CG2"));
         }
+
         private void homeButton_Click(object sender, EventArgs e)
         {
             menuPanel.Visible = false;
             rightPanel.Visible = false;
+            /// menuPanel.BringToFront();
+            // rightPanel.BringToFront();
             wordSearch1.Visible = true;
             wordSearch1.BringToFront();
         }
+
         private void logoutButton_Click(object sender, EventArgs e)
         {
             MessageBox.Show("로그아웃에 성공했습니다.");
             GlobalVariables.LoggedInUserId = null;
             Console.WriteLine(GlobalVariables.LoggedInUserId);
-            logoutButton.Visible = false;
-        }
-
-        private void menuSwitchPanel_Paint(object sender, PaintEventArgs e)
-        {
-
+            logoutButton.Visible = false;   
         }
     }
 }
