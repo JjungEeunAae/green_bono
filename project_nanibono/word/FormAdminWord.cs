@@ -161,13 +161,13 @@ namespace project_nanibono.word
             if (a.Equals("CT1"))
             {
                 b = "insert into word(word_no, word, word_mean, insert_date, delete_yn, category) " +
-                        "values('ELF' || (ELF.nextval), :word, :word_mean, sysdate, 'N', :category)";
+                        "values('ELF' || (ELF.nextval), :word, :word_mean, CURRENT_TIMESTAMP, 'N', :category)";
 
             }
             else if (a.Equals("CT2"))
             {
                 b = "insert into word(word_no, word, word_mean, insert_date, delete_yn, category) " +
-                        "values('SD' || (SD.nextval), :word, :word_mean, sysdate, 'N', :category)";
+                        "values('SD' || (SD.nextval), :word, :word_mean, CURRENT_TIMESTAMP, 'N', :category)";
             }
             return b;
         }
