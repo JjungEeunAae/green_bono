@@ -65,6 +65,7 @@
             // 
             userPassword.Location = new Point(274, 221);
             userPassword.Name = "userPassword";
+            userPassword.PasswordChar = '*';
             userPassword.Size = new Size(265, 23);
             userPassword.TabIndex = 5;
             // 

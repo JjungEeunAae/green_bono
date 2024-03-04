@@ -50,8 +50,9 @@ namespace project_nanibono
 
         private void homeButton_Click(object sender, EventArgs e)
         {
-
-            // 홈 컨트롤
+            FormMain formMain = new FormMain();
+            formMain.Show();
+            this.Hide();
         }
 
         private void pwTextBox_KeyDown(object sender, KeyEventArgs e)
