@@ -175,18 +175,18 @@ namespace project_nanibono
 
         private void elfButton5_Click(object sender, EventArgs e)
         {
-            menuSwitchPanel.Location = new System.Drawing.Point(0, 160);
+            menuSwitchPanel.Location = new System.Drawing.Point(0, 162);
             selectCategory(manager.Select("CT1_CG5"));
         }
         private void sdButton1_Click(object sender, EventArgs e)
         {
-            menuSwitchPanel.Location = new System.Drawing.Point(0, 200);
+            menuSwitchPanel.Location = new System.Drawing.Point(0, 231);
             selectCategory(manager.Select("CT2_CG1"));
         }
 
         private void sdButton2_Click(object sender, EventArgs e)
         {
-            menuSwitchPanel.Location = new System.Drawing.Point(0, 230);
+            menuSwitchPanel.Location = new System.Drawing.Point(0, 259);
             selectCategory(manager.Select("CT2_CG2"));
         }
 
