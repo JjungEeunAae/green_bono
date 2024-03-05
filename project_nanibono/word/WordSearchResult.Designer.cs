@@ -51,8 +51,6 @@
             Name = "WordSearchResult";
             Size = new Size(651, 396);
 
-            Load += WordSearchResult_Load;
-
           //  panel1.ResumeLayout(false);
           //  panel1.PerformLayout();
            // panel2.ResumeLayout(false);

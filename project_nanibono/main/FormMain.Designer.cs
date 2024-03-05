@@ -43,13 +43,12 @@ namespace project_nanibono
             elfButton2 = new Button();
             elfButton1 = new Button();
             topPanel = new Panel();
-            button2 = new Button();
+            elfButton = new Button();
             notifButton = new Button();
             sdButton = new Button();
             homeButton = new Button();
             centerPanel = new Panel();
             rightPanel = new Panel();
-            wordSearch1 = new word.WordSearch(this);
             menuPanel.SuspendLayout();
             topPanel.SuspendLayout();
             centerPanel.SuspendLayout();
@@ -224,7 +223,7 @@ namespace project_nanibono
             // topPanel
             // 
             topPanel.BackColor = Color.FromArgb(135, 196, 255);
-            topPanel.Controls.Add(button2);
+            topPanel.Controls.Add(elfButton);
             topPanel.Controls.Add(notifButton);
             topPanel.Controls.Add(sdButton);
             topPanel.Controls.Add(homeButton);
@@ -234,20 +233,20 @@ namespace project_nanibono
             topPanel.Size = new Size(799, 54);
             topPanel.TabIndex = 12;
             // 
-            // button2
+            // elfButton
             // 
-            button2.BackColor = Color.Transparent;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("휴먼둥근헤드라인", 12F);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(149, 0);
-            button2.Name = "button2";
-            button2.Size = new Size(139, 52);
-            button2.TabIndex = 5;
-            button2.Text = "정보처리기사";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
+            elfButton.BackColor = Color.Transparent;
+            elfButton.FlatAppearance.BorderSize = 0;
+            elfButton.FlatStyle = FlatStyle.Flat;
+            elfButton.Font = new Font("휴먼둥근헤드라인", 12F);
+            elfButton.ForeColor = Color.White;
+            elfButton.Location = new Point(149, 0);
+            elfButton.Name = "elfButton";
+            elfButton.Size = new Size(139, 52);
+            elfButton.TabIndex = 5;
+            elfButton.Text = "정보처리기사";
+            elfButton.UseVisualStyleBackColor = false;
+            elfButton.Click += button2_Click;
             // 
             // notifButton
             // 
@@ -293,7 +292,6 @@ namespace project_nanibono
             // centerPanel
             // 
             centerPanel.Controls.Add(rightPanel);
-            centerPanel.Controls.Add(wordSearch1);
             centerPanel.Location = new Point(0, 54);
             centerPanel.Name = "centerPanel";
             centerPanel.Size = new Size(799, 396);
@@ -305,15 +303,6 @@ namespace project_nanibono
             rightPanel.Name = "rightPanel";
             rightPanel.Size = new Size(632, 390);
             rightPanel.TabIndex = 15;
-            // 
-            // wordSearch1
-            // 
-            wordSearch1.BackColor = SystemColors.ControlLightLight;
-            wordSearch1.ForeColor = SystemColors.ControlText;
-            wordSearch1.Location = new Point(3, 0);
-            wordSearch1.Name = "wordSearch1";
-            wordSearch1.Size = new Size(793, 396);
-            wordSearch1.TabIndex = 0;
             // 
             // FormMain
             // 
@@ -346,7 +335,7 @@ namespace project_nanibono
         private Button elfButton2;
         private Button elfButton1;
         private Panel topPanel;
-        private Button button2;
+        private Button elfButton;
         private Button notifButton;
         private Button sdButton;
         private Button homeButton;

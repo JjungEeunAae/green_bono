@@ -151,7 +151,7 @@ namespace project_nanibono.word
             {
                 MessageBox.Show("오류 : " + ex.Message.ToString());
             }
-            return result; 
+            return result;
         }
         private string sql() // 시퀀스 사용해서 insert 쿼리 넣는다.
         {
@@ -219,6 +219,11 @@ namespace project_nanibono.word
                 return false;
             }
             return true;
+        }
+
+        private void FormAdminWord_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

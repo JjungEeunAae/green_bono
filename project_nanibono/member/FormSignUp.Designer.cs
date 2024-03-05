@@ -102,6 +102,7 @@
             label4.Size = new Size(165, 39);
             label4.TabIndex = 13;
             label4.Text = "회원가입";
+           
             // 
             // label5
             // 

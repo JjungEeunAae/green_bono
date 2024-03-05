@@ -127,6 +127,7 @@
             textBox_requestContent.Name = "textBox_requestContent";
             textBox_requestContent.Size = new Size(325, 84);
             textBox_requestContent.TabIndex = 25;
+          
             // 
             // comboBox_proccessDivision
             // 
@@ -135,7 +136,7 @@
             comboBox_proccessDivision.Name = "comboBox_proccessDivision";
             comboBox_proccessDivision.Size = new Size(325, 23);
             comboBox_proccessDivision.TabIndex = 27;
-            comboBox_proccessDivision.SelectedIndexChanged += comboBox_proccessDivision_SelectedIndexChanged;
+           
             // 
             // panel1
             // 

@@ -215,3 +215,4 @@ D:\students\green_bono\project_nanibono\obj\Debug\net8.0-windows\project_nanibon
 D:\students\green_bono\project_nanibono\obj\Debug\net8.0-windows\project_nanibono.genruntimeconfig.cache
 D:\students\green_bono\project_nanibono\obj\Debug\net8.0-windows\ref\project_nanibono.dll
 D:\green_bono\project_nanibono\obj\Debug\net8.0-windows\project_.7CEAAFFB.Up2Date
+D:\students\green_bono\project_nanibono\obj\Debug\net8.0-windows\project_nanibono.category.FormWordDetail.resources

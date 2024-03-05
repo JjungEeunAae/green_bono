@@ -210,6 +210,7 @@
             Name = "FormAdminWord";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormAdminWord";
+            Load += FormAdminWord_Load;
             ResumeLayout(false);
             PerformLayout();
         }

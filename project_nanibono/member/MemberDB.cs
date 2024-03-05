@@ -3,8 +3,7 @@
 namespace project_nanibono.member
 {
     public class MemberDB
-    {
-        // 공통 > 로그인 ( 응쟁 )
+    { 
         string strconn = "Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.110)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=xe)));User Id=bono;Password=bono;";
 
         public Member SelectMember(string id, string pw)
@@ -53,7 +52,7 @@ namespace project_nanibono.member
                 {
                     return null;
                 }
-            }finally { oc.Close(); }
+            } finally { oc.Close(); }
         }
 
         public Member SelectPw(string pw)
@@ -77,12 +76,5 @@ namespace project_nanibono.member
             }
             oc.Close();
         }
-
-        // 공통 > 회원가입 ( 강녕 )
-
-
-        // 어드민 > 회원관리 ( 응앵 )
-
-
     }
 }
