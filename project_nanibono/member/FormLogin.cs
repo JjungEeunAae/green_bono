@@ -15,39 +15,11 @@ namespace project_nanibono
         public FormLogin()
         {
             InitializeComponent();
-
-
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void loginButton_Click(object sender, EventArgs e)
         {
-            loginCheck();
-           
+            loginCheck();  
         }
-
-        private void FormLogin_Load(object sender, EventArgs e)
-        {
-        }
-
-        private void SignUpButton_Click(object sender, EventArgs e)
-        {
-         
-        }
-        private void pwTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void idTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void homeButton_Click(object sender, EventArgs e)
         {
             FormMain formMain = new FormMain();
@@ -89,7 +61,7 @@ namespace project_nanibono
                 MessageBox.Show("존재하지 않는 회원입니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            if (DBMemberId.role == "admin")
+            else if (DBMemberId.role == "admin")
             {
                 GlobalVariables.LoggedInUserId = DBMemberId.id;
                 main.FormAdminMain formAdminMain = new main.FormAdminMain();
@@ -103,7 +75,6 @@ namespace project_nanibono
             }
             else if (inputMemberId == DBMemberId.id && inputMemberPw == DBMemberPw.pw)
             {
-                // 로그인 정보 저장
                 GlobalVariables.LoggedInUserId = DBMemberId.id;
 
                 MessageBox.Show("로그인에 성공했습니다.");
@@ -116,7 +87,6 @@ namespace project_nanibono
 
         private void SignUpButton_Click_1(object sender, EventArgs e)
         {
-            // 회원가입 페이지로 이동
             FormSignUp formSignUp = new FormSignUp();
             formSignUp.Show();
             this.Hide();

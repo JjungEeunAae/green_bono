@@ -18,41 +18,27 @@ namespace project_nanibono
         public FormMain()
         {
             InitializeComponent();
-
-            //wordSearchResult1.Visible = false;  // 단어검색결과 사용자 정의 컨트롤 숨기기
-
-            menuPanel.Visible = false;          // 메뉴패널 숨기기
-            //panel1.BringToFront();
-
-            //topPanel.Visible = true;
-            //topPanel.BringToFront();
-
-            centerPanel.Visible = true;
+            menuPanel.Visible = false;
             centerPanel.BringToFront();
+           
             wordSearch1.Visible = true;
             wordSearch1.BringToFront();
 
             searchButton = wordSearch1.getButton1();
             searchButton.Click += SearchButton_Click;
 
-
             if (!string.IsNullOrEmpty(GlobalVariables.LoggedInUserId))
             {
-                // 사용자가 로그인한 상태
-                // 버튼을 숨김
-               logoutButton.Visible = true;
+                logoutButton.Visible = true;
             }
             else
             {
-                // 사용자가 로그인하지 않은 상태
-                // 버튼을 보이게 함
                 logoutButton.Visible = false;
             }
         }
 
         private void SearchButton_Click(object? sender, EventArgs e)
         {
-
             Dictionary<string, string> dictWord = db.selectWord(wordSearch1.getTextBox(), wordSearch1.getComboBox()) as Dictionary<string, string>;
             if (dictWord != null)
             {
@@ -70,8 +56,6 @@ namespace project_nanibono
         {
             ct1select();
         }
-
-        // elfButton
         private void button2_Click(object sender, EventArgs e)
         {
             menuPanel.Visible = true;
@@ -83,7 +67,6 @@ namespace project_nanibono
 
             ct1select();
         }
-
         private void sdButton_Click(object sender, EventArgs e)
         {
             menuPanel.Visible = true;
@@ -95,8 +78,6 @@ namespace project_nanibono
 
             ct2select();
         }
-
-
         public void selectCategory(DataTable dataTable)
         {
             rightPanel.Controls.Clear();
@@ -107,7 +88,6 @@ namespace project_nanibono
             dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgv.ReadOnly = true;
             dgv.AllowUserToAddRows = false;
-
 
             DataTable dt = dataTable;
 
@@ -128,51 +108,54 @@ namespace project_nanibono
                 dgv.Columns[0].Width = 30;
                 dgv.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 dgv.Columns[2].Width = 30;
-            }
 
+                dgv.CellClick += (sender, e) =>
+                {
+                    if (e.RowIndex >= 0)
+                    {
+                        DataGridViewRow selectedRow = dgv.Rows[e.RowIndex];
+                        string word = selectedRow.Cells["word"].Value.ToString();
+                        string wordMean = selectedRow.Cells["word_mean"].Value.ToString();
+
+                        FormWordDetail formWordDetail = new FormWordDetail(word, wordMean);
+                        formWordDetail.Show();
+                    }
+                };
+            }
             rightPanel.Controls.Add(dgv);
         }
-
         private void ct1select()
         {
             selectCategory(manager.SelectELF());
         }
-
         private void ct2select()
         {
             selectCategory(manager.SelectSD());
         }
-
         private void button_ct2_Click(object sender, EventArgs e)
         {
             selectCategory(manager.SelectSD());
         }
-
-
         private void elfButton1_Click(object sender, EventArgs e)
         {
             menuSwitchPanel.Location = new System.Drawing.Point(0, 47);
             selectCategory(manager.Select("CT1_CG1"));
         }
-
         private void elfButton2_Click(object sender, EventArgs e)
         {
             menuSwitchPanel.Location = new System.Drawing.Point(0, 75);
             selectCategory(manager.Select("CT1_CG2"));
         }
-
         private void elfButton3_Click(object sender, EventArgs e)
         {
             menuSwitchPanel.Location = new System.Drawing.Point(0, 105);
             selectCategory(manager.Select("CT1_CG3"));
         }
-
         private void elfButton4_Click(object sender, EventArgs e)
         {
             menuSwitchPanel.Location = new System.Drawing.Point(0, 132);
             selectCategory(manager.Select("CT1_CG4"));
         }
-
         private void elfButton5_Click(object sender, EventArgs e)
         {
             menuSwitchPanel.Location = new System.Drawing.Point(0, 162);
@@ -183,29 +166,24 @@ namespace project_nanibono
             menuSwitchPanel.Location = new System.Drawing.Point(0, 231);
             selectCategory(manager.Select("CT2_CG1"));
         }
-
         private void sdButton2_Click(object sender, EventArgs e)
         {
             menuSwitchPanel.Location = new System.Drawing.Point(0, 259);
             selectCategory(manager.Select("CT2_CG2"));
         }
-
         private void homeButton_Click(object sender, EventArgs e)
         {
             menuPanel.Visible = false;
             rightPanel.Visible = false;
-            /// menuPanel.BringToFront();
-            // rightPanel.BringToFront();
             wordSearch1.Visible = true;
             wordSearch1.BringToFront();
         }
-
         private void logoutButton_Click(object sender, EventArgs e)
         {
             MessageBox.Show("로그아웃에 성공했습니다.");
             GlobalVariables.LoggedInUserId = null;
             Console.WriteLine(GlobalVariables.LoggedInUserId);
-            logoutButton.Visible = false;   
+            logoutButton.Visible = false;
         }
     }
 }

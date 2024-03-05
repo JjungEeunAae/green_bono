@@ -85,10 +85,5 @@ namespace project_nanibono.word
             FormEdit rq = new FormEdit(rqvo.word);
             rq.Show();
         }
-
-        private void WordSearchResult_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

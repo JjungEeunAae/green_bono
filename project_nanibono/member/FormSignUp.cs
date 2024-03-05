@@ -35,7 +35,7 @@ namespace project_nanibono
         }
 
         private void button1_Click(object sender, EventArgs e) // 회원가입 시 아이디 중복체크
-        {            
+        {
             idCheckResult = checkId() ? 1 : 0; // 1 이면 중복 아니라서 아이디 사용가능, 0 이면 중복 
         }
         private bool checkId() // 아이디 중복체크하는 메서드
@@ -151,7 +151,7 @@ namespace project_nanibono
                         }
 
                     }
-                }             
+                }
             }
             catch (OracleException ex)  // id 가 유니크 타입이라서 같은 값 넣을때 오류가 떠서 아이디 중복 확인하는 메세지로 변경
             {
@@ -170,5 +170,6 @@ namespace project_nanibono
                 MessageBox.Show("Test" + ex.Message);
             }
         }
+
     }
 }
