@@ -314,6 +314,7 @@ namespace project_nanibono
             Controls.Add(centerPanel);
             Controls.Add(topPanel);
             Name = "FormMain";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             menuPanel.ResumeLayout(false);
             topPanel.ResumeLayout(false);

@@ -417,6 +417,7 @@
             Controls.Add(label_wordCode);
             Controls.Add(label9);
             Name = "FormAdminUpdate";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FormAdminUpdate";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

@@ -28,12 +28,6 @@ namespace project_nanibono
         {
             //pictureBox1.Image = Properties.Resources.bonoImg;
         }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e) // 회원가입 시 아이디 중복체크
         {
             idCheckResult = checkId() ? 1 : 0; // 1 이면 중복 아니라서 아이디 사용가능, 0 이면 중복 
@@ -104,7 +98,6 @@ namespace project_nanibono
             }
             return true;
         }
-
         private void loginButton_Click(object sender, EventArgs e) // 회원가입 버튼 누르는 메서드(빈값 확인후 로그인 구현)
         {
             if (signUpCheck())
@@ -149,7 +142,6 @@ namespace project_nanibono
                             formLogin.Show();
                             this.Hide();   // 회원가입 성공이면 원래 폼 숨기기
                         }
-
                     }
                 }
             }

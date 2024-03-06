@@ -127,7 +127,6 @@
             textBox_requestContent.Name = "textBox_requestContent";
             textBox_requestContent.Size = new Size(325, 84);
             textBox_requestContent.TabIndex = 25;
-          
             // 
             // comboBox_proccessDivision
             // 
@@ -136,7 +135,6 @@
             comboBox_proccessDivision.Name = "comboBox_proccessDivision";
             comboBox_proccessDivision.Size = new Size(325, 23);
             comboBox_proccessDivision.TabIndex = 27;
-           
             // 
             // panel1
             // 
@@ -276,6 +274,7 @@
             Controls.Add(label_id);
             Controls.Add(label9);
             Name = "FormEdit";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FormEdit";
             ResumeLayout(false);
             PerformLayout();

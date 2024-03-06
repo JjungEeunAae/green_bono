@@ -96,7 +96,6 @@
             idTextBox.Name = "idTextBox";
             idTextBox.Size = new Size(201, 23);
             idTextBox.TabIndex = 5;
-           
             // 
             // pwTextBox
             // 
@@ -209,8 +208,8 @@
             Controls.Add(iconBox);
             Controls.Add(nanibonoBox);
             Name = "FormLogin";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form3";
-          
             ((System.ComponentModel.ISupportInitialize)nanibonoBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconBox).EndInit();
             ResumeLayout(false);
