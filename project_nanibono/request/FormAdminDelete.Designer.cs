@@ -396,8 +396,8 @@
             Controls.Add(label_wordCode);
             Controls.Add(label9);
             Name = "FormAdminDelete";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FormAdminDelete";
-//           Load += FormAdminDelete_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);

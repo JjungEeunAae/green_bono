@@ -107,7 +107,6 @@
             label8.Name = "label8";
             label8.Size = new Size(400, 2);
             label8.TabIndex = 171;
-         
             // 
             // closeBtn
             // 
@@ -138,6 +137,7 @@
             Controls.Add(wordLabel);
             Controls.Add(titleLabel);
             Name = "FormWordDetail";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FormWordDetail";
             Load += FormWordDetail_Load;
             wordPanel.ResumeLayout(false);

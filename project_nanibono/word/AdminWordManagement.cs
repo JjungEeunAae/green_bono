@@ -26,8 +26,8 @@ namespace project_nanibono.word
         private void button_wordInsert_Click(object sender, EventArgs e) // 단어등록 버튼
         {
             MessageBox.Show("단어 등록 페이지로 이동합니다.");
-            if(parentForm != null)
-            {               
+            if (parentForm != null)
+            {
                 FormAdminWord formAdminWord = new FormAdminWord(parentForm);
                 parentForm.Hide();
                 formAdminWord.Show();

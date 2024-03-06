@@ -61,7 +61,7 @@ namespace project_nanibono
                 MessageBox.Show("존재하지 않는 회원입니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            else if (DBMemberId.role == "admin")
+            else if (DBMemberId.role == "ADMIN")
             {
                 GlobalVariables.LoggedInUserId = DBMemberId.id;
                 main.FormAdminMain formAdminMain = new main.FormAdminMain();

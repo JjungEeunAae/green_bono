@@ -21,11 +21,11 @@ namespace project_nanibono
             menuPanel.Visible = false;
             centerPanel.BringToFront();
            
-            wordSearch1.Visible = true;
-            wordSearch1.BringToFront();
+            //wordSearch1.Visible = true;
+            //wordSearch1.BringToFront();
 
-            searchButton = wordSearch1.getButton1();
-            searchButton.Click += SearchButton_Click;
+            //searchButton = wordSearch1.getButton1();
+            //searchButton.Click += SearchButton_Click;
 
             if (!string.IsNullOrEmpty(GlobalVariables.LoggedInUserId))
             {
@@ -62,8 +62,8 @@ namespace project_nanibono
             rightPanel.Visible = true;
             menuPanel.BringToFront();
             rightPanel.BringToFront();
-            wordSearch1.Visible = false;
-            wordSearch1.SendToBack();
+            //wordSearch1.Visible = false;
+            //wordSearch1.SendToBack();
 
             ct1select();
         }
@@ -73,8 +73,8 @@ namespace project_nanibono
             rightPanel.Visible = true;
             menuPanel.BringToFront();
             rightPanel.BringToFront();
-            wordSearch1.Visible = false;
-            wordSearch1.SendToBack();
+            //wordSearch1.Visible = false;
+            //wordSearch1.SendToBack();
 
             ct2select();
         }
@@ -175,8 +175,8 @@ namespace project_nanibono
         {
             menuPanel.Visible = false;
             rightPanel.Visible = false;
-            wordSearch1.Visible = true;
-            wordSearch1.BringToFront();
+            //wordSearch1.Visible = true;
+            //wordSearch1.BringToFront();
         }
         private void logoutButton_Click(object sender, EventArgs e)
         {
