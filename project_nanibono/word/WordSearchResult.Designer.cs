@@ -46,19 +46,11 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
             BackColor = SystemColors.ControlLightLight;
             Controls.Add(label1);
             Name = "WordSearchResult";
-            Size = new Size(651, 396);
-
-          //  panel1.ResumeLayout(false);
-          //  panel1.PerformLayout();
-           // panel2.ResumeLayout(false);
-           // panel2.PerformLayout();
-           // panel3.ResumeLayout(false);
-            //panel3.PerformLayout();
-
-
+            Size = new Size(632, 390);
             ResumeLayout(false);
             PerformLayout();
         }

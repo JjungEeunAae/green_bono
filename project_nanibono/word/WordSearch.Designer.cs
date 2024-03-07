@@ -68,7 +68,7 @@
             button1.TabIndex = 2;
             button1.Text = "Search";
             button1.UseVisualStyleBackColor = false;
-            button1.Click += searchButton_Click;
+            //button1.Click += searchButton_Click;
             // 
             // label1
             // 

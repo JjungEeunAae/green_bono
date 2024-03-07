@@ -299,9 +299,9 @@ namespace project_nanibono
             // 
             // rightPanel
             // 
-            rightPanel.Location = new Point(164, 4);
+            rightPanel.Location = new Point(154, 0);
             rightPanel.Name = "rightPanel";
-            rightPanel.Size = new Size(632, 390);
+            rightPanel.Size = new Size(645, 396);
             rightPanel.TabIndex = 15;
             // 
             // FormMain
@@ -310,8 +310,8 @@ namespace project_nanibono
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(799, 450);
-            Controls.Add(menuPanel);
             Controls.Add(centerPanel);
+            Controls.Add(menuPanel);
             Controls.Add(topPanel);
             Name = "FormMain";
             StartPosition = FormStartPosition.CenterScreen;
@@ -342,7 +342,6 @@ namespace project_nanibono
         private Button homeButton;
         private word.WordSearchResult wordSearchResult1;
         private Panel centerPanel;
-        private word.WordSearch wordSearch1;
         private Panel rightPanel;
     }
 }
