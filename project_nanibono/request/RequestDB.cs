@@ -13,11 +13,13 @@ namespace project_nanibono.request
 
         public void select(Label label9, Label label10, Label label11, Label label12, ComboBox comboBox1, ComboBox comboBox2, String word)
         {
+            string id = GlobalVariables.LoggedInUserId;
             OracleConnection conn = new OracleConnection(DBINFO.getConnection());
             conn.Open();
             Console.WriteLine(word);
             // 아이디 자동조회
-            OracleCommand cmd = new OracleCommand($"SELECT ID FROM member WHERE ID = 'test'", conn);
+            OracleCommand cmd = new OracleCommand($"SELECT ID FROM member WHERE ID = :id", conn);
+            cmd.Parameters.Add(":id", OracleDbType.Varchar2).Value = id;
             OracleDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {

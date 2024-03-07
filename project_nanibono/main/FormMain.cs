@@ -9,8 +9,8 @@ namespace project_nanibono
 {
     public partial class FormMain : Form
     {
-        //private WordSearch wordSearch = new WordSearch();
         public Button searchButton = null;
+        private WordSearch wordSearch1 = null;
 
         mainDB db = new mainDB();
         CategoryDBManager manager = new CategoryDBManager();
@@ -18,14 +18,21 @@ namespace project_nanibono
         public FormMain()
         {
             InitializeComponent();
-            menuPanel.Visible = false;
-            centerPanel.BringToFront();
-           
-            //wordSearch1.Visible = true;
-            //wordSearch1.BringToFront();
 
-            //searchButton = wordSearch1.getButton1();
-            //searchButton.Click += SearchButton_Click;
+            wordSearch1 = new WordSearch(this);
+
+            menuPanel.Visible = false;
+
+            centerPanel.Visible = true;
+            centerPanel.BringToFront();
+
+            centerPanel.Controls.Add(wordSearch1);
+
+            wordSearch1.Visible = true;
+            wordSearch1.BringToFront();
+
+            searchButton = wordSearch1.getButton1();
+            searchButton.Click += SearchButton_Click;
 
             if (!string.IsNullOrEmpty(GlobalVariables.LoggedInUserId))
             {
@@ -40,13 +47,26 @@ namespace project_nanibono
         private void SearchButton_Click(object? sender, EventArgs e)
         {
             Dictionary<string, string> dictWord = db.selectWord(wordSearch1.getTextBox(), wordSearch1.getComboBox()) as Dictionary<string, string>;
+
             if (dictWord != null)
             {
                 WordSearchResult sw = new WordSearchResult(dictWord);
+
+                sw.Size = new Size(620, 390);
+                sw.AutoScroll = true;
+                sw.VerticalScroll.Enabled = true; // 세로 스크롤
+                sw.HorizontalScroll.Enabled = false; // 가로 스크롤
+
                 menuPanel.Visible = true;
                 menuPanel.BringToFront();
+
+                rightPanel.Size = new Size(620, 390);
+                rightPanel.AutoScroll = false;
+                rightPanel.HorizontalScroll.Enabled = false;
+
                 rightPanel.Visible = true;
                 rightPanel.Controls.Add(sw);
+
                 rightPanel.BringToFront();
                 sw.BringToFront();
             };
@@ -62,8 +82,8 @@ namespace project_nanibono
             rightPanel.Visible = true;
             menuPanel.BringToFront();
             rightPanel.BringToFront();
-            //wordSearch1.Visible = false;
-            //wordSearch1.SendToBack();
+            wordSearch1.Visible = false;
+            wordSearch1.SendToBack();
 
             ct1select();
         }
@@ -71,10 +91,12 @@ namespace project_nanibono
         {
             menuPanel.Visible = true;
             rightPanel.Visible = true;
+
             menuPanel.BringToFront();
             rightPanel.BringToFront();
-            //wordSearch1.Visible = false;
-            //wordSearch1.SendToBack();
+
+            wordSearch1.Visible = false;
+            wordSearch1.SendToBack();
 
             ct2select();
         }
@@ -175,12 +197,13 @@ namespace project_nanibono
         {
             menuPanel.Visible = false;
             rightPanel.Visible = false;
-            //wordSearch1.Visible = true;
-            //wordSearch1.BringToFront();
+            wordSearch1.Visible = true;
+            wordSearch1.BringToFront();
         }
         private void logoutButton_Click(object sender, EventArgs e)
         {
             MessageBox.Show("로그아웃에 성공했습니다.");
+
             GlobalVariables.LoggedInUserId = null;
             Console.WriteLine(GlobalVariables.LoggedInUserId);
             logoutButton.Visible = false;
