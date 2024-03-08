@@ -130,6 +130,7 @@
             // 
             // comboBox_proccessDivision
             // 
+            comboBox_proccessDivision.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox_proccessDivision.FormattingEnabled = true;
             comboBox_proccessDivision.Location = new Point(260, 192);
             comboBox_proccessDivision.Name = "comboBox_proccessDivision";
@@ -186,6 +187,7 @@
             // 
             // comboBox3
             // 
+            comboBox3.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox3.FormattingEnabled = true;
             comboBox3.Location = new Point(260, 224);
             comboBox3.Name = "comboBox3";
