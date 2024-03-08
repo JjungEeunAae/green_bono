@@ -35,16 +35,20 @@ namespace project_nanibono.word
             {
                 // 사용자가 로그인한 상태
                 // 버튼을 숨김
-                button2.Visible = false;
+                loginButton.Visible = false;
             }
             else
             {
                 // 사용자가 로그인하지 않은 상태
                 // 버튼을 보이게 함
-                button2.Visible = true;
+                loginButton.Visible = true;
             }
         }
-
+        
+        public Button getLoginButton()
+        {
+            return loginButton; 
+        }
 
         public Button getButton1()
         {
@@ -60,17 +64,6 @@ namespace project_nanibono.word
         {
             return comboBox1;
         }
-        //private void searchButton_Click(object sender, EventArgs e)
-        //{
-        //    // null이 들어올 수 있으니깐 null인지 아닌지 정확하게 형변환
-        //    Dictionary<string, string> dictWord = db.selectWord(textBox1, comboBox1) as Dictionary<string, string>;
-        //    if (dictWord != null)
-        //    {
-        //        WordSearchResult sw = new WordSearchResult(dictWord);
-        //        this.Controls.Add(sw);
-        //        sw.BringToFront();
-        //    };
-        //}
 
         protected virtual void OnSearchButtonClicked(EventArgs e)
         {
