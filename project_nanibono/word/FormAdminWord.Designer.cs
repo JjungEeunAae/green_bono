@@ -185,7 +185,6 @@
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(192, 23);
             comboBox2.TabIndex = 169;
-            comboBox2.SelectedIndexChanged += selectGroupCategory;
             // 
             // FormAdminWord
             // 
@@ -210,7 +209,6 @@
             Name = "FormAdminWord";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormAdminWord";
-            Load += FormAdminWord_Load;
             ResumeLayout(false);
             PerformLayout();
         }

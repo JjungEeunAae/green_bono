@@ -18,9 +18,8 @@ namespace project_nanibono.word
             this.parentForm = parentForm;
             InitializeComponent();
 
-            comboBox1.SelectedIndex = 0; // 0번째 실행시키는 코드   
+            comboBox1.SelectedIndex = 0; // comboBox1의 0번째 보여주는 코드
         }
-
         public string selectGoup_no()  // 정처기, sqld 중에 선택해서 선택 값 리턴하는 콤보박스1
         {
             string check = "";
@@ -49,7 +48,7 @@ namespace project_nanibono.word
             }
             return check;
         }
-        private void selectComboBox2() // 콤보박스1 의 값에 따라 중분류 과목이 나오는 콤보박스2
+        private void selectGroupName(object sender, EventArgs e) // 정처기 또는 sql 선택값에 따른 중분류 나오는 콤보박스2
         {
             string a = selectGoup_no();
             try
@@ -87,33 +86,12 @@ namespace project_nanibono.word
                 MessageBox.Show("오류 : " + ex.Message.ToString());
             }
         }
-        public void selectedetailName()
-        {
-            if (comboBox1.SelectedIndex != 0 & comboBox2.SelectedIndex != 0)
-            {
-                group.group_name = comboBox1.SelectedItem.ToString();
-                groupDetail.group_detail_name = comboBox2.SelectedItem.ToString();
-            }
-        }
-
-        private void selectGroupName(object sender, EventArgs e) // 정처기 또는 sql  선택
-        {
-            selectGoup_no();
-            selectComboBox2();
-        }
-
-        private void selectGroupCategory(object sender, EventArgs e) // 정처기, sql 관련 카테고리 선택
-        {
-            selectedetailName();
-        }
-
         private void closeBtn_Click(object sender, EventArgs e) // 닫기 버튼  
         {
             MessageBox.Show("단어 페이지로 돌아갑니다.");
             this.Close();
             parentForm.Show();
         }
-
         private void successBtn_Click(object sender, EventArgs e) // 등록 버튼
         {
             if (textBoxValuesCheck())
@@ -153,7 +131,7 @@ namespace project_nanibono.word
             }
             return result;
         }
-        private string sql() // 시퀀스 사용해서 insert 쿼리 넣는다.
+        private string sequenceSql() // 시퀀스 사용해서 insert 쿼리 넣는다.
         {
             string a = selectGoup_no();
             string b = "";
@@ -176,14 +154,13 @@ namespace project_nanibono.word
             word.word = textBox_word.Text;
             word.word_mean = textBox_wordMean.Text;
             word.category = selectGroupDetailNo();
-
             try
             {
                 using (OracleConnection con = new OracleConnection(DBINFO.getConnection()))
                 {
                     con.Open();
 
-                    DBINFO.sql = sql();
+                    DBINFO.sql = sequenceSql();
 
                     using (OracleCommand cmd = new OracleCommand(DBINFO.sql, con))
                     {
@@ -219,11 +196,6 @@ namespace project_nanibono.word
                 return false;
             }
             return true;
-        }
-
-        private void FormAdminWord_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -15,7 +15,7 @@ namespace project_nanibono.word
         {
             this.parentForm = parentForm;
             InitializeComponent();
-            WordList();
+            wordList();
         }
 
         public AdminWordManagement()
@@ -34,12 +34,12 @@ namespace project_nanibono.word
                 formAdminWord.FormClosed += (s, args) =>
                 {
                     parentForm.Hide();
-                    WordList();
+                    wordList();
                 };
             }
 
         }
-        private void WordList() // 단어리스트 보여주는 메서드
+        private void wordList() // 단어리스트 보여주는 메서드
         {
             try
             {
