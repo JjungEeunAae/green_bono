@@ -39,6 +39,7 @@
             adminWordManagement1 = new word.AdminWordManagement(this);
             adminRequestManagement1 = new request.AdminRequestManagement(this);
 
+            logoutButton = new Button();
 
             panel1.SuspendLayout();
             SuspendLayout();
@@ -56,6 +57,9 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(140, 450);
             panel1.TabIndex = 0;
+
+
+            panel1.Controls.Add(logoutButton);
             // 
             // SidePanel
             // 
@@ -149,7 +153,21 @@
 
             adminRequestManagement1.TabIndex = 6;
             adminRequestManagement1.Load += adminRequestManagement1_Load;
-
+            // 
+            // logoutButton
+            // 
+            logoutButton.FlatAppearance.BorderSize = 0;
+            logoutButton.FlatStyle = FlatStyle.Flat;
+            logoutButton.Font = new Font("맑은 고딕", 9F, FontStyle.Regular, GraphicsUnit.Point, 129);
+            logoutButton.ForeColor = Color.Gray;
+            logoutButton.Location = new Point(3, 424);
+            logoutButton.Name = "logoutButton";
+            logoutButton.Size = new Size(64, 23);
+            logoutButton.TabIndex = 15;
+            logoutButton.Text = "로그아웃";
+            logoutButton.TextAlign = ContentAlignment.BottomLeft;
+            logoutButton.UseVisualStyleBackColor = true;
+            logoutButton.Click += logoutButton_Click;
             // 
             // FormAdminMain
             // 
@@ -176,6 +194,7 @@
         private Button button_word;
         private Button button_user;
         private Panel SidePanel;
+        private Button logoutButton;
         private request.AdminMemberManagement adminMemberManagement1;
         private word.AdminWordManagement adminWordManagement1;
         private request.AdminRequestManagement adminRequestManagement1;

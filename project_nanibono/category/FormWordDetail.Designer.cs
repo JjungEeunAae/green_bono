@@ -36,6 +36,7 @@
             wordMeanLabel = new Label();
             label8 = new Label();
             closeBtn = new Button();
+            requestButton = new Button();
             wordPanel.SuspendLayout();
             SuspendLayout();
             // 
@@ -123,12 +124,28 @@
             closeBtn.UseVisualStyleBackColor = false;
             closeBtn.Click += closeBtn_Click;
             // 
+            // requestButton
+            // 
+            requestButton.BackColor = Color.FromArgb(135, 196, 255);
+            requestButton.FlatAppearance.BorderSize = 0;
+            requestButton.FlatStyle = FlatStyle.Flat;
+            requestButton.Font = new Font("맑은 고딕", 11.25F, FontStyle.Bold);
+            requestButton.ForeColor = Color.White;
+            requestButton.Location = new Point(426, 384);
+            requestButton.Name = "requestButton";
+            requestButton.Size = new Size(81, 36);
+            requestButton.TabIndex = 174;
+            requestButton.Text = "편집요청";
+            requestButton.UseVisualStyleBackColor = false;
+            requestButton.Click += requestButton_Click;
+            // 
             // FormWordDetail
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
             ClientSize = new Size(800, 450);
+            Controls.Add(requestButton);
             Controls.Add(closeBtn);
             Controls.Add(label8);
             Controls.Add(wordPanel);
@@ -154,5 +171,6 @@
         private Label wordMeanLabel;
         private Label label8;
         private Button closeBtn;
+        private Button requestButton;
     }
 }

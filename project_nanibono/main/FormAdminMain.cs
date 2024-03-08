@@ -1,9 +1,12 @@
 ﻿using project_nanibono.request;
+using project_nanibono.word;
 
 namespace project_nanibono.main
 {
     public partial class FormAdminMain : Form
     {
+        FormMain formMain = new FormMain();
+
         public FormAdminMain()
         {
             InitializeComponent();
@@ -50,6 +53,19 @@ namespace project_nanibono.main
         private void adminRequestManagement1_Load(object sender, EventArgs e)
         {
 
+        }
+        private void logoutButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("로그아웃에 성공했습니다.");
+
+            GlobalVariables.LoggedInUserId = null;
+
+            Console.WriteLine("id = " + GlobalVariables.LoggedInUserId);
+            logoutButton.Visible = false;
+
+            formMain.wordSearch1.getLoginButton().Visible = true;
+            this.Hide();
+            formMain.Show();
         }
     }
 }

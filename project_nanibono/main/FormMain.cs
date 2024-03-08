@@ -10,7 +10,7 @@ namespace project_nanibono
     public partial class FormMain : Form
     {
         public Button searchButton = null;
-        private WordSearch wordSearch1 = null;
+        public WordSearch wordSearch1 = null;
 
         mainDB db = new mainDB();
         CategoryDBManager manager = new CategoryDBManager();
