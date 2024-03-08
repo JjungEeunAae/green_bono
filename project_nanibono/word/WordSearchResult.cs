@@ -36,7 +36,7 @@ namespace project_nanibono.word
                 panel.Size = new Size(530, 150);
                 panel.BackColor = Color.Transparent;
                 Controls.Add(panel);
-                if(id != null)
+                if (!String.IsNullOrEmpty(id))
                 {
                     Button button_requestEdit = new Button();
                     button_requestEdit.Name = "button_requestEdit";
@@ -51,9 +51,9 @@ namespace project_nanibono.word
                     button_requestEdit.UseVisualStyleBackColor = false;
                     button_requestEdit.Tag = new Request { word = word, wordMean = wordMean };
                     button_requestEdit.Click += Button_Click;
+
                     panel.Controls.Add(button_requestEdit);
                 }
-
                 Label label_word = new Label();
                 label_word.Name = "label_word";
                 label_word.Location = new Point(15, 30);

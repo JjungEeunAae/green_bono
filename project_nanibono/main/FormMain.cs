@@ -46,6 +46,12 @@ namespace project_nanibono
 
         private void SearchButton_Click(object? sender, EventArgs e)
         {
+            serchResult();
+        }
+
+        private void serchResult()
+        {
+
             Dictionary<string, string> dictWord = db.selectWord(wordSearch1.getTextBox(), wordSearch1.getComboBox()) as Dictionary<string, string>;
 
             if (dictWord != null)
@@ -205,8 +211,11 @@ namespace project_nanibono
             MessageBox.Show("로그아웃에 성공했습니다.");
 
             GlobalVariables.LoggedInUserId = null;
-            Console.WriteLine(GlobalVariables.LoggedInUserId);
+            Console.WriteLine("id = " + GlobalVariables.LoggedInUserId);
             logoutButton.Visible = false;
+
+            rightPanel.Controls.Clear();
+            serchResult();
         }
     }
 }
