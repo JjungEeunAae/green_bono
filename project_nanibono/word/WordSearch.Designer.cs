@@ -33,7 +33,7 @@
             button1 = new Button();
             label1 = new Label();
             label2 = new Label();
-            button2 = new Button();
+            loginButton = new Button();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -68,7 +68,6 @@
             button1.TabIndex = 2;
             button1.Text = "Search";
             button1.UseVisualStyleBackColor = false;
-            //button1.Click += searchButton_Click;
             // 
             // label1
             // 
@@ -94,20 +93,20 @@
             label2.TabIndex = 4;
             label2.Text = "사      전";
             // 
-            // button2
+            // loginButton
             // 
-            button2.BackColor = Color.FromArgb(135, 196, 255);
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("맑은 고딕", 9F, FontStyle.Bold);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(335, 245);
-            button2.Name = "button2";
-            button2.Size = new Size(127, 40);
-            button2.TabIndex = 5;
-            button2.Text = "LOGIN";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
+            loginButton.BackColor = Color.FromArgb(135, 196, 255);
+            loginButton.FlatAppearance.BorderSize = 0;
+            loginButton.FlatStyle = FlatStyle.Flat;
+            loginButton.Font = new Font("맑은 고딕", 9F, FontStyle.Bold);
+            loginButton.ForeColor = Color.White;
+            loginButton.Location = new Point(335, 245);
+            loginButton.Name = "loginButton";
+            loginButton.Size = new Size(127, 40);
+            loginButton.TabIndex = 5;
+            loginButton.Text = "LOGIN";
+            loginButton.UseVisualStyleBackColor = false;
+            loginButton.Click += button2_Click;
             // 
             // pictureBox1
             // 
@@ -136,7 +135,7 @@
             BackColor = SystemColors.ControlLightLight;
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
-            Controls.Add(button2);
+            Controls.Add(loginButton);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(button1);
@@ -159,7 +158,7 @@
         private Button button1;
         private Label label1;
         private Label label2;
-        private Button button2;
+        private Button loginButton;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
     }
