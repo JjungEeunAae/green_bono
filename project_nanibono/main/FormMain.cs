@@ -51,31 +51,42 @@ namespace project_nanibono
 
         private void serchResult()
         {
-
             Dictionary<string, string> dictWord = db.selectWord(wordSearch1.getTextBox(), wordSearch1.getComboBox()) as Dictionary<string, string>;
 
-            if (dictWord != null)
+            if(dictWord == null)
             {
-                WordSearchResult sw = new WordSearchResult(dictWord);
+                return;
+            }
+            else if (string.IsNullOrEmpty(wordSearch1.getTextBox().Text.Trim()) && string.IsNullOrEmpty(GlobalVariables.LoggedInUserId))
+            {
+                MessageBox.Show("검색어를 입력해주세요", "경고", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                if (dictWord != null)
+                {
+                    WordSearchResult sw = new WordSearchResult(dictWord);
 
-                sw.Size = new Size(620, 390);
-                sw.AutoScroll = true;
-                sw.VerticalScroll.Enabled = true; // 세로 스크롤
-                sw.HorizontalScroll.Enabled = false; // 가로 스크롤
+                    sw.Size = new Size(620, 390);
+                    sw.AutoScroll = true;
+                    sw.VerticalScroll.Enabled = true; // 세로 스크롤
+                    sw.HorizontalScroll.Enabled = false; // 가로 스크롤
 
-                menuPanel.Visible = true;
-                menuPanel.BringToFront();
+                    menuPanel.Visible = true;
+                    menuPanel.BringToFront();
 
-                rightPanel.Size = new Size(620, 390);
-                rightPanel.AutoScroll = false;
-                rightPanel.HorizontalScroll.Enabled = false;
+                    rightPanel.Size = new Size(620, 390);
+                    rightPanel.AutoScroll = false;
+                    rightPanel.HorizontalScroll.Enabled = false;
 
-                rightPanel.Visible = true;
-                rightPanel.Controls.Add(sw);
+                    rightPanel.Visible = true;
+                    rightPanel.Controls.Add(sw);
 
-                rightPanel.BringToFront();
-                sw.BringToFront();
-            };
+                    rightPanel.BringToFront();
+                    sw.BringToFront();
+                };
+            }
+
         }
 
         private void button_ct1_Click(object sender, EventArgs e)
@@ -201,7 +212,7 @@ namespace project_nanibono
         }
         private void homeButton_Click(object sender, EventArgs e)
         {
-            if(String.IsNullOrEmpty( GlobalVariables.LoggedInUserId ))
+            if (String.IsNullOrEmpty(GlobalVariables.LoggedInUserId))
             {
                 logoutButton.Visible = false;
                 wordSearch1.getLoginButton().Visible = true;
@@ -226,7 +237,6 @@ namespace project_nanibono
             Console.WriteLine("id = " + GlobalVariables.LoggedInUserId);
             logoutButton.Visible = false;
 
-            rightPanel.Controls.Clear();
             serchResult();
         }
     }
