@@ -14,6 +14,7 @@ namespace project_nanibono.category
     {
         private string word;
         private string wordMean;
+        
         public FormWordDetail(string word, string wordMean)
         {
             InitializeComponent();
@@ -28,6 +29,12 @@ namespace project_nanibono.category
         private void closeBtn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        private void requestButton_Click(object sender, EventArgs e)
+        {
+            FormEdit formEdit = new FormEdit(wordLabel.Text);
+            formEdit.Show();
+            this.Hide();
         }
     }
 }
