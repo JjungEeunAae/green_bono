@@ -25,16 +25,18 @@ namespace project_nanibono.category
         {
             wordLabel.Text = word;
             wordMeanLabel.Text = wordMean;
+
+            requestButton.Visible = !string.IsNullOrEmpty(GlobalVariables.LoggedInUserId);  // 로그인 되어있으면 버튼 보여주는 코드
         }
         private void closeBtn_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        private void requestButton_Click(object sender, EventArgs e)
+        private void requestButton_Click(object sender, EventArgs e) //편집요청 버튼
         {
-            FormEdit formEdit = new FormEdit(wordLabel.Text);
-            formEdit.Show();
-            this.Hide();
+                FormEdit formEdit = new FormEdit(wordLabel.Text);
+                formEdit.Show();
+                this.Hide();
         }
     }
 }

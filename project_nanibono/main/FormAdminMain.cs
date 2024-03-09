@@ -56,16 +56,7 @@ namespace project_nanibono.main
         }
         private void logoutButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("로그아웃에 성공했습니다.");
-
-            GlobalVariables.LoggedInUserId = null;
-
-            Console.WriteLine("id = " + GlobalVariables.LoggedInUserId);
-            logoutButton.Visible = false;
-
-            formMain.wordSearch1.getLoginButton().Visible = true;
-            this.Hide();
-            formMain.Show();
+            formMain.logoutButton_Click(sender,e);
         }
     }
 }
