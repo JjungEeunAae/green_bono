@@ -10,7 +10,7 @@ namespace project_nanibono
     public partial class FormMain : Form
     {
         public Button searchButton = null;
-        public WordSearch wordSearch1 = null;
+        private WordSearch wordSearch1 = null;
 
         mainDB db = new mainDB();
         CategoryDBManager manager = new CategoryDBManager();
@@ -228,7 +228,7 @@ namespace project_nanibono
             wordSearch1.Visible = true;
             wordSearch1.BringToFront();
         }
-        private void logoutButton_Click(object sender, EventArgs e)
+        public void logoutButton_Click(object sender, EventArgs e)
         {
             MessageBox.Show("로그아웃에 성공했습니다.");
 
@@ -237,6 +237,8 @@ namespace project_nanibono
             Console.WriteLine("id = " + GlobalVariables.LoggedInUserId);
             logoutButton.Visible = false;
 
+            FormMain formMain = new FormMain();  // 로그아웃 하면 메인화면으로 가즈아
+            formMain.Show();
             serchResult();
         }
     }
