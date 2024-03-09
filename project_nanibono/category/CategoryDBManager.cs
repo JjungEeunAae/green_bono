@@ -16,8 +16,8 @@ namespace project_nanibono.category
             OracleConnection oc = null;
             try
             {
-                oc = new OracleConnection(DBINFO.getConnection());
-                string sql = $"SELECT word, word_mean,insert_date FROM word WHERE category LIKE '{code}%'AND delete_yn = 'N' ORDER BY insert_date DESC";
+                oc = new OracleConnection(DBINFO.getConnection());              
+                string sql = $"SELECT word, word_mean,insert_date FROM word WHERE category LIKE '{code}%'AND delete_yn = 'N' ORDER BY word_no ASC";
 
                 OracleCommand cmd = new OracleCommand(sql, oc);
                 oc.Open();
@@ -49,8 +49,9 @@ namespace project_nanibono.category
             string ct1;
             try
             {
-                oc = new OracleConnection(DBINFO.getConnection());
-                string sql = "SELECT word, word_mean,insert_date FROM word WHERE category LIKE 'CT1%' AND delete_yn = 'N' ORDER BY insert_date DESC";
+                oc = new OracleConnection(DBINFO.getConnection());             
+                string sql = "SELECT word, word_mean,insert_date FROM word WHERE category LIKE 'CT1%' AND delete_yn = 'N' ORDER BY word_no ASC";
+
 
                 OracleCommand cmd = new OracleCommand(sql,oc);
                 oc.Open();
@@ -82,8 +83,8 @@ namespace project_nanibono.category
             string ct2;
             try
             {
-                oc = new OracleConnection(DBINFO.getConnection());
-                string sql = "SELECT word, word_mean,insert_date FROM word WHERE category LIKE 'CT2%' AND delete_yn = 'N' ORDER BY insert_date DESC";
+                oc = new OracleConnection(DBINFO.getConnection());          
+                string sql = "SELECT word, word_mean,insert_date FROM word WHERE category LIKE 'CT2%' AND delete_yn = 'N' ORDER BY word_no ASC";
                 OracleCommand cmd = new OracleCommand(sql, oc);
                 oc.Open();
 

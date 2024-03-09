@@ -155,7 +155,7 @@
             Controls.Add(titleLabel);
             Name = "FormWordDetail";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FormWordDetail";
+            Text = "7";
             Load += FormWordDetail_Load;
             wordPanel.ResumeLayout(false);
             ResumeLayout(false);

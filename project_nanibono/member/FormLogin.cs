@@ -64,6 +64,7 @@ namespace project_nanibono
             else if (DBMemberId.role == "ADMIN")
             {
                 GlobalVariables.LoggedInUserId = DBMemberId.id;
+                MessageBox.Show("로그인에 성공했습니다.");
                 main.FormAdminMain formAdminMain = new main.FormAdminMain();
                 formAdminMain.Show();
                 this.Hide();
