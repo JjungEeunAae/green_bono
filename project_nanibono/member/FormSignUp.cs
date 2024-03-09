@@ -32,7 +32,7 @@ namespace project_nanibono
         {
             idCheckResult = checkId() ? 1 : 0; // 1 이면 중복 아니라서 아이디 사용가능, 0 이면 중복 
         }
-        private bool checkId() // 아이디 중복체크하는 메서드
+        private bool checkId()
         {
             member.id = userId.Text;
             bool check = true;
@@ -140,7 +140,7 @@ namespace project_nanibono
 
                             FormLogin formLogin = new FormLogin();
                             formLogin.Show();
-                            this.Hide();   // 회원가입 성공이면 원래 폼 숨기기
+                            this.Hide();
                         }
                     }
                 }

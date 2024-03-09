@@ -136,6 +136,7 @@
             comboBox_proccessDivision.Name = "comboBox_proccessDivision";
             comboBox_proccessDivision.Size = new Size(325, 23);
             comboBox_proccessDivision.TabIndex = 27;
+            comboBox_proccessDivision.SelectedIndexChanged += comboBox_proccessDivision_SelectedIndexChanged;
             // 
             // panel1
             // 
