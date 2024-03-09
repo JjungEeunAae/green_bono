@@ -29,5 +29,28 @@ namespace project_nanibono
         {
             this.Close();
         }
+
+        private void comboBox_proccessDivision_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!comboBox_proccessDivision.SelectedItem.ToString().Equals("수정")) // 처리구분이 수정이 아니라면
+            {
+                Control[] foundControls = Controls.Find("label14", true);
+                Control[] foundControls2 = Controls.Find("comboBox3", true);
+
+                if (foundControls.Length > 0 && foundControls2.Length > 0)
+                {
+                    Label label14 = (Label)foundControls[0];
+                    Controls.Remove(label14);
+
+                    ComboBox comboBox3 = (ComboBox)foundControls2[0];
+                    Controls.Remove(comboBox3);
+                }
+            }
+            else
+            {
+                Controls.Add(label14);
+                Controls.Add(comboBox3);
+            }
+        }
     }
 }
