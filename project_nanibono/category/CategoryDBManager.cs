@@ -17,7 +17,7 @@ namespace project_nanibono.category
             try
             {
                 oc = new OracleConnection(DBINFO.getConnection());
-                string sql = $"SELECT word, word_mean,insert_date FROM word WHERE category LIKE '{code}%' ORDER BY insert_date DESC";
+                string sql = $"SELECT word, word_mean,insert_date FROM word WHERE category LIKE '{code}%'AND delete_yn = 'N' ORDER BY insert_date DESC";
 
                 OracleCommand cmd = new OracleCommand(sql, oc);
                 oc.Open();
@@ -50,7 +50,7 @@ namespace project_nanibono.category
             try
             {
                 oc = new OracleConnection(DBINFO.getConnection());
-                string sql = "SELECT word, word_mean,insert_date FROM word WHERE category LIKE 'CT1%' ORDER BY insert_date DESC";
+                string sql = "SELECT word, word_mean,insert_date FROM word WHERE category LIKE 'CT1%' AND delete_yn = 'N' ORDER BY insert_date DESC";
 
                 OracleCommand cmd = new OracleCommand(sql,oc);
                 oc.Open();
@@ -83,7 +83,7 @@ namespace project_nanibono.category
             try
             {
                 oc = new OracleConnection(DBINFO.getConnection());
-                string sql = "SELECT word, word_mean,insert_date FROM word WHERE category LIKE 'CT2%' ORDER BY insert_date DESC";
+                string sql = "SELECT word, word_mean,insert_date FROM word WHERE category LIKE 'CT2%' AND delete_yn = 'N' ORDER BY insert_date DESC";
                 OracleCommand cmd = new OracleCommand(sql, oc);
                 oc.Open();
 
