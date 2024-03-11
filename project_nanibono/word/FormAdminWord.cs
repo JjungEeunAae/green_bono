@@ -178,9 +178,19 @@ namespace project_nanibono.word
                 MessageBox.Show("Test" + ex.Message);
             }
         }
-        private bool textBoxValuesCheck() // 단어명, 단어설명, 카테고리 빈값 확인하는 메서드
+        private bool textBoxValuesCheck() // 분류, 카테고리, 단어명, 단어설명 빈값 확인하는 메서드
         {
-            if (string.IsNullOrEmpty(textBox_word.Text.Trim()))
+            if (string.IsNullOrEmpty(selectGoup_no()))
+            {
+                MessageBox.Show("분류를 선택하세요", "경고", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+            else if (string.IsNullOrEmpty(selectGroupDetailNo()))
+            {
+                MessageBox.Show("카테고리 선택하세요", "경고", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+            else if (string.IsNullOrEmpty(textBox_word.Text.Trim()))
             {
                 MessageBox.Show("단어명을 입력하세요", "경고", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
@@ -188,11 +198,6 @@ namespace project_nanibono.word
             else if (string.IsNullOrEmpty(textBox_wordMean.Text.Trim()))
             {
                 MessageBox.Show("단어 설명을 입력하세요", "경고", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return false;
-            }
-            else if (string.IsNullOrEmpty(selectGoup_no()) || string.IsNullOrEmpty(selectGroupDetailNo()))
-            {
-                MessageBox.Show("카테고리 선택하세요", "경고", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
             }
             return true;
