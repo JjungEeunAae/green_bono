@@ -24,7 +24,7 @@ namespace project_nanibono.request
             while (reader.Read())
             {
                 label9.Text = reader.GetString(0);
-            }
+            } 
 
             // 단어코드 자동조회
             cmd = new OracleCommand($"SELECT word_no FROM word WHERE word = :word", conn);
