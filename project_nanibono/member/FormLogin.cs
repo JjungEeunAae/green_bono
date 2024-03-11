@@ -5,13 +5,7 @@ using project_nanibono.word;
 namespace project_nanibono
 {
     public partial class FormLogin : Form
-    {
-
-        string strConnection = "DATA SOURCE = 192.168.0.110; User Id = bono; Password=bono";
-
-        OracleConnection conn;
-        OracleCommand cmd;
-
+    {    
         public FormLogin()
         {
             InitializeComponent();
@@ -20,13 +14,6 @@ namespace project_nanibono
         {
             loginCheck();  
         }
-        private void homeButton_Click(object sender, EventArgs e)
-        {
-            FormMain formMain = new FormMain();
-            formMain.Show();
-            this.Hide();
-        }
-
         private void pwTextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (Keys.Enter == e.KeyCode)
@@ -34,7 +21,6 @@ namespace project_nanibono
                 loginCheck();
             }
         }
-
         private void loginCheck()
         {
             string inputMemberId = idTextBox.Text.Trim();
@@ -52,7 +38,6 @@ namespace project_nanibono
             }
 
             MemberDB memberDB = new MemberDB();
-
             Member DBMemberId = memberDB.SelectId(inputMemberId);
             Member DBMemberPw = memberDB.SelectPw(inputMemberPw);
 
@@ -68,6 +53,7 @@ namespace project_nanibono
                 main.FormAdminMain formAdminMain = new main.FormAdminMain();
                 formAdminMain.Show();
                 this.Hide();
+                return;
             }
             else if (DBMemberPw == null)
             {
@@ -83,9 +69,15 @@ namespace project_nanibono
                 Hide();
                 formMain.ShowDialog();
                 Show();
+                return;
             }
         }
-
+        private void homeButton_Click(object sender, EventArgs e)
+        {
+            FormMain formMain = new FormMain();
+            formMain.Show();
+            this.Hide();
+        }
         private void SignUpButton_Click_1(object sender, EventArgs e)
         {
             FormSignUp formSignUp = new FormSignUp();
