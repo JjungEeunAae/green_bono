@@ -30,10 +30,6 @@ namespace project_nanibono.main
 
         public Dictionary<string, string> selectWord(TextBox text, ComboBox combox)
         {
-            if(text.Text == "")
-            {
-                return null;
-            }
             if (combox.Text.Equals("용어"))
             {
                 string word = text.Text;

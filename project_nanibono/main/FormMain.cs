@@ -74,11 +74,11 @@ namespace project_nanibono
 
                     rightPanel.BringToFront();
                     sw.BringToFront();
-            }
-            else
-            {
-                MessageBox.Show("검색어를 입력해주세요");
-            };
+                }
+                else
+                {
+                    MessageBox.Show("검색어를 입력해주세요");
+                };
             
 
         }
