@@ -126,7 +126,6 @@ namespace project_nanibono
             logoutButton.Text = "로그아웃";
             logoutButton.TextAlign = ContentAlignment.BottomLeft;
             logoutButton.UseVisualStyleBackColor = true;
-            logoutButton.Click += logoutButton_Click;
             // 
             // sdButton2
             // 
@@ -287,7 +286,6 @@ namespace project_nanibono
             homeButton.Size = new Size(148, 54);
             homeButton.TabIndex = 1;
             homeButton.UseVisualStyleBackColor = false;
-            homeButton.Click += homeButton_Click;
             // 
             // centerPanel
             // 
