@@ -53,16 +53,6 @@ namespace project_nanibono
         {
             Dictionary<string, string> dictWord = db.selectWord(wordSearch1.getTextBox(), wordSearch1.getComboBox()) as Dictionary<string, string>;
 
-            if(dictWord == null)
-            {
-                return;
-            }
-            else if (string.IsNullOrEmpty(wordSearch1.getTextBox().Text.Trim()) && string.IsNullOrEmpty(GlobalVariables.LoggedInUserId))
-            {
-                MessageBox.Show("검색어를 입력해주세요", "경고", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
                 if (dictWord != null)
                 {
                     WordSearchResult sw = new WordSearchResult(dictWord);
@@ -84,8 +74,12 @@ namespace project_nanibono
 
                     rightPanel.BringToFront();
                     sw.BringToFront();
-                };
             }
+            else
+            {
+                MessageBox.Show("검색어를 입력해주세요");
+            };
+            
 
         }
 
@@ -239,7 +233,6 @@ namespace project_nanibono
 
             FormMain formMain = new FormMain();  // 로그아웃 하면 메인화면으로 가즈아
             formMain.Show();
-            serchResult();
         }
     }
 }

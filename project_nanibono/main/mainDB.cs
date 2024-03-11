@@ -37,11 +37,11 @@ namespace project_nanibono.main
             if (combox.Text.Equals("용어"))
             {
                 string word = text.Text;
-                //if (string.IsNullOrEmpty(word.Trim()))
-                //{
-                //    MessageBox.Show("검색어를 입력해주세요", "경고", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //    return null;
-                //}
+                if (string.IsNullOrEmpty(word.Trim()))
+                {
+                    
+                    return null;
+                }
                 OracleConnection conn = new OracleConnection(strConnection);
                 conn.Open();
                 OracleCommand cmd = new OracleCommand($"SELECT * FROM word WHERE word LIKE '%{word}%' AND delete_yn = 'N'", conn);
@@ -69,11 +69,11 @@ namespace project_nanibono.main
             else if (combox.Text.Equals("정의"))
             {
                 string wordMean = text.Text;
-                //if (string.IsNullOrEmpty(wordMean.Trim()))
-                //{
-                //    MessageBox.Show("검색어를 입력해주세요");
-                //    return null;
-                //}
+                if (string.IsNullOrEmpty(wordMean.Trim()))
+                {
+                    
+                    return null;
+                }
                 OracleConnection conn = new OracleConnection(strConnection);
                 conn.Open();
                 OracleCommand cmd = new OracleCommand($"SELECT * FROM word WHERE word_mean LIKE '%{wordMean}%' AND delete_yn = 'N'", conn);
