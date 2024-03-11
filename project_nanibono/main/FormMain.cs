@@ -43,7 +43,6 @@ namespace project_nanibono
                 logoutButton.Visible = false;
             }
         }
-
         private void SearchButton_Click(object? sender, EventArgs e)
         {
             serchResult();
@@ -53,7 +52,7 @@ namespace project_nanibono
         {
             Dictionary<string, string> dictWord = db.selectWord(wordSearch1.getTextBox(), wordSearch1.getComboBox()) as Dictionary<string, string>;
 
-            if(dictWord == null)
+            if (dictWord == null)
             {
                 return;
             }
@@ -69,8 +68,8 @@ namespace project_nanibono
 
                     sw.Size = new Size(620, 390);
                     sw.AutoScroll = true;
-                    sw.VerticalScroll.Enabled = true; // 세로 스크롤
-                    sw.HorizontalScroll.Enabled = false; // 가로 스크롤
+                    sw.VerticalScroll.Enabled = true; 
+                    sw.HorizontalScroll.Enabled = false; 
 
                     menuPanel.Visible = true;
                     menuPanel.BringToFront();
@@ -86,37 +85,40 @@ namespace project_nanibono
                     sw.BringToFront();
                 };
             }
-
         }
-
-        private void button_ct1_Click(object sender, EventArgs e)
+        private void homeButton_Click(object sender, EventArgs e)
         {
-            ct1select();
+            if (String.IsNullOrEmpty(GlobalVariables.LoggedInUserId))
+            {
+                logoutButton.Visible = false;
+                wordSearch1.getLoginButton().Visible = true;
+            }
+            else
+            {
+                logoutButton.Visible = true;
+                wordSearch1.getLoginButton().Visible = false;
+            }
+
+            menuPanel.Visible = false;
+            rightPanel.Visible = false;
+            wordSearch1.Visible = true;
+            wordSearch1.BringToFront();
         }
-        private void button2_Click(object sender, EventArgs e)
+        public void logoutButton_Click(object sender, EventArgs e)
         {
-            menuPanel.Visible = true;
-            rightPanel.Visible = true;
-            menuPanel.BringToFront();
-            rightPanel.BringToFront();
-            wordSearch1.Visible = false;
-            wordSearch1.SendToBack();
+            MessageBox.Show("로그아웃에 성공했습니다.");
 
-            ct1select();
+            GlobalVariables.LoggedInUserId = null;
+
+            Console.WriteLine("id = " + GlobalVariables.LoggedInUserId);
+            logoutButton.Visible = false;
+
+            FormMain formMain = new FormMain(); 
+            formMain.Show();
+            serchResult();
         }
-        private void sdButton_Click(object sender, EventArgs e)
-        {
-            menuPanel.Visible = true;
-            rightPanel.Visible = true;
 
-            menuPanel.BringToFront();
-            rightPanel.BringToFront();
-
-            wordSearch1.Visible = false;
-            wordSearch1.SendToBack();
-
-            ct2select();
-        }
+        // 최은재 
         public void selectCategory(DataTable dataTable)
         {
             rightPanel.Controls.Clear();
@@ -163,18 +165,45 @@ namespace project_nanibono
             }
             rightPanel.Controls.Add(dgv);
         }
-        private void ct1select()
+
+        private void button2_Click(object sender, EventArgs e)
         {
-            selectCategory(manager.SelectELF());
+            menuPanel.Visible = true;
+            rightPanel.Visible = true;
+
+            menuPanel.BringToFront();
+            rightPanel.BringToFront();
+
+            wordSearch1.Visible = false;
+            wordSearch1.SendToBack();
+
+            selectCategory(manager.Select("CT1%"));
         }
-        private void ct2select()
+
+        private void sdButton_Click(object sender, EventArgs e)
         {
-            selectCategory(manager.SelectSD());
+            menuPanel.Visible = true;
+            rightPanel.Visible = true;
+
+            menuPanel.BringToFront();
+            rightPanel.BringToFront();
+
+            wordSearch1.Visible = false;
+            wordSearch1.SendToBack();
+
+            selectCategory(manager.Select("CT2%"));
         }
+
+        private void button_ct1_Click(object sender, EventArgs e)
+        {
+            selectCategory(manager.Select("CT1%"));
+        }
+
         private void button_ct2_Click(object sender, EventArgs e)
         {
-            selectCategory(manager.SelectSD());
+            selectCategory(manager.Select("CT2%"));
         }
+
         private void elfButton1_Click(object sender, EventArgs e)
         {
             menuSwitchPanel.Location = new System.Drawing.Point(0, 47);
@@ -200,6 +229,7 @@ namespace project_nanibono
             menuSwitchPanel.Location = new System.Drawing.Point(0, 162);
             selectCategory(manager.Select("CT1_CG5"));
         }
+
         private void sdButton1_Click(object sender, EventArgs e)
         {
             menuSwitchPanel.Location = new System.Drawing.Point(0, 231);
@@ -209,37 +239,6 @@ namespace project_nanibono
         {
             menuSwitchPanel.Location = new System.Drawing.Point(0, 259);
             selectCategory(manager.Select("CT2_CG2"));
-        }
-        private void homeButton_Click(object sender, EventArgs e)
-        {
-            if (String.IsNullOrEmpty(GlobalVariables.LoggedInUserId))
-            {
-                logoutButton.Visible = false;
-                wordSearch1.getLoginButton().Visible = true;
-            }
-            else
-            {
-                logoutButton.Visible = true;
-                wordSearch1.getLoginButton().Visible = false;
-            }
-
-            menuPanel.Visible = false;
-            rightPanel.Visible = false;
-            wordSearch1.Visible = true;
-            wordSearch1.BringToFront();
-        }
-        public void logoutButton_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("로그아웃에 성공했습니다.");
-
-            GlobalVariables.LoggedInUserId = null;
-
-            Console.WriteLine("id = " + GlobalVariables.LoggedInUserId);
-            logoutButton.Visible = false;
-
-            FormMain formMain = new FormMain();  // 로그아웃 하면 메인화면으로 가즈아
-            formMain.Show();
-            serchResult();
         }
     }
 }

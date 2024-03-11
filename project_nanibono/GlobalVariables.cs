@@ -8,6 +8,6 @@ namespace project_nanibono
 {
     public static class GlobalVariables
     {
-        public static string LoggedInUserId { get; set; }
+        public static string? LoggedInUserId { get; set; }
     }
 }
