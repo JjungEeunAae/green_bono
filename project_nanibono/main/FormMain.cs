@@ -118,9 +118,7 @@ namespace project_nanibono
             serchResult();
         }
 
-
         // 최은재 
-
         public void selectCategory(DataTable dataTable)
         {
             rightPanel.Controls.Clear();
