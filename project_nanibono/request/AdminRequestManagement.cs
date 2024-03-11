@@ -265,13 +265,22 @@ namespace project_nanibono.request
                 view("DELETE", dataGridView2, requestRyn);
                 // 수정, 승인or거절or요청이면?
             }
-            else if ((requestRyn.Equals("승인") || (requestRyn.Equals("거절")) || (requestRyn.Equals("요청"))) && proccessDivision.Equals("수정"))
+            else if ( (    requestRyn.Equals("승인")
+                        || requestRyn.Equals("거절")
+                        || requestRyn.Equals("요청")
+                       )
+                       && proccessDivision.Equals("수정"))
             {
                 dataGridViewClear(dataGridView1);
                 view("UPDATE", dataGridView1, requestRyn);
                 // 삭제, 승인or거절or요청이면?  
             }
-            else if ((requestRyn.Equals("승인") || (requestRyn.Equals("거절")) || (requestRyn.Equals("요청"))) && proccessDivision.Equals("삭제"))
+            else if ( (    requestRyn.Equals("승인")
+                        || requestRyn.Equals("거절")
+                        || requestRyn.Equals("요청")
+                       ) 
+                       && proccessDivision.Equals("삭제")
+                    )
             {
                 dataGridViewClear(dataGridView2);
                 view("DELETE", dataGridView2, requestRyn);
