@@ -23,11 +23,19 @@ namespace project_nanibono.request
 
         private void LoadMembers()
         {
-            string[,] member_columns = { { "rn", "no" }, { "id", "아이디" }, { "pw", "패스워드" }, { "name", "이름" }, { "role", "권한" }, { "resign", "탈퇴여부" } };
+            string[,] member_columns = { 
+                                            { "rn", "no" }
+                                          , { "id", "아이디" }
+                                          , { "pw", "패스워드" }
+                                          , { "name", "이름" }
+                                          , { "role", "권한" }
+                                          , { "resign", "탈퇴여부" }
+                                       };
             for (int i = 0; i < member_columns.GetLength(0); i++)
             {
                 dataGridView1.Columns.Add(member_columns[i, 0], member_columns[i, 1]);
             }
+
             List<Member> member = new List<Member>();
 
             DBINFO.conn.Open();
@@ -62,11 +70,13 @@ namespace project_nanibono.request
         private void memberSearch()
         // 검색기능
         {
-            string currentComboBoxCode = "";
             List<Member> member = new List<Member>();
+
             dataGridView1.Rows.Clear();
 
+            string currentComboBoxCode = "";
             string currentComboBoxText = comboBox_search.SelectedItem.ToString();
+
             if (currentComboBoxText.Equals("선택하세요"))
             {
                 currentComboBoxCode = "";
@@ -101,7 +111,14 @@ namespace project_nanibono.request
 
                 foreach (Member members in member)
                 {
-                    dataGridView1.Rows.Add(members.rn, members.id, members.pw, members.name, members.role, members.resign);
+                    dataGridView1.Rows.Add(    members.rn
+                                             , members.id
+                                             , members.pw
+                                             , members.name
+                                             , members.role
+                                             , members.resign
+                                           );
+
                 }
             }
             catch (Exception e)
