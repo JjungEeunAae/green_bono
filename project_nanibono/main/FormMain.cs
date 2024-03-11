@@ -52,7 +52,7 @@ namespace project_nanibono
         {
             Dictionary<string, string> dictWord = db.selectWord(wordSearch1.getTextBox(), wordSearch1.getComboBox()) as Dictionary<string, string>;
 
-            if(dictWord == null)
+            if (dictWord == null)
             {
                 return;
             }
@@ -68,8 +68,8 @@ namespace project_nanibono
 
                     sw.Size = new Size(620, 390);
                     sw.AutoScroll = true;
-                    sw.VerticalScroll.Enabled = true; // 세로 스크롤
-                    sw.HorizontalScroll.Enabled = false; // 가로 스크롤
+                    sw.VerticalScroll.Enabled = true; 
+                    sw.HorizontalScroll.Enabled = false; 
 
                     menuPanel.Visible = true;
                     menuPanel.BringToFront();
@@ -85,7 +85,6 @@ namespace project_nanibono
                     sw.BringToFront();
                 };
             }
-
         }
         private void homeButton_Click(object sender, EventArgs e)
         {
@@ -114,12 +113,13 @@ namespace project_nanibono
             Console.WriteLine("id = " + GlobalVariables.LoggedInUserId);
             logoutButton.Visible = false;
 
-            FormMain formMain = new FormMain();  // 로그아웃 하면 메인화면으로 가즈아
+            FormMain formMain = new FormMain(); 
             formMain.Show();
             serchResult();
         }
 
-// 응쟁 코드 
+
+        // 최은재 
 
         public void selectCategory(DataTable dataTable)
         {
@@ -168,7 +168,6 @@ namespace project_nanibono
             rightPanel.Controls.Add(dgv);
         }
 
-        // 상단바 정처기버튼
         private void button2_Click(object sender, EventArgs e)
         {
             menuPanel.Visible = true;
@@ -183,7 +182,6 @@ namespace project_nanibono
             selectCategory(manager.Select("CT1%"));
         }
 
-        // 상단바 SQLD 버튼
         private void sdButton_Click(object sender, EventArgs e)
         {
             menuPanel.Visible = true;
@@ -194,11 +192,10 @@ namespace project_nanibono
 
             wordSearch1.Visible = false;
             wordSearch1.SendToBack();
-        
+
             selectCategory(manager.Select("CT2%"));
         }
 
-        // 왼 패널 
         private void button_ct1_Click(object sender, EventArgs e)
         {
             selectCategory(manager.Select("CT1%"));
