@@ -23,7 +23,7 @@ namespace project_nanibono.word
             InitializeComponent();
         }
 
-        private void button_wordInsert_Click(object sender, EventArgs e) // 단어등록 버튼
+        private void button_wordInsert_Click(object sender, EventArgs e)       // 단어등록 버튼
         {
             MessageBox.Show("단어 등록 페이지로 이동합니다.");
             if (parentForm != null)
@@ -37,7 +37,6 @@ namespace project_nanibono.word
                     wordList();
                 };
             }
-
         }
         private void wordList() // 단어리스트 보여주는 메서드
         {
@@ -53,7 +52,8 @@ namespace project_nanibono.word
                          "    WHEN category LIKE 'CT2%' THEN 'SQLD' " +
                          "    ELSE category " +
                          "END AS 카테고리, " +
-                         "word_no as " + "번호" + ", word as " + "단어" + ", word_mean as " + "뜻" + ", insert_date as " + "등록일" +
+                         "word_no as " + "번호" + ", word as " + "단어" + ", word_mean as " + "뜻" + 
+                         ", insert_date as " + "등록일" +
                          " FROM word WHERE category like 'CT1%' or category like 'CT2%'" +
                          " Order by insert_date desc";
 
