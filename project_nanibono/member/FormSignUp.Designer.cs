@@ -37,7 +37,7 @@
             label5 = new Label();
             label1 = new Label();
             label2 = new Label();
-            loginButton = new Button();
+            signUpButton = new Button();
             label6 = new Label();
             label3 = new Label();
             label7 = new Label();
@@ -102,7 +102,6 @@
             label4.Size = new Size(165, 39);
             label4.TabIndex = 13;
             label4.Text = "회원가입";
-           
             // 
             // label5
             // 
@@ -137,20 +136,20 @@
             label2.TabIndex = 16;
             label2.Text = "NAME";
             // 
-            // loginButton
+            // signUpButton
             // 
-            loginButton.BackColor = Color.FromArgb(224, 244, 255);
-            loginButton.FlatAppearance.BorderSize = 0;
-            loginButton.FlatStyle = FlatStyle.Flat;
-            loginButton.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            loginButton.ForeColor = Color.FromArgb(57, 167, 255);
-            loginButton.Location = new Point(341, 338);
-            loginButton.Name = "loginButton";
-            loginButton.Size = new Size(105, 37);
-            loginButton.TabIndex = 17;
-            loginButton.Text = "SIGN UP";
-            loginButton.UseVisualStyleBackColor = false;
-            loginButton.Click += loginButton_Click;
+            signUpButton.BackColor = Color.FromArgb(224, 244, 255);
+            signUpButton.FlatAppearance.BorderSize = 0;
+            signUpButton.FlatStyle = FlatStyle.Flat;
+            signUpButton.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            signUpButton.ForeColor = Color.FromArgb(57, 167, 255);
+            signUpButton.Location = new Point(341, 338);
+            signUpButton.Name = "signUpButton";
+            signUpButton.Size = new Size(105, 37);
+            signUpButton.TabIndex = 17;
+            signUpButton.Text = "SIGN UP";
+            signUpButton.UseVisualStyleBackColor = false;
+            signUpButton.Click += signUpButton_Click;
             // 
             // label6
             // 
@@ -194,7 +193,7 @@
             Controls.Add(label7);
             Controls.Add(label3);
             Controls.Add(label6);
-            Controls.Add(loginButton);
+            Controls.Add(signUpButton);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(label5);
@@ -224,7 +223,7 @@
         private Label label5;
         private Label label1;
         private Label label2;
-        private Button loginButton;
+        private Button signUpButton;
         private Label label6;
         private Label label3;
         private Label label7;

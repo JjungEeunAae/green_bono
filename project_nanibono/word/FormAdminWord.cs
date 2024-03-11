@@ -56,8 +56,8 @@ namespace project_nanibono.word
                 using (OracleConnection con = new OracleConnection(DBINFO.getConnection()))
                 {
                     con.Open();
-                    string c = comboBox1.SelectedItem.ToString();
-                    DBINFO.sql = $"select group_detail_name from group_detail where group_detail_no like '{a}_%' and '{a}' is not null";
+                    DBINFO.sql = $"select group_detail_name from group_detail " +
+                                 $"where group_detail_no like '{a}_%' and '{a}' is not null";
                     using (OracleCommand cmd = new OracleCommand(DBINFO.sql, con))
                     {
                         using (OracleDataReader reader = cmd.ExecuteReader())
@@ -88,7 +88,7 @@ namespace project_nanibono.word
         }
         private void closeBtn_Click(object sender, EventArgs e) // 닫기 버튼  
         {
-            MessageBox.Show("단어 페이지로 돌아갑니다.");
+            MessageBox.Show("단어 리스트 페이지로 돌아갑니다.");
             this.Close();
             parentForm.Show();
         }
@@ -111,7 +111,8 @@ namespace project_nanibono.word
                 {
                     con.Open();
 
-                    DBINFO.sql = $"select group_detail_no from group_detail where group_detail_name like '{a}' and '{a}' is not null";
+                    DBINFO.sql = $"select group_detail_no from group_detail " +
+                                 $"where group_detail_name like '{a}' and '{a}' is not null";
                     using (OracleCommand cmd = new OracleCommand(DBINFO.sql, con))
                     {
                         using (OracleDataReader reader = cmd.ExecuteReader())
@@ -120,7 +121,6 @@ namespace project_nanibono.word
                             {
                                 result = reader.GetString(0);
                             }
-
                         }
                     }
                 }
@@ -159,7 +159,6 @@ namespace project_nanibono.word
                 using (OracleConnection con = new OracleConnection(DBINFO.getConnection()))
                 {
                     con.Open();
-
                     DBINFO.sql = sequenceSql();
 
                     using (OracleCommand cmd = new OracleCommand(DBINFO.sql, con))
@@ -175,7 +174,7 @@ namespace project_nanibono.word
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Test" + ex.Message);
+                MessageBox.Show("에러 : " + ex.Message);
             }
         }
         private bool textBoxValuesCheck() // 분류, 카테고리, 단어명, 단어설명 빈값 확인하는 메서드

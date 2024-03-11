@@ -24,15 +24,11 @@ namespace project_nanibono
             InitializeComponent();
         }
 
-        private void FormSignUp_Load(object sender, EventArgs e)
+        private void FormSignUp_Load(object sender, EventArgs e) // 회원가입하는 창 보노보노 이미지
         {
             //pictureBox1.Image = Properties.Resources.bonoImg;
         }
-        private void button1_Click(object sender, EventArgs e) // 회원가입 시 아이디 중복체크
-        {
-            idCheckResult = checkId() ? 1 : 0; // 1 이면 중복 아니라서 아이디 사용가능, 0 이면 중복 
-        }
-        private bool checkId()
+        private bool checkId() // id 중복 체크
         {
             member.id = userId.Text;
             bool check = true;
@@ -79,6 +75,10 @@ namespace project_nanibono
 
             return check;
         }
+        private void button1_Click(object sender, EventArgs e) // 회원가입 시 아이디 중복체크
+        {
+            idCheckResult = checkId() ? 1 : 0;
+        }
         private bool textBoxValuesCheck() // 아아디, 비밀번호, 이름 빈값 확인하는 메서드
         {
             if (string.IsNullOrEmpty(userId.Text.Trim()))
@@ -98,26 +98,22 @@ namespace project_nanibono
             }
             return true;
         }
-        private void loginButton_Click(object sender, EventArgs e) // 회원가입 버튼 누르는 메서드(빈값 확인후 로그인 구현)
+        private void signUpButton_Click(object sender, EventArgs e)   // 중복체크에 따라 회원가입 버튼 누르는 메서드(빈값 확인후 로그인 구현)
         {
-            if (signUpCheck())
-                signUp();
-        }
-        private bool signUpCheck() // 회원가입 할 수 있는지 확인하는 메서드
-        {
-            bool sucess = false;
-            Console.WriteLine(idCheckResult);
             if (idCheckResult == 1)
             {
-                sucess = textBoxValuesCheck() ? true : false;
+                bool sucess = textBoxValuesCheck() ? true : false;
+                if (sucess)
+                {
+                    signUp();
+                }
             }
             else
             {
                 MessageBox.Show("아이디 중복 체크 해주세요");
             }
-            return sucess;
         }
-        private void signUp() // 회원가입 insert 넣는 메서드
+        private void signUp() // 회원가입 하는 db
         {
             try
             {
@@ -133,7 +129,6 @@ namespace project_nanibono
                         cmd.Parameters.Add("pw", userPassword.Text);
                         cmd.Parameters.Add("name", userName.Text);
 
-
                         if (cmd.ExecuteNonQuery() == 1)
                         {
                             MessageBox.Show("환영합니다. " + userId.Text + " 님 회원가입 되었습니다.");
@@ -145,7 +140,7 @@ namespace project_nanibono
                     }
                 }
             }
-            catch (OracleException ex)  // id 가 유니크 타입이라서 같은 값 넣을때 오류가 떠서 아이디 중복 확인하는 메세지로 변경
+            catch (OracleException ex)
             {
                 if (ex.Number == 1)
                 {
@@ -155,13 +150,11 @@ namespace project_nanibono
                 {
                     MessageBox.Show("오류 : " + ex.Message.ToString());
                 }
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Test" + ex.Message);
             }
         }
-
     }
 }
