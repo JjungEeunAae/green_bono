@@ -35,7 +35,7 @@ namespace project_nanibono.main
                 string word = text.Text;
                 if (string.IsNullOrEmpty(word.Trim()))
                 {
-                    
+                    MessageBox.Show("검색어를 입력해주세요");
                     return null;
                 }
                 OracleConnection conn = new OracleConnection(strConnection);
@@ -54,7 +54,7 @@ namespace project_nanibono.main
                 }
                 if (cnt == 0)
                 {
-                    MessageBox.Show("다시 검색하세요");
+                    MessageBox.Show("검색 결과가 없습니다");
                     return null;
                 }
                 reader.Close();
@@ -67,7 +67,7 @@ namespace project_nanibono.main
                 string wordMean = text.Text;
                 if (string.IsNullOrEmpty(wordMean.Trim()))
                 {
-                    
+                    MessageBox.Show("검색어를 입력해주세요");
                     return null;
                 }
                 OracleConnection conn = new OracleConnection(strConnection);
@@ -89,7 +89,7 @@ namespace project_nanibono.main
                 }
                 if (cnt == 0)
                 {
-                    MessageBox.Show("다시 검색하세요");
+                    MessageBox.Show("검색 결과가 없습니다");
                     return null;
                 }
                 reader.Close();
