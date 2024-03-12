@@ -52,34 +52,30 @@ namespace project_nanibono
         {
             Dictionary<string, string> dictWord = db.selectWord(wordSearch1.getTextBox(), wordSearch1.getComboBox()) as Dictionary<string, string>;
 
-                if (dictWord != null)
-                {
-                    WordSearchResult sw = new WordSearchResult(dictWord);
+            if (dictWord != null)
+            {
+                WordSearchResult sw = new WordSearchResult(dictWord);
 
-                    sw.Size = new Size(620, 390);
-                    sw.AutoScroll = true;
-                    sw.VerticalScroll.Enabled = true; 
-                    sw.HorizontalScroll.Enabled = false; 
+                sw.Size = new Size(620, 390);
+                sw.AutoScroll = true;
+                sw.VerticalScroll.Enabled = true;
+                sw.HorizontalScroll.Enabled = false;
 
-                    menuPanel.Visible = true;
-                    menuPanel.BringToFront();
+                menuPanel.Visible = true;
+                menuPanel.BringToFront();
 
-                    rightPanel.Size = new Size(620, 390);
-                    rightPanel.AutoScroll = false;
-                    rightPanel.HorizontalScroll.Enabled = false;
+                rightPanel.Size = new Size(620, 390);
+                rightPanel.AutoScroll = false;
+                rightPanel.HorizontalScroll.Enabled = false;
 
-                    rightPanel.Visible = true;
-                    rightPanel.Controls.Add(sw);
+                rightPanel.Visible = true;
+                rightPanel.Controls.Add(sw);
 
-                    rightPanel.BringToFront();
-                    sw.BringToFront();
-                }
-                else
-                {
-                    MessageBox.Show("검색어를 입력해주세요");
-                };
-        }      
-      
+                rightPanel.BringToFront();
+                sw.BringToFront();
+            }
+        }
+
         public void selectCategory(DataTable dataTable)
         {
             rightPanel.Controls.Clear();
