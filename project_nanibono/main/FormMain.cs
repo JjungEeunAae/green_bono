@@ -74,39 +74,11 @@ namespace project_nanibono
                     rightPanel.BringToFront();
                     sw.BringToFront();
                 }
-        }
-        private void homeButton_Click(object sender, EventArgs e)
-        {
-            if (String.IsNullOrEmpty(GlobalVariables.LoggedInUserId))
-            {
-                logoutButton.Visible = false;
-                wordSearch1.getLoginButton().Visible = true;
-            }
-            else
-            {
-                logoutButton.Visible = true;
-                wordSearch1.getLoginButton().Visible = false;
-            }
-
-            menuPanel.Visible = false;
-            rightPanel.Visible = false;
-            wordSearch1.Visible = true;
-            wordSearch1.BringToFront();
-        }
-        public void logoutButton_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("로그아웃에 성공했습니다.");
-
-            GlobalVariables.LoggedInUserId = null;
-
-            Console.WriteLine("id = " + GlobalVariables.LoggedInUserId);
-            logoutButton.Visible = false;
-
-            FormMain formMain = new FormMain(); 
-            formMain.Show();
-            serchResult();
-        }
-
+                else
+                {
+                    MessageBox.Show("검색어를 입력해주세요");
+                };
+        }      
       
         public void selectCategory(DataTable dataTable)
         {
@@ -169,6 +141,7 @@ namespace project_nanibono
             selectCategory(manager.Select("CT1%"));
         }
 
+        // 상단 패널 버튼
         private void sdButton_Click(object sender, EventArgs e)
         {
             menuPanel.Visible = true;
@@ -183,6 +156,7 @@ namespace project_nanibono
             selectCategory(manager.Select("CT2%"));
         }
 
+        // 좌측 메뉴 패널 버튼
         private void button_ct1_Click(object sender, EventArgs e)
         {
             selectCategory(manager.Select("CT1%"));
@@ -229,5 +203,35 @@ namespace project_nanibono
             menuSwitchPanel.Location = new System.Drawing.Point(0, 259);
             selectCategory(manager.Select("CT2_CG2"));
         }
-    }
+        private void homeButton_Click(object sender, EventArgs e)
+        {
+          if (String.IsNullOrEmpty(GlobalVariables.LoggedInUserId))
+          {
+            logoutButton.Visible = false;
+            wordSearch1.getLoginButton().Visible = true;
+          }
+          else
+         {
+          logoutButton.Visible = true;
+          wordSearch1.getLoginButton().Visible = false;
+         }
+
+         menuPanel.Visible = false;
+         rightPanel.Visible = false;
+         wordSearch1.Visible = true;
+         wordSearch1.BringToFront();
+        }
+     public void logoutButton_Click(object sender, EventArgs e)
+     {
+       MessageBox.Show("로그아웃에 성공했습니다.");
+
+       GlobalVariables.LoggedInUserId = null;
+
+       Console.WriteLine("id = " + GlobalVariables.LoggedInUserId);
+       logoutButton.Visible = false;
+
+       FormMain formMain = new FormMain();  
+       formMain.Show();
+      }
+   }
 }

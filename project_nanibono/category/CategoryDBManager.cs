@@ -16,7 +16,9 @@ namespace project_nanibono.category
             try
             {
                 oc = new OracleConnection(DBINFO.getConnection());
-                string sql = $"SELECT word, word_mean,insert_date FROM word WHERE category LIKE '{category}%'AND delete_yn = 'N' ORDER BY word_no ASC";
+                string sql = $"SELECT word, word_mean,insert_date " +
+                    $"FROM word WHERE category LIKE '{category}%'" +
+                    $"AND delete_yn = 'N' ORDER BY word_no ASC";
 
                 OracleCommand cmd = new OracleCommand(sql, oc);
                 oc.Open();
