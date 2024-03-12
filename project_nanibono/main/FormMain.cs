@@ -46,6 +46,7 @@ namespace project_nanibono
         private void SearchButton_Click(object? sender, EventArgs e)
         {
             serchResult();
+            wordSearch1.getTextBox().Clear();
         }
 
         private void serchResult()
