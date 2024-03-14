@@ -6,7 +6,7 @@
 ## 참여인원 및 역할
 |이름|역할|깃 주소|
 |------|---|---|
-|<b>권*민</b>|✧ DB관리<br>✧ 기능<br>&nbsp;&nbsp;&nbsp;⋆ 공통-용어or정의 검색<br>&nbsp;&nbsp;&nbsp;⋆ 공통-검색결과<br>&nbsp;&nbsp;&nbsp;⋆ 공통-단어 편집요청|?????|
+|<b>권*민</b>|✧ DB관리<br>✧ 기능<br>&nbsp;&nbsp;&nbsp;⋆ 공통-용어or정의 검색<br>&nbsp;&nbsp;&nbsp;⋆ 공통-검색결과<br>&nbsp;&nbsp;&nbsp;⋆ 공통-단어 편집요청|https://github.com/SuCock|
 |<b>양*영</b>|✧ 전체적인 테스트<br>✧ PPT 작업<br>✧ 기능<br>&nbsp;&nbsp;&nbsp;⋆ 공통-회원가입<br>&nbsp;&nbsp;&nbsp;⋆ 관리자-단어관리|https://github.com/yayoung92|
 |<b>정*애</b>|✧ 프로그램 환경설정<br>✧ 설계<br>&nbsp;&nbsp;&nbsp;⋆ 화면<br>&nbsp;&nbsp;&nbsp;⋆ DB<br>✧ 기능<br>&nbsp;&nbsp;&nbsp;⋆ 관리자-회원관리<br>&nbsp;&nbsp;&nbsp;⋆ 관리자-요청관리|https://github.com/JjungEeunAae|
 |<b>최*재</b>|✧ GitHub-형상관리<br>✧ 아이디어 제공<br>✧ 기능<br>&nbsp;&nbsp;&nbsp;⋆ 공통-로그인/로그아웃<br>&nbsp;&nbsp;&nbsp;⋆ 공통-카테고리별 단어조회<br>&nbsp;&nbsp;&nbsp;⋆ 공통-단어 상세조회|https://github.com/Namee572|
