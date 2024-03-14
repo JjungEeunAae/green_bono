@@ -25,7 +25,7 @@
 # 화면
 ## 공통
 ### 회원가입
-![image](https://github.com/JjungEeunAae/green_bono/assets/121069641/8b9476c6-6408-426c-a24a-0d51d3b42284)
+![image](https://github.com/JjungEeunAae/green_bono/assets/140130695/6dcfddf7-560a-4c43-b84a-7dc84da66bcd)
 
 
 ### 로그인
@@ -33,11 +33,11 @@
 
 
 ### 메인
-![image](https://github.com/JjungEeunAae/green_bono/assets/121069641/a978d63c-cecd-4f8a-aca1-df5405d40970)
+![image](https://github.com/JjungEeunAae/green_bono/assets/140130695/9143880b-5f9b-46b3-9f5b-b09d2545bcce)
 
 
 ### 검색결과
-![image](https://github.com/JjungEeunAae/green_bono/assets/121069641/7eb79c03-4ca7-415b-ab54-56b234099dde)
+![image](https://github.com/JjungEeunAae/green_bono/assets/140130695/e3c1815a-31e4-4f93-a147-9478fdaaee0f)
 
 
 ### 편집요청
@@ -45,24 +45,24 @@
 
 
 ### 카테고리별 목록 조회
-![image](https://github.com/JjungEeunAae/green_bono/assets/121069641/aaad2b67-09ef-4df4-9755-a2a69f26c119)
+![image](https://github.com/JjungEeunAae/green_bono/assets/140130695/e7191996-9bd3-404a-aab7-af05c786c47c)
 
 
 ### 단어 상세조회
-![image](https://github.com/JjungEeunAae/green_bono/assets/121069641/2655fb8a-6461-464a-849e-556bb1245d56)
+![image](https://github.com/JjungEeunAae/green_bono/assets/140130695/09556a63-1b7f-4217-bca2-023a4f63e63d)
 
 
 ## 관리자
 ### 회원관리
-![image](https://github.com/JjungEeunAae/green_bono/assets/121069641/23c468be-118e-4ef3-a06f-06b0de9fdd93)
+![image](https://github.com/JjungEeunAae/green_bono/assets/140130695/4a20ec26-84ba-4e9e-a685-ec7a92f51575)
 
 
 ### 단어관리
-![image](https://github.com/JjungEeunAae/green_bono/assets/121069641/84fd7ad2-bc98-465f-bc1a-f6efd28c2a2f)
+![image](https://github.com/JjungEeunAae/green_bono/assets/140130695/b6c2d609-c3e1-41af-b084-5623ae666413)
 
 
 ### 단어등록
-![image](https://github.com/JjungEeunAae/green_bono/assets/121069641/9e1f143f-268a-42b4-ac2b-92271c0f849d)
+![image](https://github.com/JjungEeunAae/green_bono/assets/140130695/9b951262-d0ed-495a-bfe9-72d9dc3c277c)
 
 
 ### 요청관리
@@ -70,7 +70,7 @@
 
 
 ### 수정요청
-![image](https://github.com/JjungEeunAae/green_bono/assets/121069641/b413ad35-1626-45c5-9259-fe15cb5de5aa)
+![image](https://github.com/JjungEeunAae/green_bono/assets/140130695/75d37134-e7c8-4eba-b413-24ddbf976a69)
 
 
 ### 삭제요청
