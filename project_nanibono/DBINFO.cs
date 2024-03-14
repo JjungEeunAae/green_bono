@@ -6,7 +6,7 @@ namespace project_nanibono
     {
         public static string getConnection() // db 연결하는 메서드
         {
-            string dbstr = "DATA SOURCE=192.168.0.110; User Id=bono; Password=bono";
+            string dbstr = "DATA SOURCE=localhost; User Id=bono; Password=bono";
 
             // 각자 집에서 DB 연결할 때 쓸 string 변수
             //string dbstr = "DATA SOURCE=localhost; User Id=green; Password=1234";
@@ -17,7 +17,7 @@ namespace project_nanibono
         public static OracleCommand cmd = new OracleCommand();
         public static string sql = "";
 
-        public static string strConnection = "DATA SOURCE=192.168.0.110; User Id=bono; Password=bono";
+        public static string strConnection = "DATA SOURCE=localhost; User Id=bono; Password=bono";
         public static OracleConnection conn = new OracleConnection(strConnection);
         public static OracleCommand cmd_eunae;
         public static OracleDataReader rdr_eunae;
