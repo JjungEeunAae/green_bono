@@ -46,16 +46,15 @@ namespace project_nanibono.word
                 {
                     con.Open();
                     OracleDataAdapter oracleDataAdapter = new OracleDataAdapter();
-                    DBINFO.sql = "SELECT " +
-                         "CASE " +
-                         "    WHEN category LIKE 'CT1%' THEN '정보처리기사' " +
-                         "    WHEN category LIKE 'CT2%' THEN 'SQLD' " +
-                         "    ELSE category " +
-                         "END AS 카테고리, " +
-                         "word_no as " + "번호" + ", word as " + "단어" + ", word_mean as " + "뜻" + 
-                         ", insert_date as " + "등록일" +
-                         " FROM word WHERE category like 'CT1%' or category like 'CT2%'" +
-                         " Order by insert_date desc";
+                    DBINFO.sql = "SELECT CASE WHEN category LIKE 'CT1%' THEN '정보처리기사' " +
+                                             "WHEN category LIKE 'CT2%' THEN 'SQLD' " +
+                                 "ELSE category END AS 카테고리 " +
+                                 ", word_no as " + "번호 " + 
+                                 ", word as " + "단어 " + 
+                                 ", word_mean as " + "뜻 " + 
+                                 ", insert_date as " + "등록일 " +
+                                 "FROM word WHERE category LIKE 'CT1%' OR category LIKE 'CT2%' " +
+                                 "ORDER BY insert_date DESC";
 
                     using (OracleCommand cmd = new OracleCommand(DBINFO.sql, con))
                     {

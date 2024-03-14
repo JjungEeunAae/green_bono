@@ -38,7 +38,7 @@ namespace project_nanibono
                 {
                     con.Open();
 
-                    DBINFO.sql = "select id from member";
+                    DBINFO.sql = "SELECT id FROM member";
                     using (OracleCommand cmd = new OracleCommand(DBINFO.sql, con))
                     {
                         using (OracleDataReader reader = cmd.ExecuteReader())
