@@ -29,7 +29,7 @@ namespace project_nanibono.word
                 {
                     con.Open();
                     string c = comboBox1.SelectedItem.ToString();
-                    DBINFO.sql = $"select group_detail_no from group_detail where group_detail_name='{c}'";
+                    DBINFO.sql = $"SELECT group_detail_no FROM group_detail WHERE group_detail_name='{c}'";
                     using (OracleCommand cmd = new OracleCommand(DBINFO.sql, con))
                     {
                         using (OracleDataReader reader = cmd.ExecuteReader())
@@ -56,8 +56,8 @@ namespace project_nanibono.word
                 using (OracleConnection con = new OracleConnection(DBINFO.getConnection()))
                 {
                     con.Open();
-                    DBINFO.sql = $"select group_detail_name from group_detail " +
-                                 $"where group_detail_no like '{a}_%' and '{a}' is not null";
+                    DBINFO.sql = $"SELECT group_detail_name FROM group_detail " +
+                                 $"WHERE group_detail_no LIKE '{a}_%' AND '{a}' IS NOT NULL";
                     using (OracleCommand cmd = new OracleCommand(DBINFO.sql, con))
                     {
                         using (OracleDataReader reader = cmd.ExecuteReader())
@@ -111,8 +111,8 @@ namespace project_nanibono.word
                 {
                     con.Open();
 
-                    DBINFO.sql = $"select group_detail_no from group_detail " +
-                                 $"where group_detail_name like '{a}' and '{a}' is not null";
+                    DBINFO.sql = $"SELECT group_detail_no FROM group_detail " +
+                                 $"WHERE group_detail_name LIKE '{a}' AND '{a}' IS NOT NULL";
                     using (OracleCommand cmd = new OracleCommand(DBINFO.sql, con))
                     {
                         using (OracleDataReader reader = cmd.ExecuteReader())
@@ -138,14 +138,14 @@ namespace project_nanibono.word
 
             if (a.Equals("CT1"))
             {
-                b = "insert into word(word_no, word, word_mean, insert_date, delete_yn, category) " +
-                        "values('ELF' || (ELF.nextval), :word, :word_mean, CURRENT_TIMESTAMP, 'N', :category)";
+                b = "INSERT INTO word(word_no, word, word_mean, insert_date, delete_yn, category) " +
+                    "VALUES('ELF' || (ELF.NEXTVAL), :word, :word_mean, CURRENT_TIMESTAMP, 'N', :category)";
 
             }
             else if (a.Equals("CT2"))
             {
-                b = "insert into word(word_no, word, word_mean, insert_date, delete_yn, category) " +
-                        "values('SD' || (SD.nextval), :word, :word_mean, CURRENT_TIMESTAMP, 'N', :category)";
+                b = "INSERT INTO word(word_no, word, word_mean, insert_date, delete_yn, category) " +
+                    "VALUES('SD' || (SD.NEXTVAL), :word, :word_mean, CURRENT_TIMESTAMP, 'N', :category)";
             }
             return b;
         }
